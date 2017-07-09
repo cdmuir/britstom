@@ -1,6 +1,4 @@
 ##### Contents #####
-# 1. Preliminaries
-# 2. Process trait data
 # 3. Phylogeny
 # 4. Rauniker life-form versus SR
 # 5. Remove hydrophytes, helophytes, c4, and cam plants
@@ -8,78 +6,6 @@
 # #. Plot growth form versus stomatal ratio
 #
 
-##### 1. Preliminaries #####
-
-  # Directories
-  pathMain <- "~/Google Drive/StomatalRatio/BES"
-  pathRawData <- paste0(pathMain, "/RawData")
-  pathProcData <- paste0(pathMain, "/ProcData")
-  pathR <- paste0(pathMain, "/R")
-  pathMS <- paste0(pathMain, "/ms")
-  pathFigures <- paste0(pathMS, "/Figures")
-  
-  setwd(pathMain)
-  
-  # Libraries
-  library(vioplot)
-  library(ape)
-  library(rncl)
-  library(phytools)
-  library(rstanarm)
-  library(phylolm)
-  library(Rphylopars)
-  
-##### 2. Process data #####
-  
-  # Stomata
-  stomata <- read.csv(paste0(pathRawData, "/stomata.csv"), stringsAsFactors = F, strip.white = T)
-  stomata$sr_propAd <- apply(stomata, 1, function(X) as.numeric(X["ad_density"]) / (as.numeric(X["ab_density"]) + as.numeric(X["ad_density"])))
-  stomata$sr_even <- apply(stomata, 1, function(X) min(as.numeric(X[c("ab_density", "ad_density")])) / max(as.numeric(X[c("ab_density", "ad_density")])))
-  stomata <- stomata[which(!is.na(stomata$sr_propAd)), ]
-  
-  # OLD - Ellenberg light index
-  # ellenberg_light <- read.csv(paste0(pathRawData, "/ellenberg_light.csv"), stringsAsFactors = F, 
-  #                            strip.white = T)
-  
-  # OLD - Life-form
-  # lifeform <- read.csv(paste0(pathRawData, "/life-form.csv"), stringsAsFactors = F, strip.white = T)
-  
-  # Photosynthetic pathway
-  photo <- read.csv(paste0(pathRawData, "/photo.csv"), stringsAsFactors = F, strip.white = T)
-  all(stomata$species %in% photo$species) # should be true
-  
-  # PLANTATT (Hill et al 2004) for lifeform and Ellenberg light indicator values
-  plantatt <- read.csv(paste0(pathRawData, "/plantatt.csv"), stringsAsFactors = F, strip.white = T)
-  # stomata$species[which(!stomata$species %in% plantatt$Taxon.name)] # Missing data for a few
-  # Combine bulbous and nonbulbous geophytes
-  plantatt$LF1[plantatt$LF1 == "Gb"] <- "Gn"
-
-  # Combine hydrophytes and annual hydrophytes
-  plantatt$LF1[plantatt$LF1 == "Hz"] <- "Hy"
-
-  # Combine phanerophytes and nanophanerophytes
-  plantatt$LF1[plantatt$LF1 == "Pn"] <- "Ph"
-  
-  # Combine datasets
-  # x1 <- match(stomata$species, ellenberg_light$species)
-  # x2 <- match(stomata$species, lifeform$species)
-  xp <- match(stomata$species, photo$species)
-  xa <- match(stomata$species, plantatt$Taxon.name)
-  # stomata$ellenberg_light <- ellenberg_light$ellenberg_light[x1]
-  # stomata$lifeform <- lifeform$lifeform[x2]
-  stomata$photo <- photo$photo[xp]
-  stomata$lifeform <- plantatt$LF1[xa]
-  stomata$ellenberg_light <- plantatt$L[xa]
-  stomata$height <- plantatt$Hght[xa]
-  stomata$wh <- plantatt$W[xa]
-
-  # Remove missing values
-  stomata <- stomata[complete.cases(stomata[, c("sr_propAd", "lifeform", "ellenberg_light")]), ]
-  
-  rm("photo", "plantatt", "xp", "xa")
-  
-  # Export  
-  # write.csv(stomata, paste0(pathProcData, "/stomata.csv"))
 
 ##### 3. Phylogeny #####
   
