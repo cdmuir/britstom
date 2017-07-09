@@ -4,3 +4,4 @@ source("R/update-packages.R")
 source("R/session-info.R")
 
 source("R/process-data.R")
+source("R/make-phylogeny.R")
