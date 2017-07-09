@@ -1,0 +1,204 @@
+species,ad_density,ab_density
+Acer campestre,0.5,270
+Acer pseudoplatanus,0,400
+Alnus glutinosa,0,108
+Betula alba,0,184
+Betula pubescens,0,147
+Carpinus betulus ,0.5,160
+Fagus sylvatica ,0,236
+Fraxinus excelsior,0,176
+Ilex aquifolium,0,180
+Populus alba ,0,315
+Populus nigra,20,115
+Populus tremula ,0,330
+Prunus avium,0,282
+Pyrus communis,0,91
+Pyrus malus ,0,275
+Pyrus torminalis,0,110
+Quercus robur ,0,450
+Quercus sessiliflora,0,400
+Sorbus aria ,0,225
+Sorbus aucuparia ,0,224
+Taxus baccata ,0,151
+Tilia parvifolia ,0,214
+Tilia platyphyllos ,0,119
+Tilia vulgaris ,0,130
+Ulmus montana,0,218
+Castanea vulgaris ,0,330
+Berberis vulgaris ,0,400
+Buxus sempervirens,0,160
+Clematis vitalba ,0,115
+Cornus sanguinea ,0,246
+Corylus avellana ,0,225
+Crataegus monogyna,0,154
+Crataegus oxyacanthoides,0,147
+Cytisus scoparius,90,0
+Daphne laureola ,0,94
+Daphne mezereum,0,99
+Euonymus europaeus,0.5,254
+Hedera helix ,0,125
+Hypericum androsaemum,0,200
+Ligustrum vulgare ,0,300
+Lonicera periclymenum,0,130
+Prunus cerasus,0,216
+Prunus spinosa ,0,375
+Rhamnus cathartica,0,167
+Rhamnus frangula ,0,477
+Ribes grossularia ,0,195
+Ribes nigrum ,0,144
+Rosa canina ,0,89
+Rubus corylifolius ,0,292
+Salix caprea,0,400
+Sambucus nigra ,0,90
+Solanum dulcamara ,0,156
+Vaccinium myrtillus ,18,120
+Viburnum lantana ,0,136
+Viburnum opulus ,0,79
+Actaea spicata ,0,45
+Adoxa moschatellina ,0,33
+Ajuga reptans ,17,147
+Allium ursinum ,0,60
+Anemone nemorosa,0,42
+Arum maculatum ,45,76
+Asperula odorata ,0,119
+Cephalanthera pallens,0,48
+Circaea alpina ,0,56
+Circaea lutetiana ,0,154
+Conopodium denudatum ,0,130
+Convallaria majalis ,60,47
+Dentaria bulbifera ,0,104
+Epipactis latifolia ,0,41
+Ficaria verna ,21,75
+Helleborus foetidus,0,65
+Helleborus viridis ,0,41
+Iris foetidissima,0,78
+Lamium galeobdolon ,0,175
+Linnaea borealis ,0,200
+Listera ovata ,0,29
+Luzula maxima ,0,129
+Mercurialis perennis ,6,82
+Narcissus pseudonarcissus ,65,68
+Orchis mascula ,0,45
+Oxalis acetosella ,0,56
+Paris quadrifolia ,0,20
+Phyteuma spicatum,2,176
+Polygonatum multiflorum,0,73
+Polygonatum officinale ,0,66
+Polygonatum verticillatum ,0,88
+Primula acaulis ,0,140
+Pyrola minor ,17,183
+Pyrola rotundifolia ,0,200
+Sanicula europaea ,0,143
+Scilla nutans ,55,51
+Scirpus sylvaticus ,0,108
+Trientalis europaea ,0.5,47
+Viola sylvestris ,0,52
+Aconitum napellus ,0,71
+Aegopodium podagraria ,0,266
+Agrimonia eupatoria ,0.5,200
+Agrostis alba ,80,56
+Alchemilla vulgaris ,50,190
+Angelica sylvestris ,0,90
+Anthriscus sylvestris ,0.5,160
+Aquilegia vulgaris ,0,69
+Arctium nemorosum ,0,99
+Arenaria trinervia,4,80
+Arrhenatherum avenaceum,61,13
+Asarum europaeum,50,18
+Asperula odorata ,0,119
+Astragalus glycyphyllos ,0,108
+Atropa belladonna,56,227
+Ballota nigra ,0,274
+Barbarea vulgaris ,250,378
+Brachypodium sylvaticum ,240,0
+Bromus asper,42,2
+Byronia dioica,0,194
+Calamintha clinopodium ,0,235
+Campanula latifolia ,0,198
+Campanula trachelium ,0,165
+Carex pendula ,0,189
+Carex sylvatica ,0,132
+Chaerophyllum temulum,0,150
+Cirsium palustre,3,128
+Colchicum autumnale,41,47
+Crepis paludosa ,2.5,109.5
+Dentaria bulbifera ,0.5,75
+Digitalis purpurea ,6,122
+Dipsacus sylvestris ,9.5,93
+Dipsacus pilosus,26,175
+Epilobium angustifolium ,8,250.5
+Epilobium montanum ,16,185
+Epilobium tetragonum ,145,200
+Euphorbia amygdaloides ,0,104
+Festuca gigantea,36,3.5
+Festuca sylvatica ,200,0
+Fragaria vesca ,0,400
+Gagea lutea ,27,27
+Galanthus nivalis,30,55
+Galeopsis tetrahit ,15,140
+Galium mollugo ,10,200
+Geranium dissectum ,0,318
+Geranium phaeum,0,130
+Geranium robertianum,0,190
+Geranium striatum,0,106
+Geum rivale ,20,220
+Geum urbanum,23,160
+Heracleum sphondylium ,60,313.5
+Hieracium sylvaticum,0,244
+Holcus lanatus ,55,37
+Holcus mollis ,61,38
+Hordeum sylvaticum ,79,5
+Hypericum hirsutum ,0,298
+Hypericum humifusum,0,328
+Hypericum perforatum ,0,233
+Hypericum pulchrum,0,163
+Lactuca muralis ,0,89
+Lathyrus macrorrhizus,10,58
+Lathyrus pratensis ,73,76
+Lathyrus sylvestris ,167,103
+Lilium martagon ,0,30
+Lithospermum officinale ,0,230
+Lithospermum purpurocaeruleum,0,170
+Luzula forsteri ,0,189
+Luzula pilosa ,0,41
+Lychnis dioica,3,67
+Lysimachia nemorum,38,86
+Lysimachia nummularia ,60,125
+Melica nutans ,122,0
+Melica uniflora ,95,0
+Melittis melissophyllum ,0,191
+Milium effusum,103,0
+Nepeta cataria ,0,162.5
+Nepeta glechoma ,0,160
+Poa nemoralis ,3.8,118
+Potentilla erecta ,0,400
+Potentilla sterilis ,0,171.5
+Prunella vulgaris ,42,210
+Pteridium aquilinum,0,63
+Ranunculus auricomus,16,59
+Rumex condylodes ,12,103
+Rumex sanguineus ,2,120
+Saponaria officinalis ,17,103
+Scabiosa succisa ,90,142
+Scrophularia nodosa ,2,181
+Scrophularia vernalis ,4,130
+Sedum telephium ,18,46
+Serratula tinctoria ,19,170
+Sibthorpia europaea,0,100
+Sison amomum,0,227.5
+Sisymbrium alliaria ,4,138
+Solidago virgaurea,80,78
+Stachys betonica ,32,145
+Stachys sylvatica,0,136
+Stellaria graminea,35,84.5
+Stellaria holostea ,3,118
+Teucrium scorodonia,0,238
+Verbascum thapsus,75,140.5
+Veronica chamaedrys,4,190
+Veronica montana ,0,164
+Veronica officinalis ,23,90
+Vicia cracca,130,44
+Vicia sepium,0,160.5
+Vicia sylvatica ,78,5.5
+Vinca minor ,0,270
+Viola odorata ,4.5,96
