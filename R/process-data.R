@@ -2,6 +2,7 @@ source("R/header.R")
 
 # Stomata
 
+warning("need to fix sr_even")
 stomata <- read_csv(str_c(pathRawData, "/stomata.csv"))
 stomata %<>% mutate(sr_propAd = ad_density / (ab_density + ad_density),
                     sr_even = min(c(ab_density, ad_density)) / 
