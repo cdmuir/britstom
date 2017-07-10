@@ -1,7 +1,7 @@
 source("R/header.R")
 
-phy <- read.nexus(file = str_c(pathProcData, "/angio_phy_modified.nex"))
-stomata <- read_csv(str_c(pathProcData, "/stomata_filtered.csv"))
+phy <- read.nexus(file = str_c(path_proc_data, "/angio_phy_modified.nex"))
+stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"))
 
 ##### Raunikaer life form and Ellenberg light indicator values versus sr_even -----
 
@@ -9,21 +9,21 @@ stomata <- read_csv(str_c(pathProcData, "/stomata_filtered.csv"))
 # fitSR_pp <- phylopars.lm(sr_even ~ ellenberg_light * lifeform,
 #                          trait_data = stomata[, c("species", "sr_even", "ellenberg_light", "lifeform")],
 #                          tree = phy, model = "OU", REML = F)
-# write_rds(fitSR_pp, path = str_c(pathR, "/fitSR_pp.rds"))
-fitSR_pp <- read_rds(str_c(pathR, "/fitSR_pp.rds"))
+# write_rds(fitSR_pp, path = str_c(path_objects, "/fitSR_pp.rds"))
+fitSR_pp <- read_rds(str_c(path_objects, "/fitSR_pp.rds"))
 anova(fitSR_pp)
 
 # Parametric bootstrap CIs of full model for plotting
 # NOTE - this could be done with Rphylopars, which might be better because parameter estimates are slightly different for some reason
 # set.seed(36502)
 # fitSR_pl <- phylolm(sr_even ~ -1 + lifeform + ellenberg_light:lifeform, 
-#                      model = "OUrandomRoot", data = stomata, phy = phy, boot = 1e3)
-# write_rds(fitSR_pl, path = str_c(pathR, "/fitSR_pl.rds"))
-fitSR_pl <- read_rds(str_c(pathR, "/fitSR_pl.rds"))
+#                     model = "OUrandomRoot", data = stomata, phy = phy, boot = 1e3)
+# write_rds(fitSR_pl, path = str_c(path_objects, "/fitSR_pl.rds"))
+fitSR_pl <- read_rds(str_c(path_objects, "/fitSR_pl.rds"))
 
 # Figure
 
-pdf(str_c(pathFigures, "/Figure_SRmultReg.pdf"), 4, 7)
+pdf(str_c(path_figures, "/figure_SRmultReg.pdf"), 4, 7)
 par(mfrow = c(5, 1), mar = rep(0, 4), cex.lab = 1, oma = c(5, 7, 1, 1))
 
 lf <- c("chamaephyte", "geophyte", "hemicryptophyte", "phanerophyte", "therophyte")

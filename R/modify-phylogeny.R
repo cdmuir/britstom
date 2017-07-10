@@ -1,7 +1,7 @@
 source("R/header.R")
 
-stomata <- read_csv(str_c(pathProcData, "/stomata_filtered.csv"))
-angio_phy <- read.nexus(file = str_c(pathProcData, "/angio_phy.nex"))
+stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"))
+angio_phy <- read.nexus(file = str_c(path_proc_data, "/angio_phy.nex"))
 
 ##### Make dichotomous and slightly adjust edge lengths to make exactly ultrametric -----
 
@@ -15,4 +15,4 @@ angio_phy$edge.length[te] <- angio_phy$edge.length[te] + (max(x) - x)
 is.ultrametric(angio_phy)
 angio_phy %<>% drop.tip(.$tip.label[!.$tip.label %in% stomata$species])
 
-write.nexus(angio_phy, file = paste0(pathProcData, "/angio_phy_modified.nex"))
+write.nexus(angio_phy, file = str_c(path_proc_data, "/angio_phy_modified.nex"))

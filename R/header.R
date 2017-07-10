@@ -1,7 +1,7 @@
 rm(list = ls())
 graphics.off()
 
-compilte_pathd8 <- FALSE # changed to TRUE if you need to compule PATHd8
+compilte_pathd8 <- FALSE # changed to TRUE if you need to compile PATHd8
 if (compilte_pathd8) {
   system("cd PATHd8; cc PATHd8.c -O3 -lm -o PATHd8")
 }
@@ -23,11 +23,12 @@ library(stringr)
 library(vioplot)
 
 # Directories
-pathRawData <- "RawData"
-pathProcData <- "ProcData"
-pathR <- "R"
-pathMS <- "ms"
-pathFigures <- "ms/Figures"
+path_raw_data <- "raw-data"
+path_proc_data <- "proc-data"
+path_r <- "r"
+  path_objects <- "r/objects"
+pathM_ms <- "ms"
+  path_figures <- "ms/figures"
 
 
 

@@ -1,5 +1,11 @@
 # R functions associated with Muir 2017
 
+# Calculate sr_even
+calc_sr_even <- function(ab_density, ad_density) {
+  apply(cbind(ab_density, ad_density), 1, min) / 
+    apply(cbind(ab_density, ad_density), 1, max)
+}
+  
 # Make statistical significance asterisks
 sigStar <- function(pvalue)
 {

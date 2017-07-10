@@ -2,19 +2,17 @@ source("R/header.R")
 
 # Stomata
 
-warning("need to fix sr_even")
-stomata <- read_csv(str_c(pathRawData, "/stomata.csv"))
+stomata <- read_csv(str_c(path_raw_data, "/stomata.csv"))
 stomata %<>% mutate(sr_propAd = ad_density / (ab_density + ad_density),
-                    sr_even = min(c(ab_density, ad_density)) / 
-                      max(c(ab_density, ad_density)))
+                    sr_even = calc_sr_even(ab_density, ad_density))
 stomata %<>% filter(!is.na(sr_propAd))
 
 # Photosynthetic pathway
-photo <- read_csv(str_c(pathRawData, "/photo.csv"))
+photo <- read_csv(str_c(path_raw_data, "/photo.csv"))
 all(stomata$species %in% photo$species) # should be true
 
 # PLANTATT (Hill et al 2004) for lifeform and Ellenberg light indicator values
-plantatt <- read_csv(str_c(pathRawData, "/plantatt.csv")) %>%
+plantatt <- read_csv(str_c(path_raw_data, "/plantatt.csv")) %>%
   select(species = `Taxon name`, lifeform = LF1, ellenberg_light = L, 
          height = Hght, wh = W)
 # stomata$species[which(!stomata$species %in% plantatt$species)] # Missing data for a few
@@ -34,18 +32,4 @@ stomata %<>% filter(!is.na(sr_propAd), !is.na(lifeform), !is.na(ellenberg_light)
 stomata %<>% filter(!(species %in% c("Sedum acre", "Sedum telephium")))
 
 # Export  
-write_csv(stomata, str_c(pathProcData, "/stomata.csv"))
-
-# OLD - rm("photo", "plantatt", "xp", "xa")
-
-# OLD - Ellenberg light index
-# ellenberg_light <- read.csv(paste0(pathRawData, "/ellenberg_light.csv"), stringsAsFactors = F, 
-#                            strip.white = T)
-
-# OLD - Life-form
-# lifeform <- read.csv(paste0(pathRawData, "/life-form.csv"), stringsAsFactors = F, strip.white = T)
-
-# x1 <- match(stomata$species, ellenberg_light$species)
-# x2 <- match(stomata$species, lifeform$species)
-# stomata$ellenberg_light <- ellenberg_light$ellenberg_light[x1]
-# stomata$lifeform <- lifeform$lifeform[x2]
+write_csv(stomata, str_c(path_proc_data, "/stomata.csv"))

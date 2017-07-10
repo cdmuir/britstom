@@ -1,16 +1,16 @@
 source("R/header.R")
 
-phy <- read.nexus(file = str_c(pathProcData, "/angio_phy_modified.nex"))
-stomata <- read_csv(str_c(pathProcData, "/stomata_filtered.csv"))
+phy <- read.nexus(file = str_c(path_proc_data, "/angio_phy_modified.nex"))
+stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"))
 
 ##### Raunikaer life form versus Ellenberg light indicator values -----
 
-# Phylogenetic ANOVA
+# Phylogenetic ANOVA (takes a minute)
 # fitLFvEL_pp <- phylopars.lm(ellenberg_light ~ lifeform,
 #                             trait_data = stomata[, c("species", "ellenberg_light", "lifeform")],
 #                             tree = phy, model = "OU", REML = F)
-# write_rds(fitLFvEL_pp, path = str_c(pathR, "/fitLFvEL_pp.rds"))
-fitLFvEL_pp <- read_rds(str_c(pathR, "/fitLFvEL_pp.rds"))
+# write_rds(fitLFvEL_pp, path = str_c(path_objects, "/fitLFvEL_pp.rds"))
+fitLFvEL_pp <- read_rds(str_c(path_objects, "/fitLFvEL_pp.rds"))
 anova(fitLFvEL_pp)
 
 stomata %<>% as.data.frame() %>% set_rownames(.$species) # need to change row names for phylolm
@@ -23,7 +23,7 @@ lf <- c("chamaephyte", "geophyte", "hemicryptophyte", "phanerophyte", "therophyt
 names(lf) = c("Ch", "Gn", "hc", "Ph", "Th")
 lf <- lf[names(sort(tapply(stomata$sr_propAd, stomata$lifeform, mean)))]
 
-pdf(str_c(pathFigures, "/FigureS_lf-light.pdf"), 4, 7)
+pdf(str_c(path_figures, "/figureS_lf-light.pdf"), 4, 7)
 par(mai = c(1.5, 1, 0, 0.25), cex.lab = 1, las = 1)
 plot(0, 0, type = "n", xlim = c(0, 9), ylim = c(0, 5), xlab = "", ylab = "", axes = F)  
 
@@ -53,7 +53,7 @@ rect(grconvertX(0, from = "npc", "user"), 0:4,
 
 # Means + 95% confidence intervals
 ci <- confint(fitLFvEL_pl)
-ci <- ci[paste0("lifeform", names(lf)), ] # reorder
+ci <- ci[str_c("lifeform", names(lf)), ] # reorder
 mu <- coef(fitLFvEL_pl)[paste0("lifeform", names(lf))]
 for (i in 1:5) {
   lines(ci[i, ], rep(i - 1 + 0.675, 2), lwd = 2)
@@ -61,3 +61,4 @@ for (i in 1:5) {
 }
 
 dev.off()
+

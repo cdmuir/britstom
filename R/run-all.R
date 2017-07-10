@@ -1,7 +1,7 @@
-source("R/install-packages.R")
-source("R/update-packages.R")
+# source("R/install-packages.R")
+# source("R/update-packages.R")
 
-source("R/session-info.R")
+# source("R/session-info.R")
 
 # Prepare data
 source("R/process-data.R")
@@ -11,4 +11,5 @@ source("R/filter-data.R")
 source("R/modify-phylogeny.R")
 
 # Analyze data
-source("R/analyze-light-vs-lifeform.R")
+source("R/analyse-light-vs-lifeform.R")
+source("R/analyse-stomata.R")

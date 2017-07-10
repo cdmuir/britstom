@@ -2,15 +2,15 @@ source("R/header.R")
 
 ##### Import phylogeny of British Flora -----
 # from Lim et al 2014
-tmp <- read_lines(str_c(pathRawData, "/S15105.nex"))
+tmp <- read_lines(str_c(path_raw_data, "/S15105.nex"))
 l1 <- str_detect(tmp, "BEGIN CHARACTERS") %>% which() - 1
 l2 <- str_detect(tmp, "BEGIN TREES") %>% which() - 1
 write_lines(tmp[c(1:l1, l2:length(tmp))], 
-            path = str_c(pathRawData, "/Lim_etal_2014.nex"))
-phy <- read_nexus_phylo(str_c(pathRawData, "/Lim_etal_2014.nex"))
+            path = str_c(path_raw_data, "/Lim_etal_2014.nex"))
+phy <- read_nexus_phylo(str_c(path_raw_data, "/Lim_etal_2014.nex"))
 
 ##### Check for species missing from phylogeny -----
-stomata <- read_csv(str_c(pathProcData, "/stomata.csv")) %>%
+stomata <- read_csv(str_c(path_proc_data, "/stomata.csv")) %>%
   mutate(species1 = species)
 stomata$species1 %<>% str_replace_all(" ", "_")
 notInPhy <- which(!stomata$species1 %in% phy$tip.label)
@@ -56,8 +56,8 @@ tmp %<>% str_replace_all("Viola_arvensis", "Viola_kitaibeliana")
 
 # Write first modified phylogeny
 write_lines(tmp[c(1:l1, l2:length(tmp))], 
-            path = str_c(pathProcData, "/Lim_etal_2014_mod1.nex"))
-phy <- read_nexus_phylo(paste0(pathProcData, "/Lim_etal_2014_mod1.nex"))
+            path = str_c(path_proc_data, "/Lim_etal_2014_mod1.nex"))
+phy <- read_nexus_phylo(paste0(path_proc_data, "/Lim_etal_2014_mod1.nex"))
 
 ##### Bind additional tips -----
 tips <- phy$tip.label
@@ -117,7 +117,7 @@ phy <- bind.tip(phy, "Viola_hirta",
                 where = which(phy$tip.label == "Viola_reichenbachiana"))
 
 # Write second modified phylogeny
-write.nexus(phy, file = paste0(pathProcData, "/Lim_etal_2014_mod2.nex"))
+write.nexus(phy, file = paste0(path_proc_data, "/Lim_etal_2014_mod2.nex"))
 
 # Check for species missing from modified phylogeny
 notInPhy <- which(!stomata$species1 %in% phy$tip.label)
@@ -160,4 +160,4 @@ phy <- read.tree(text = substr(pathd8_out[11], 14, nchar(pathd8_out[11])))
 rm("pathd8_out")
 
 # Write ultrametric phylogeny
-write.nexus(phy, file = paste0(pathProcData, "/Lim_etal_2014_final.nex"))
+write.nexus(phy, file = str_c(path_proc_data, "/Lim_etal_2014_final.nex"))
