@@ -1,46 +1,9 @@
 ##### Contents #####
-# 5. Remove hydrophytes, helophytes, c4, and cam plants
 # #. Plot light versus stomatal ratio
 # #. Plot growth form versus stomatal ratio
-#
-
-
-
-  
-##### 5. Remove hydrophytes, helophytes, c4, cam, and nonangiosperm plants #####
-  
-  # x1 <- c("phanerophyte", "geophyte", "hemicryptophyte", "chamaephyte", "therophyte")
-  # stomata <- stomata[which(stomata$lifeform %in% x1 & stomata$photo == "c3"), ]
-  x1 <- c("Ph", "Ch", "hc", "Gn", "Th")
-  stomata <- stomata[which(stomata$lifeform %in% x1 & stomata$photo == "c3"), ]
-  
-  angioPhy <- extract.clade(phy, node = length(phy$tip.label) + which(phy$node.label == "angiosperms"))
-  # plot(angioPhy, show.tip.label = F, show.node.label = T)
-  
-  stomata <- stomata[stomata$species1 %in% angioPhy$tip.label, ]
-  
-  stomata$species <- stomata$species1
-  stomata <- stomata[, colnames(stomata) != "species1"]
-  
-  # Export new dataset and tree
-  write.csv(stomata, paste0(pathProcData, "/stomata.csv"))
-  write.nexus(angioPhy, file = paste0(pathProcData, "/angioPhy.nex"))
-  
-  rm("x1", "phy")
 
 ##### 6. Raunikaer life form versus Ellenberg light indicator values #####
   
-  # Make dichotomous and slightly adjust edge lengths to make exactly ultrametric
-  modAngioPhy <- multi2di(angioPhy)
-  modAngioPhy$edge.length[modAngioPhy$edge.length == 0] <- 0.02
-  x <- diag(vcv.phylo(modAngioPhy))
-  is.ultrametric(modAngioPhy)
-  n <- length(modAngioPhy$tip.label)
-  te <- sapply(1:n, function(x, y) which(y == x), y = modAngioPhy$edge[, 2]) # terminal edges
-  modAngioPhy$edge.length[te] <- modAngioPhy$edge.length[te] + (max(x) - x)
-  is.ultrametric(modAngioPhy)
-  modAngioPhy <- drop.tip(modAngioPhy, 
-                          modAngioPhy$tip.label[!modAngioPhy$tip.label %in% stomata$species])
   
   # Phylogenetic ANOVA
   # fitLFvEL_pp <- phylopars.lm(ellenberg_light ~ lifeform,

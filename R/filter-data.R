@@ -17,4 +17,4 @@ stomata %<>% filter(species %in% angio_phy$tip.label)
 
 # Export new dataset and tree
 write_csv(stomata, str_c(pathProcData, "/stomata_filtered.csv"))
-write.nexus(angio_phy, file = paste0(pathProcData, "/angio_phy.nex"))
+write.nexus(angio_phy, file = str_c(pathProcData, "/angio_phy.nex"))
