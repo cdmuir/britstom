@@ -20,13 +20,14 @@ library(rncl)
 library(Rphylopars)
 library(rstanarm)
 library(stringr)
+library(vioplot)
 
 # Directories
 pathRawData <- "RawData"
 pathProcData <- "ProcData"
 pathR <- "R"
 pathMS <- "ms"
-pathFigures <- "Figures"
+pathFigures <- "ms/Figures"
 
 
 
