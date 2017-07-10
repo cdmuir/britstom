@@ -1,6 +1,7 @@
 source("R/header.R")
 
-# Import phylogeny of British Flora from Lim et al 2014
+##### Import phylogeny of British Flora -----
+# from Lim et al 2014
 tmp <- read_lines(str_c(pathRawData, "/S15105.nex"))
 l1 <- str_detect(tmp, "BEGIN CHARACTERS") %>% which() - 1
 l2 <- str_detect(tmp, "BEGIN TREES") %>% which() - 1
@@ -8,61 +9,61 @@ write_lines(tmp[c(1:l1, l2:length(tmp))],
             path = str_c(pathRawData, "/Lim_etal_2014.nex"))
 phy <- read_nexus_phylo(str_c(pathRawData, "/Lim_etal_2014.nex"))
 
-# Check for species missing from phylogeny
+##### Check for species missing from phylogeny -----
 stomata <- read_csv(str_c(pathProcData, "/stomata.csv")) %>%
   mutate(species1 = species)
 stomata$species1 %<>% str_replace_all(" ", "_")
 notInPhy <- which(!stomata$species1 %in% phy$tip.label)
 stomata[notInPhy, ]; length(notInPhy)
 
-# Modify tip labels
+##### Modify tip labels -----
 
 # Using Cerastium brachypetalum as proxy for C. cerastoides based on similar divergence in Scheen et al. 2004 (Am J Bot, 91(6): 943-952)
-tmp %<>% str_replace("Cerastium_cerastoides", "Cerastium_brachypetalum")
+tmp %<>% str_replace_all("Cerastium_brachypetalum", "Cerastium_cerastoides")
 
 # Using Coincya monensis as proxy for C. wrightii 
-tmp %<>% str_replace("Coincya_wrightii", "Coincya_monensis")
+tmp %<>% str_replace_all("Coincya_monensis", "Coincya_wrightii")
 
 # Using Geranium pusillum as proxy for G. versicolor based on similar divergence in Palazzesi et al. 2012 (Bio J of Linn Soc, 107(1): 67-85)
 # tmp <- gsub("Geranium_pusillum", "Geranium_versicolor", tmp)
 
 # Using Gnaphalium luteoalbum as proxy for G. norvegicum 
-tmp %<>% str_replace("Gnaphalium_norvegicum", "Gnaphalium_luteoalbum")
+tmp %<>% str_replace_all("Gnaphalium_luteoalbum", "Gnaphalium_norvegicum")
 
 # Lithospermum purpurocaeruleum is mispelled
-tmp %<>% str_replace("Lithospermum_purpurocaeruleum", "Lithospermum_purpureocaeruleum")
+tmp %<>% str_replace_all("Lithospermum_purpureocaeruleum", "Lithospermum_purpurocaeruleum")
 
 # Using Lythrum portula as proxy for L. hyssopifolia 
-tmp %<>% str_replace("Lythrum_hyssopifolia", "Lythrum_portula")
+tmp %<>% str_replace_all("Lythrum_portula", "Lythrum_hyssopifolia")
 
 # Using Peucedanum ostruthium as proxy for P. officinale 
-tmp %<>% str_replace("Peucedanum_officinale", "Peucedanum_ostruthium")
+tmp %<>% str_replace_all("Peucedanum_ostruthium", "Peucedanum_officinale")
 
 # Changing Populus_nigra_sens.lat. to Populus nigra officinale 
-tmp %<>% str_replace("Populus_nigra", "Populus_nigra_sens.lat.")
+tmp %<>% str_replace_all("Populus_nigra_sens.lat.", "Populus_nigra")
 
 # Changing Rosa_canina_agg. to Rosa_canina officinale 
-tmp %<>% str_replace("Rosa_canina", "Rosa_canina_agg.")
+tmp %<>% str_replace_all("Rosa_canina_agg.", "Rosa_canina")
 
 # Using Stachys alpina as proxy for S. germanica based on similar divergence in Salmaki et al. 2013 (Mol Phylo Evol, 69(3): 535-551)
-tmp %<>% str_replace("Stachys_germanica", "Stachys_alpina")
+tmp %<>% str_replace_all("Stachys_alpina", "Stachys_germanica")
 
 # Using Tripleurospermum_maritimum as proxy for T. inodorum 
-tmp %<>% str_replace("Tripleurospermum_inodorum", "Tripleurospermum_maritimum")
+tmp %<>% str_replace("Tripleurospermum_maritimum", "Tripleurospermum_inodorum")
 
 # Using Viola_arvensis as proxy for V. kitaibeliana 
-tmp %<>% str_replace("Viola_kitaibeliana", "Viola_arvensis")
+tmp %<>% str_replace_all("Viola_arvensis", "Viola_kitaibeliana")
 
 # Write first modified phylogeny
 write_lines(tmp[c(1:l1, l2:length(tmp))], 
             path = str_c(pathProcData, "/Lim_etal_2014_mod1.nex"))
 phy <- read_nexus_phylo(paste0(pathProcData, "/Lim_etal_2014_mod1.nex"))
 
-# Bind additional tips
+##### Bind additional tips -----
 tips <- phy$tip.label
 nodes <- sapply(tips, function(x,y) which(y == x), y = phy$tip.label)
 edge.lengths <- setNames(phy$edge.length[sapply(nodes, function(x, y) {
-  which(y == x) }, y = phy$edge[,2])], names(nodes))
+  which(y == x) }, y = phy$edge[, 2])], names(nodes))
 
 # Make Agrostemma githago sister to all (Silene sp., Lychnis sp.) [based on Fior et al. 2006, Am J Bot 104(2):399-411]
 n <- getMRCA(phy, phy$tip.label[c(grep("Silene", phy$tip.label), grep("Lychnis", phy$tip.label))])
@@ -119,7 +120,6 @@ phy <- bind.tip(phy, "Viola_hirta",
 write.nexus(phy, file = paste0(pathProcData, "/Lim_etal_2014_mod2.nex"))
 
 # Check for species missing from modified phylogeny
-stomata$species1 <- gsub(" ", "_", stomata$species)
 notInPhy <- which(!stomata$species1 %in% phy$tip.label)
 stomata[notInPhy, ]
 
@@ -147,13 +147,17 @@ cat(sprintf("Sequence length = 4692;
             name of mrca: Chelidonium_majus, Solanum_nigrum, name=eudicots;
             name of mrca: Quercus_robur, Bryonia_dioica, name=curcibitales_fagales;
             
-            ", write.tree(phy)), file = paste0(pathMain, "/PATHd8/pathd8_in"))
+            ", write.tree(phy)), file = "PATHd8/pathd8_in")
 
 # Run PATHd8
-system("cd ~/Google\\ Drive/StomatalRatio/BES/PATHd8; ./PATHd8 pathd8_in pathd8_out")
+pathd8 <- str_c(getwd(), "/PATHd8") %>% str_replace_all(" ", "\\\\ ")
+system(sprintf("cd %s; ./PATHd8 pathd8_in pathd8_out", pathd8))
 
 # Import ultrametric tree
-pathd8_out <- readLines(paste0(pathMain, "/PATHd8/pathd8_out"))
+pathd8_out <- read_lines("PATHd8/pathd8_out")
 phy <- read.tree(text = substr(pathd8_out[11], 14, nchar(pathd8_out[11])))
 
 rm("pathd8_out")
+
+# Write ultrametric phylogeny
+write.nexus(phy, file = paste0(pathProcData, "/Lim_etal_2014_final.nex"))

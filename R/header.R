@@ -1,6 +1,11 @@
 rm(list = ls())
 graphics.off()
 
+compilte_pathd8 <- FALSE # changed to TRUE if you need to compule PATHd8
+if (compilte_pathd8) {
+  system("cd PATHd8; cc PATHd8.c -O3 -lm -o PATHd8")
+}
+
 source("R/functions.R")
 
 # Libraries
