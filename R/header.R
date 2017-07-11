@@ -20,6 +20,7 @@ library(rncl)
 library(Rphylopars)
 library(rstanarm)
 library(stringr)
+library(taxize)
 library(vioplot)
 
 # Directories

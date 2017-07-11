@@ -1,8 +1,21 @@
 source("R/header.R")
 
-# Stomata
+# British Ecological Flora
 
 stomata <- read_csv(str_c(path_raw_data, "/stomata.csv"))
+
+# Salisbury 1927
+
+salisbury <- read_csv(str_c(path_raw_data, "/salisbury_1927.csv"))
+
+# Taxize Salisbury dataset - this is done as a loop to prevent timing out
+tnr <- tnrs(query = salisbury$species[1], source = "iPlant_TNRS")
+for (i in 2:nrow(salisbury)) {
+  tnr %<>% bind_rows(tnrs(query = salisbury$species[i], source = "iPlant_TNRS"))
+}
+write_csv(tnr, path = str_c(path_raw_data, "/taxized_salisbury_1927.csv"))
+tnr <- read_csv(str_c(path_raw_data, "/taxized_salisbury_1927.csv"))
+############## WORKING TO ADD IN CODE FROM MS.RNW WHERE ###################
 stomata %<>% mutate(sr_propAd = ad_density / (ab_density + ad_density),
                     sr_even = calc_sr_even(ab_density, ad_density))
 stomata %<>% filter(!is.na(sr_propAd))

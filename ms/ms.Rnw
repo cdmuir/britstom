@@ -92,56 +92,9 @@ Discussion:  \\
 \setstretch{\stretchy}
 % \pagenumbering{gobble}
 
-<<Preliminaries, eval=TRUE, echo=FALSE, results=hide>>=
-
-  # REMOVE BEFORE PUBLICATION
-  system('cp ~/Google\\ Drive/CommonResources/refs.bib ~/Google\\ Drive/StomatalRatio/BEF/ms/refs.bib')
-
-  # Directories
-  pathMain <- "~/Google Drive/StomatalRatio/BEF"
-  pathRawData <- paste0(pathMain, "/RawData")
-  pathProcData <- paste0(pathMain, "/ProcData")
-  pathR <- paste0(pathMain, "/R")
-  pathMS <- paste0(pathMain, "/ms")
-  pathFigures <- paste0(pathMS, "/Figures")
-  
-  # Libraries
-  library(vioplot)
-  library(ape)
-  library(rncl)
-  library(phytools)
-  library(rstanarm)
-  library(phylolm)
-  library(Rphylopars)
-  library(lavaan)
-  library(stringr)
-  library(magrittr)
-  library(taxize)
-  library(dplyr)
-
-  # Source functions
-  source(paste0(pathR, "/functions.R"))
-  
-@
-
 <<Process data, eval=TRUE, echo=FALSE, results=hide>>=
 
-  # Stomata
-  ## BEF
-  stomata <- read.csv(paste0(pathRawData, "/stomata.csv"), stringsAsFactors = F, 
-                      strip.white = T)
-  
-  ## Salisbury 1927
-  salisbury <- read.csv(paste0(pathRawData, "/salisbury_1927.csv"), 
-                        stringsAsFactors = FALSE, strip.white = TRUE)
 
-  # This is done as a loop to prevent timing out
-  # tnr <- tnrs(query = salisbury$species[1], source = "iPlant_TNRS")
-  # for (i in 2:nrow(salisbury)) {
-  #  tnr %<>% rbind(tnrs(query = salisbury$species[i], source = "iPlant_TNRS"))
-  # }
-  # write.csv(temp, file = paste0(pathRawData, "/taxized_salisbury_1927.csv"), row.names = F)
-  tnr <- read.csv(paste0(pathRawData, "/taxized_salisbury_1927.csv"), stringsAsFactors = FALSE)
 
   # When TNRS does not give an accepted name, I am using these based on searching The Plant List
   # http://www.theplantlist.org/

@@ -45,51 +45,7 @@
                  data = stomata[, c("sr2", "ellenberg_light", "lifeform")], phy = tmp)
   summary(fit)  
 
-##### X. path analysis - experimental #####
-  
-  library("phylopath")
-  candidates <- list(A = DAG(logAb ~ ellenberg_light, logAd ~ ellenberg_light),
-                     B = DAG(logAb ~ ellenberg_light, logAd ~ ellenberg_light, logAd ~ logAb, logAb ~ logAd))
-  plot(candidates$A)
-  
-  library(Rphylopars)
-  
-  stomata$species <- stomata$species1
-  all(stomata$species %in% phy$tip.label) # should be TRUE
-  phy <- chronos(phy1)
-  plot(phy, show.tip.label = F)
-  axis(1)
-  
-  phy1 <- drop.tip(phy, phy$tip.label[!phy$tip.label %in% stomata$species])
-  plot(phy1, show.tip.label = F)
-  ppBM <- phylopars(stomata[, c("species", "ab_density", "ad_density")], tree = phy1,
-                    model = "BM", pheno_error = FALSE, pheno_correlated = FALSE)
-  cov2cor(ppBM$par$phylocov)
-  ppOU <- phylopars(stomata[, c("species", "ab_density", "ad_density")], tree = multi2di(phy1),
-                    model = "mvOU", pheno_error = FALSE, pheno_correlated = FALSE, full_alpha = TRUE)
-  
-  library("mvMORPH")
-  rownames(stomata) <- stomata$species1
-  #phy$edge.length <- phy$edge.length * 100
-  stomata$logAb <- log(stomata$ab_density + 1)
-  stomata$logAd <- log(stomata$ad_density + 1)
-  
-  mmOU <- mvOU(multi2di(phy1), stomata[, c("ab_density", "ad_density")], scale.height = FALSE)
-  mmBM <- mvBM(multi2di(phy1), stomata[, c("ab_density", "ad_density")], scale.height = FALSE)
 
-  mmOU <- mvOU(multi2di(phy1), stomata[, c("logAb", "logAd")], scale.height = FALSE)
-  mmBM <- mvBM(multi2di(phy1), stomata[, c("logAb", "logAd")], scale.height = FALSE)
-  
-##### 3. Plot light versus stomatal ratio #####
-  
-  vioplot(subset(stomata$sr2, stomata$ellenberg_light == 3, na.rm = TRUE),
-          subset(stomata$sr2, stomata$ellenberg_light == 4, na.rm = TRUE),
-          subset(stomata$sr2, stomata$ellenberg_light == 5, na.rm = TRUE),
-          subset(stomata$sr2, stomata$ellenberg_light == 6, na.rm = TRUE),
-          subset(stomata$sr2, stomata$ellenberg_light == 7, na.rm = TRUE),
-          subset(stomata$sr2, stomata$ellenberg_light == 8, na.rm = TRUE),
-          subset(stomata$sr2, stomata$ellenberg_light == 9, na.rm = TRUE))
-  
 ##### 5. #####
 
 i <- "phanerophyte"

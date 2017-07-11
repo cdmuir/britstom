@@ -13,3 +13,6 @@ source("R/modify-phylogeny.R")
 # Analyze data
 source("R/analyse-light-vs-lifeform.R")
 source("R/analyse-stomata.R")
+
+# NEED TO GET PATH ANALYSIS STUFF
+# NEED TO KNIT REPORT
