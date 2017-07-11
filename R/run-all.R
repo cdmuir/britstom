@@ -12,7 +12,8 @@ source("R/05-modify-phylogeny.R")
 
 # Analyze data
 source("R/06-analyse-light-vs-lifeform.R")
-source("R/07-analyse-stomata.R")
+source("R/07-analyse-stomatal-ratio.R")
+source("R/08-analyse-stomatal-density.R")
 
 # NEED TO GET PATH ANALYSIS STUFF
 # NEED TO KNIT REPORT
