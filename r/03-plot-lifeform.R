@@ -1,7 +1,6 @@
 source("R/header.R")
 
 stomata <- read_csv(str_c(path_proc_data, "/stomata.csv"))
-phy <- read.nexus(file = str_c(path_proc_data, "/Lim_etal_2014_final.nex"))
 
 ##### Plot lifeform versus stomatal ratio -----
 

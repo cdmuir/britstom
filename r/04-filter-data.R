@@ -5,11 +5,14 @@ phy <- read.nexus(file = str_c(path_proc_data, "/Lim_etal_2014_final.nex"))
 
 ##### Filter hydrophytes, helophytes, c4, cam, and nonangiosperm plants -----
 
+nHydrophyte <- length(which(stomata$lifeform == "Hy"))
+nC4 <- length(which(stomata$photo == "c4"))
+nCAM <- length(which(stomata$photo == "cam"))
+
 stomata %<>% filter(lifeform %in% c("Ph", "Ch", "hc", "Gn", "Th"),
                     photo == "c3") %>%
   select(-photo)
 
-stomata$species %<>% str_replace_all(" ", "_")
 angio_phy <- extract.clade(phy, node = length(phy$tip.label) + 
                              which(phy$node.label == "angiosperms"))
 

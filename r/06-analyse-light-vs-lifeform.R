@@ -5,19 +5,18 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"))
 
 ##### Raunikaer life form versus Ellenberg light indicator values -----
 
-# Phylogenetic ANOVA (takes a minute)
-# fitLFvEL_pp <- phylopars.lm(ellenberg_light ~ lifeform,
-#                             trait_data = stomata[, c("species", "ellenberg_light", "lifeform")],
-#                             tree = phy, model = "OU", REML = F)
-# write_rds(fitLFvEL_pp, path = str_c(path_objects, "/fitLFvEL_pp.rds"))
-fitLFvEL_pp <- read_rds(str_c(path_objects, "/fitLFvEL_pp.rds"))
-anova(fitLFvEL_pp)
-
+# phylolm shows that there is no phylogenetic signal in this regression (very high alpha)
 stomata %<>% as.data.frame() %>% set_rownames(.$species) # need to change row names for phylolm
 fitLFvEL_pl <- phylolm(ellenberg_light ~ -1 + lifeform, model = "OUrandomRoot", 
-                       data = stomata, phy = phy)
+                       data = stomata, phy = phy, upper.bound = 1e10)
 summary(fitLFvEL_pl)
-confint(fitLFvEL_pl)
+
+# therefore using standard ANOVA
+fitLFvEL <- lm(ellenberg_light ~ lifeform, data = stomata)
+aovLFvEL <- anova(fitLFvEL)
+
+# for plotting confidence intervals
+fitLFvEL <- lm(ellenberg_light ~ -1 + lifeform, data = stomata)
 
 lf <- c("chamaephyte", "geophyte", "hemicryptophyte", "phanerophyte", "therophyte")
 names(lf) = c("Ch", "Gn", "hc", "Ph", "Th")

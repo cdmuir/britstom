@@ -4,15 +4,15 @@
 # source("R/session-info.R")
 
 # Prepare data
-source("R/process-data.R")
-source("R/make-phylogeny.R")
-source("R/plot-lifeform.R")
-source("R/filter-data.R")
-source("R/modify-phylogeny.R")
+source("R/01-process-data.R")
+source("R/02-make-phylogeny.R")
+source("R/03-plot-lifeform.R")
+source("R/04-filter-data.R") # starting here (if not before) need place to export stuff for use in ms
+source("R/05-modify-phylogeny.R")
 
 # Analyze data
-source("R/analyse-light-vs-lifeform.R")
-source("R/analyse-stomata.R")
+source("R/06-analyse-light-vs-lifeform.R")
+source("R/07-analyse-stomata.R")
 
 # NEED TO GET PATH ANALYSIS STUFF
 # NEED TO KNIT REPORT
