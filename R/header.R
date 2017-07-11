@@ -1,8 +1,8 @@
 rm(list = ls())
 graphics.off()
 
-compilte_pathd8 <- FALSE # changed to TRUE if you need to compile PATHd8
-if (compilte_pathd8) {
+compile_pathd8 <- FALSE # changed to TRUE if you need to compile PATHd8
+if (compile_pathd8) {
   system("cd PATHd8; cc PATHd8.c -O3 -lm -o PATHd8")
 }
 

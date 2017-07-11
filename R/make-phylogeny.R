@@ -120,8 +120,9 @@ phy <- bind.tip(phy, "Viola_hirta",
 write.nexus(phy, file = paste0(path_proc_data, "/Lim_etal_2014_mod2.nex"))
 
 # Check for species missing from modified phylogeny
-notInPhy <- which(!stomata$species1 %in% phy$tip.label)
-stomata[notInPhy, ]
+notInPhy <- which(!(stomata$species %in% phy$tip.label |
+                      stomata$acceptedname %in% phy$tip.label))
+stomata[notInPhy, ]; length(notInPhy)
 
 rm("edge.lengths", "el1", "el2", "l1", "l2", "n", "nodes", "notInPhy", "tips", "tmp")
 
