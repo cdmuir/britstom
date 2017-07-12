@@ -6,7 +6,7 @@ export2ms <- function(x, path_export = getOption("path_export", "/export")) {
   for (i in 1:length(x)) {
     stopifnot(is.character(x[i]))
     tmp <- eval(parse(text = x[i]))
-    path <- str_c(path_ms, path_export)
+    path <- normalizePath(str_c(path_ms, path_export))
     if (!dir.exists(path)) dir.create(path)
     write_rds(tmp, str_c(path, "/", x[i]))
   }
@@ -16,7 +16,7 @@ export2ms <- function(x, path_export = getOption("path_export", "/export")) {
 # Import objects to ms
 import2ms <- function(path_export = getOption("path_export", "/export")) {
   
-  path <- str_c(path_ms, path_export)
+  path <- normalizePath(str_c(path_ms, path_export))
   files <- list.files(path)
   eval(parse(text = str_c(files, " <- read_rds('", path, "/", files, "')")),
        envir = .GlobalEnv)

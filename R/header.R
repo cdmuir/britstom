@@ -6,11 +6,10 @@ if (compile_pathd8) {
   system("cd PATHd8; cc PATHd8.c -O3 -lm -o PATHd8")
 }
 
-source("R/functions.R")
-
 # Libraries
 library(ape)
 library(dplyr)
+library(knitr)
 library(lavaan)
 library(magrittr)
 library(phylolm)
@@ -25,12 +24,11 @@ library(taxize)
 library(vioplot)
 
 # Directories
-path_raw_data <- "raw-data"
-path_proc_data <- "proc-data"
-path_r <- "r"
-  path_objects <- str_c(path_r, "/objects")
-path_ms <- "ms"
-  path_figures <- str_c(path_ms, "/figures")
+path_raw_data <- "raw-data" %>% normalizePath()
+path_proc_data <- "proc-data" %>% normalizePath()
+path_r <- "r" %>% normalizePath()
+path_objects <- str_c(path_r, "/objects") %>% normalizePath()
+path_ms <- "ms" %>% normalizePath()
+path_figures <- str_c(path_ms, "/figures") %>% normalizePath()
 
-
-
+source(str_c(path_r, "/functions.R"))

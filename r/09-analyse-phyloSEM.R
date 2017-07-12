@@ -12,8 +12,8 @@ td <- stomata %>% select(species, ab_density, ad_density, ellenberg_light) %>%
   as.data.frame() %>% 
   set_rownames(.$species) # need to change row names for phylolm
 
-# ppOU <- phylopars(td, phy, model = "mvOU")
-# write_rds(ppOU, str_c(path_objects, "/ppOU.rds"))
+ppOU <- phylopars(td, phy, model = "mvOU")
+write_rds(ppOU, str_c(path_objects, "/ppOU.rds"))
 ppOU <- read_rds(str_c(path_objects, "/ppOU.rds"))
 phy_mat <- ppOU$pars$phylocov
   
@@ -39,4 +39,4 @@ pvalSEM <- pnorm(fitSEM@ParTable$est / fitSEM@ParTable$se, lower.tail = FALSE, l
 names(pvalSEM) <- paste(fitSEM@ParTable$lhs, fitSEM@ParTable$op, fitSEM@ParTable$rhs)
 
 # Export objects to ms
-export2ms(c("covSD", "pvalSEM", "varSDab", "varSDad", "varSR"))
+export2ms(c("covSD", "fitSEM", "pvalSEM", "varSDab", "varSDad", "varSR"))

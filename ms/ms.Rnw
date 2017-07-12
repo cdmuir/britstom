@@ -51,14 +51,6 @@
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
-<<Import objects, echo = FALSE>>=
-
-  source("r/header.R")
-
-  import2ms()
-  
-@
-
 \title{Light and life form interact to shape stomatal ratio among British angiosperms$^1$}
 \author{Christopher D. Muir$^2$}
 \date{} % delete this line to display the current date
@@ -86,6 +78,16 @@ Introduction:  \\
 Methods and Results:  \\
 Discussion:  \\
 \# Figures and \# Tables, \# references
+
+<<Import-objects, echo = FALSE>>=
+
+  setwd("..")
+  source("r/header.R")
+
+  import2ms()
+  setwd("ms")
+  
+@
 
 %--------------------------------------------------
 % Acknowledgements and Contributions
@@ -390,19 +392,19 @@ I refer to the second hypothesis as the `coordination' hypothesis. In this scena
 %--------------------------------------------------
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=0.5\textwidth]{Figures/Figure_lf-light.pdf}}
+\centerline{\includegraphics[width=0.5\textwidth]{figures/figure_lf-light.pdf}}
 \caption{Lifeforms have different tolerances for sun and shade among British angiosperms. Each panel is the distribution of Ellenberg light indicator values on an integer scale of 1-9 for different Raunki\ae r life forms. Height of the bars indicate the raw proportion of species in each bin for that lifeform. The sample size for each lifeform is listed next in parentheses. The mean (open circle) and 95\% confidence intervals (black line) around the mean Ellenberg light indicator value for each lifeform based on phylogenetic regression are above the histogram.} 
 \label{fig:lf-light}
 \end{figure}
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=0.5\textwidth]{Figures/Figure_SRmultReg.pdf}}
+\centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SRmultReg.pdf}}
 \caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 1000 parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visial clarity.} 
 \label{fig:SRmultReg}
 \end{figure}
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=0.5\textwidth]{Figures/Figure_SD-light.pdf}}
+\centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SD-light.pdf}}
 \caption{Light-mediated evolution of stomatal ratio is mostly driven by increased adaxial (`upper') stomatal density (Panel A), whereas abaxial (`lower') stomatal density (Panel B) is similar across Ellenberg light indicator values (\el~$x$-axis). The violin plot shows stomatal density ($y$-axis, log-scale) as a function of \el. The width of the grey polygons indicates the density of data. Length of grey polygon indicate the range of the data; the point indicates the median; the thick lines indicate the 0.25 and 0.75 quantiles. Points outside the polygons are statistical outliers.} 
 \label{fig:SD-light}
 \end{figure}
@@ -428,7 +430,7 @@ I refer to the second hypothesis as the `coordination' hypothesis. In this scena
 %--------------------------------------------------
 
 \begin{figure}[ht]
-\centerline{\includegraphics{Figures/FigureS_violin.pdf}}
+\centerline{\includegraphics{figures/figureS_violin.pdf}}
 \caption{Most hydrophytes are hyperstomatous, having most stomata on the adaxial (`upper') surface (high $\mathrm{SD_{propAd}}$). The violin plot shows stomatal ratio as a function of Raunki\ae r lifeform. The width of the grey polygons indicates the density of data. Length of grey polygon indicate the range of the data; the point indicates the median; the thick lines indicate the 0.25 and 0.75 quantiles. Sample sizes per lifeform in the dataset are given above the upper plot margin. $\mathrm{SD_{ad}}$ and $\mathrm{SD_{total}}$ stand for the stomatal density on the adaxial surface and the total leaf surface (adaxial plus abaxial), respectively.}
 \label{fig:violin}
 \end{figure}

@@ -38,9 +38,15 @@ new_name <- c("Betula pubescens",       "Betula pubescens",         "Fagus sylva
 
 tnr$acceptedname[match(old_name, tnr$submittedname)] <- new_name
 tnr %<>% mutate(species = submittedname)
+
+# Changed one taxonomic name (does not affect trait or phylogeny data)
+tnr$acceptedname %<>% str_replace("Arrhenatherum elatius var. elatius", 
+                                  "Arrhenatherum elatius")
+
 # tnr$acceptedname %>% str_split(" ") %>% sapply(length) %>% is_greater_than(1) %>% all()
 salisbury %<>% join(tnr, by = "species")
 rm(new_name, old_name, tnr)
+
 
 # Find which Salisbury data are already in BEF data
 already_in <- which(salisbury$submittedname %in% stomata$species |
@@ -83,15 +89,12 @@ stomata %<>%
 stomata %<>% 
   bind_rows(salisbury[!(x1 | x2), colnames(.)]) 
 
-# Remove duplicates
+# Remove duplicates and stop if varietes are left
 stomata %<>% filter(!duplicated(species))
-rm(already_in, salisbury, tmp, x, x1, x2)
-
-# Changed one taxonomic name (does not affect trait or phylogeny data)
-stomata$acceptedname %<>% str_replace("Arrhenatherum elatius var. elatius", 
-                                      "Arrhenatherum elatius")
 stopifnot(str_detect(c(stomata$species, stomata$acceptedname), " var. ") %>%
             na.omit() %>% any() %>% not())
+
+rm(already_in, salisbury, tmp, x, x1, x2)
 
 # Calculate stomatal ratio
 stomata %<>% mutate(sr_propAd = ad_density / (ab_density + ad_density),

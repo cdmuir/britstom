@@ -4,13 +4,6 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata.csv"))
 
 ##### Plot lifeform versus stomatal ratio -----
 
-# chamaephyte = subshrub (woody)
-# geophyte = cryptophyte resting in dry ground
-# hemicryptophyte = perennial with overwintering buds at soil surface
-# hydrophyte = cryptophyte resting in marshy ground
-# phanerophyte = normally woody perennial
-# therophyte = annual
-
 lf <- c("chamaephyte", "geophyte", "hemicryptophyte", "hydrophyte", "phanerophyte", "therophyte")
 names(lf) <- c("Ch", "Gn", "hc", "Hy", "Ph", "Th")
 lf <- lf[names(sort(tapply(stomata$sr_propAd, stomata$lifeform, mean)))]

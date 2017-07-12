@@ -5,6 +5,10 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"))
 
 ##### Raunikaer life form and Ellenberg light indicator values versus sr_even -----
 
+lf <- c("chamaephyte", "geophyte", "hemicryptophyte", "hydrophyte", "phanerophyte", "therophyte")
+names(lf) <- c("Ch", "Gn", "hc", "Hy", "Ph", "Th")
+lf <- lf[names(sort(tapply(stomata$sr_propAd, stomata$lifeform, mean)))]
+
 # Phylogenetic regression model comparison
 stomata %<>% as.data.frame() %>% set_rownames(.$species) # need to change row names for phylolm
 fitSRa <- phylolm(sr_even ~ lifeform * ellenberg_light, model = "OUrandomRoot",
@@ -24,8 +28,8 @@ set.seed(36502)
 fitSR_pl <- phylolm(sr_even ~ -1 + lifeform + ellenberg_light:lifeform, 
                     model = "OUrandomRoot", data = stomata, phy = phy, 
                     boot = 1e4, upper.bound = 10)
-write_rds(fitSR_pl, file = str_c(path_objects, "/fitSR_pl.rds"))
-fitSR_pl <- read_rds(file = paste0(path_objects, "/fitSR_pl.rds"))
+write_rds(fitSR_pl, path = str_c(path_objects, "/fitSR_pl.rds"))
+fitSR_pl <- read_rds(str_c(path_objects, "/fitSR_pl.rds"))
 
 # Figure
 

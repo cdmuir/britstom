@@ -1,4 +1,4 @@
-source("R/header.R")
+source("r/header.R")
 
 phy <- read.nexus(file = str_c(path_proc_data, "/angio_phy_modified.nex"))
 stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"))
@@ -22,7 +22,7 @@ lf <- c("chamaephyte", "geophyte", "hemicryptophyte", "phanerophyte", "therophyt
 names(lf) = c("Ch", "Gn", "hc", "Ph", "Th")
 lf <- lf[names(sort(tapply(stomata$sr_propAd, stomata$lifeform, mean)))]
 
-pdf(str_c(path_figures, "/figureS_lf-light.pdf"), 4, 7)
+pdf(str_c(path_figures, "/figure_lf-light.pdf"), 4, 7)
 par(mai = c(1.5, 1, 0, 0.25), cex.lab = 1, las = 1)
 plot(0, 0, type = "n", xlim = c(0, 9), ylim = c(0, 5), xlab = "", ylab = "", axes = F)  
 

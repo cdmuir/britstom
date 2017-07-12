@@ -1,6 +1,11 @@
+% Notes from call with Rob
+% van Tienderen - sensitivity approach better for evolution
+% send list of species to rob
+
 % TASKS
 % what's going on with monocots?
 % in methods - mention stuff about Salisbury
+% leaf size
 
 % OPTIONAL
 % Synthesis model
@@ -66,7 +71,7 @@ University of British Columbia \\
 Vancouver, BC, Canada \\
 V6T 1Z4 \\
 \\
-Short title: Shedding light on British herbs\\
+Short title: Shedding light on stomatal evolution\\
 \\
 Word count: \\
 Summary:  \\
@@ -74,6 +79,7 @@ Introduction:  \\
 Methods and Results:  \\
 Discussion:  \\
 \# Figures and \# Tables, \# references
+
 
 %--------------------------------------------------
 % Acknowledgements and Contributions
@@ -89,17 +95,13 @@ Discussion:  \\
 % \pagenumbering{gobble}
 
 
-
-
-
-
 \section*{Abstract}
 
 % (1) the research conducted, including the rationale, (2) methods, (3) key results and (4) the main conclusion, including key points of discussion?
 
 \begin{itemize}
 	\item In most plants, stomata are located only on the abaxial leaf surface (hypostomy), but many plants have stomata on both surfaces (amphistomy). Variation in stomatal ratio (the ratio of ab- and adaxial stomatal densities) is probably adaptive, but the ecological conditions that favor amphistomy are not well understood. In particular, high light and herbaceous growth form have been hypothesized to favor amphistomy, but these hypotheses have not been rigourously tested together.
-	\item I leveraged a large dataset including stomatal ratio, Ellenberg light indicator value, Raunki\ae r lifeform, and phylogenetic relationships on 374 species of British angiosperms. I used phylogenetic comparative methods to test how light and/or growth form influence stomatal ratio.
+	\item I leveraged a large dataset including stomatal ratio, Ellenberg light indicator value, Raunki\ae r lifeform, and phylogenetic relationships on 372 species of British angiosperms. I used phylogenetic comparative methods to test how light and/or growth form influence stomatal ratio.
 	\item (return to this) key results: \el, growth form, and interaction are important
 	\item I show for the first time that light and growth form interact to shape variation in stomatal ratio; amphistomy is advantageous in high light, but mostly for herbs. These results improve our understanding of the adaptive significance of stomatal ratio, use stomatal ratio as proxy for paleo vegetation, and as a target for crop improvement.
 \end{itemize}
@@ -163,7 +165,7 @@ To address these questions, I reanalyzed existing data on stomatal ratio, light 
 
 I obtained data on ab- and adaxial stomatal density on 370 species from British Ecological Flora \citep{Fitter_Peat_1994a, BEF}. I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). Seventeen species (4.6\%) in the dataset were not present in the phylogeny. For nine species, I used the position a congeneric species as a proxy for the focal species. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species. For the remaining eight missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.5-64 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
 
-I excluded data from hyrdrophytes (14 species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (3 species) and CAM (2 species) plants.. I limited this investigation to angiosperms because only 4 non-angiosperms had stomata data. The final dataset contained 374 species. The R code accompanying this paper documents these decisions with citations to the relevant literature \citep{Muir_dryad}.
+I excluded data from hyrdrophytes (14 species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (3 species) and CAM (2 species) plants.. I limited this investigation to angiosperms because only 4 non-angiosperms had stomata data. The final dataset contained 372 species. The R code accompanying this paper documents these decisions with citations to the relevant literature \citep{Muir_dryad}.
 
 Following \cite{Muir_2015}, I calculated stomatal ratio in two different ways depending on what was most appropriate for the question: 
 
@@ -188,12 +190,10 @@ $\mathrm{SD_{ab}}$ and $\mathrm{SD_{ad}}$ are the stomatal densities on abaxial 
 
 \subsection*{Testing for an association between open habitat and growth form}
 
-
 I tested whether Raunki\ae r life form was associated \el~values among British angiosperms using ANOVA with Type-2 sum of squares. I did not use phylogenetic ANOVA for this test because there was no phylogenetic signal in the regression fit using \pkg{phylolm} version 2.5 \citep{Ho_Ane_2014}. See the R code accompanying this paper for further detail \citep{Muir_dryad}. I predicted that species with faster life histories, especially therophytes (annuals), would have greater \el~than species with slower life histories, especially phanerophytes, which are mostly long-lived trees. 
 
 \subsection*{Open habitat, growth form, and stomatal ratio}
 
-  
 I compared phylogenetic linear models to test whether Raunki\ae r life form, \el, or interactions between them predicted $\textrm{SR}_\textrm{even}$. I used $\textrm{SR}_\textrm{even}$ rather than $\textrm{SR}_\textrm{propAd}$ as the response variable because the hypothesis is that faster life history and/or high light favor more even stomatal densities on each surface. I fit models using \pkg{phylolm} and extracted Akaike Information Criteria (AIC). For these and subsequent analyses, I assumed an Ornstein-Uhlenbeck process model for the residuals with the root character state integrated over the stationary distribution. I used a 10,000 parametric bootstrap samples of the full model (including main effects and interactions) to calculate parameter confidence intervals \citep{Boettiger_etal_2012}. Likewise, to determine whether the interaction between Raunki\ae r life form and \el~was statistically significant, I used a parametric bootstrap to generate the null distribution of $\Delta$AIC values ($\Delta$AIC is the difference in AIC between competing models). Specifically, I sampled 1000 random datasets from the estimated model with main effects of Raunki\ae r life form and \el~but no interaction. I fit these simulated datasets to models with and without interactions and  calculated $\Delta$AIC. The statistical significance of the observed $\Delta$AIC is the proportion of simulated $\Delta$AIC greater than the observed.
 
 \subsection*{Does ab- or adaxial stomatal density contribute more to stomatal ratio evolution?}
@@ -228,9 +228,6 @@ respectively. Note that when ab- and adaxial densities positively covary, the co
 
 I was interested in whether light-mediated evolution of stomatal ratio acted mostly by increasing adaxial stomatal density while maintaining abaxial density, or keeping total stomatal density the same, but shifting a greater proportion to the adaxial surface. The first scenario predicts that the phylogenetic regression of \el~ on $\mathrm{sd_{ad}}$ is stronger than that for $\mathrm{sd_{ab}}$. The second scenario predicts that \el~acts similarly on both and that there is a negative covariance $\mathrm{Cov(sd_{ad}, sd_{ab}) < 0}$. I tested these competing predictions by fitting a simple phylogenetic structural equation model (SEM). The model uses the phylogenetic covariance matrix to simultaneously estimate regressions of \el~on $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ while allowing covariance between them (i.e. estimating $\mathrm{Cov(sd_{ad}, sd_{ab})}$). To fit the SEM, I used the R package \pkg{lavaan} version 0.5-23.1097 \citep{Rosseel_2012}. I tested whether parameter estimates were significantly different than zero using $z$-scores.
 
-  
-  
-
 %--------------------------------------------------
 % Results
 %--------------------------------------------------
@@ -239,17 +236,17 @@ I was interested in whether light-mediated evolution of stomatal ratio acted mos
 
 \subsection*{Light tolerance varies among Raunki\ae r life forms}
 
-Ellenberg light indicator values (\el) differed significantly among life forms (Fig.~\ref{fig:lf-light};ANOVA - $F_{4, 369}$ = 18.4, $P$ = 8.1 $\times10^{-14}$). Therophytes (annuals), hemicryptophytes (perennial herbs with buds near the soil surface), and chamaephytes (subshrubs) had greater \el~than phanerophytes (large woody plants) and geophytes (perennial herbs with storage organs) (Fig.~\ref{fig:lf-light}).
+Ellenberg light indicator values (\el) differed significantly among life forms (Fig.~\ref{fig:lf-light};ANOVA - $F_{4, 367}$ = 18.3, $P$ = 1.1 $\times10^{-13}$). Therophytes (annuals), hemicryptophytes (perennial herbs with buds near the soil surface), and chamaephytes (subshrubs) had greater \el~than phanerophytes (large woody plants) and geophytes (perennial herbs with storage organs) (Fig.~\ref{fig:lf-light}).
 
 \subsection*{Interactions between light and Raunki\ae r life form determine stomatal ratio}
 
-Overall, $\mathrm{SR_{even}}$ increased with \el, but there was a significant interaction between Raunki\ae r life form and \el~(Fig.~\ref{fig:SRmultReg}). Both life form and \el~significantly increased model fit, though \el~had a markedly larger effect on model AIC (Table~\ref{table:srAIC}). The significant interaction is caused by different slopes between life forms. Among life forms with the overall greatest \el~(therophytes, hemicryptophytes, and chamaephytes, see Fig.~\ref{fig:lf-light}), there was a strong positive relationship between \el~and $\mathrm{SR_{even}}$. Parametrically bootstrapped 95\% confidence intervals did not overlap zero (Fig.~\ref{fig:SRmultReg}). The slope was weakly positive or not significantly different from zero in the most shade-adapted life forms (geophytes and phanerophytes), albeit the patterns were distinct in these groups. There were both hypostomatous ($\mathrm{SR_{even}} \approx 0$) and amphistomatous ($\mathrm{SR_{even}} \approx 1$) geophytes, but these were distibuted across \el s. In contrast, phanerophytes were nearly always hypostomatous regardless of \el. Allowing slopes to vary across life form signicantly increased model fit (lower AIC, Table~\ref{table:srAIC}, parametric bootstrap $P = 0.002$).
+Overall, $\mathrm{SR_{even}}$ increased with \el, but there was a significant interaction between Raunki\ae r life form and \el~(Fig.~\ref{fig:SRmultReg}). Both life form and \el~significantly increased model fit, though \el~had a markedly larger effect on model AIC (Table~\ref{table:srAIC}). The significant interaction is caused by different slopes between life forms. Among life forms with the overall greatest \el~(therophytes, hemicryptophytes, and chamaephytes, see Fig.~\ref{fig:lf-light}), there was a strong positive relationship between \el~and $\mathrm{SR_{even}}$. Parametrically bootstrapped 95\% confidence intervals did not overlap zero (Fig.~\ref{fig:SRmultReg}). The slope was weakly positive or not significantly different from zero in the most shade-adapted life forms (geophytes and phanerophytes), albeit the patterns were distinct in these groups. There were both hypostomatous ($\mathrm{SR_{even}} \approx 0$) and amphistomatous ($\mathrm{SR_{even}} \approx 1$) geophytes, but these were distibuted across \el s. In contrast, phanerophytes were nearly always hypostomatous regardless of \el. Allowing slopes to vary across life form signicantly increased model fit (lower AIC, Table~\ref{table:srAIC}).
 
 \subsection*{Adaxial stomatal density contributes most of the variation in stomatal ratio}
 
-Adaxial (`upper') stomatal density contributed most to the evolutionary variation in stomatal ratio. The contributions of adaxial density, abaxial density, and their covariance are 1.14, 0.39, and -0.53, respectively. Recall that values can be greater than one for adaxial stomatal density and negative for the covariance when the latter value is positive. This implies that evolutionary variation in adaxial stomatal density is greater than that for stomatal ratio due to positive covariance between ab- and adaxial stomatal density.
+Adaxial (`upper') stomatal density contributed most to the evolutionary variation in stomatal ratio. The contributions of adaxial density, abaxial density, and their covariance are 1.14, 0.38, and -0.53, respectively. Recall that values can be greater than one for adaxial stomatal density and negative for the covariance when the latter value is positive. This implies that evolutionary variation in adaxial stomatal density is greater than that for stomatal ratio due to positive covariance between ab- and adaxial stomatal density.
 
-Similarly, the phylogenetic SEM showed that changes in stomatal ratio associated with \el~can be attributed mostly to evolution of adaxial stomatal density (Fig.~\ref{fig:SD-light}). Both $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ increased with \el~($P =$ 8.8 $\times10^{-7}$ and 4.9 $\times10^{-5}$, respectively). However, the regression of \el~on $\mathrm{sd_{ad}}$ was 2.1$\times$ that of \el~on $\mathrm{sd_{ab}}$ (0.2 versus 0.1). Because stomatal densities were natural log-transformed, this implies an increase in \el~by one leads to a 1.22-fold change in adaxial stomatal density versus a 1.1-fold change in abaxial stomatal density. The SEM also showed a significant positive covariance between stomatal densities on each surface ($P = $1.1 $\times10^{-11}$). These results together imply that total stomatal density increases with \el, but the response is mediated mostly by adaxial stomatal density.
+Similarly, the phylogenetic SEM showed that changes in stomatal ratio associated with \el~can be attributed mostly to evolution of adaxial stomatal density (Fig.~\ref{fig:SD-light}). Both $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ increased with \el~($P =$ 6.1 $\times10^{-7}$ and 2.9 $\times10^{-5}$, respectively). However, the regression of \el~on $\mathrm{sd_{ad}}$ was 2.1$\times$ that of \el~on $\mathrm{sd_{ab}}$ (0.21 versus 0.1). Because stomatal densities were natural log-transformed, this implies an increase in \el~by one leads to a 1.23-fold change in adaxial stomatal density versus a 1.1-fold change in abaxial stomatal density. The SEM also showed a significant positive covariance between stomatal densities on each surface ($P = $1.7 $\times10^{-11}$). These results together imply that total stomatal density increases with \el, but the response is mediated mostly by adaxial stomatal density.
 
 % NOTES FOR CALCULATING fold-chage
 % log(sd1) = b1 * 3
@@ -341,41 +338,41 @@ I refer to the second hypothesis as the `coordination' hypothesis. In this scena
   & 0.068
   & 0.34
   & 12
-  & -32.6
-  & 89.2
+  & -33.3
+  & 90.6
   & 0 \\
     \el~+ lifeform
   & 0.47
-  & 0.071
+  & 0.072
   & 0.32
   & 8
-  & -39.8
-  & 95.6
-  & 6.3 \\
+  & -40.3
+  & 96.5
+  & 6 \\
     \el
-  & 0.65
-  & 0.109
+  & 0.64
+  & 0.108
   & 0.26
   & 4
-  & -58.9
-  & 125.9
-  & 36.6 \\
+  & -59.3
+  & 126.6
+  & 36.1 \\
     lifeform
   & 0.34
-  & 0.066
+  & 0.067
   & 0.15
   & 7
   & -79.2
   & 172.4
-  & 83.2 \\
+  & 81.8 \\
     1
   & 0.29
-  & 0.068
+  & 0.067
   & 0
   & 3
-  & -107.9
-  & 221.7
-  & 132.5 \\
+  & -107.5
+  & 221
+  & 130.5 \\
 	\bottomrule
 	\end{tabular}
 	\label{table:srAIC}
@@ -387,19 +384,19 @@ I refer to the second hypothesis as the `coordination' hypothesis. In this scena
 %--------------------------------------------------
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=0.5\textwidth]{Figures/Figure_lf-light.pdf}}
+\centerline{\includegraphics[width=0.5\textwidth]{figures/figure_lf-light.pdf}}
 \caption{Lifeforms have different tolerances for sun and shade among British angiosperms. Each panel is the distribution of Ellenberg light indicator values on an integer scale of 1-9 for different Raunki\ae r life forms. Height of the bars indicate the raw proportion of species in each bin for that lifeform. The sample size for each lifeform is listed next in parentheses. The mean (open circle) and 95\% confidence intervals (black line) around the mean Ellenberg light indicator value for each lifeform based on phylogenetic regression are above the histogram.} 
 \label{fig:lf-light}
 \end{figure}
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=0.5\textwidth]{Figures/Figure_SRmultReg.pdf}}
+\centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SRmultReg.pdf}}
 \caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 1000 parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visial clarity.} 
 \label{fig:SRmultReg}
 \end{figure}
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=0.5\textwidth]{Figures/Figure_SD-light.pdf}}
+\centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SD-light.pdf}}
 \caption{Light-mediated evolution of stomatal ratio is mostly driven by increased adaxial (`upper') stomatal density (Panel A), whereas abaxial (`lower') stomatal density (Panel B) is similar across Ellenberg light indicator values (\el~$x$-axis). The violin plot shows stomatal density ($y$-axis, log-scale) as a function of \el. The width of the grey polygons indicates the density of data. Length of grey polygon indicate the range of the data; the point indicates the median; the thick lines indicate the 0.25 and 0.75 quantiles. Points outside the polygons are statistical outliers.} 
 \label{fig:SD-light}
 \end{figure}
@@ -425,7 +422,7 @@ I refer to the second hypothesis as the `coordination' hypothesis. In this scena
 %--------------------------------------------------
 
 \begin{figure}[ht]
-\centerline{\includegraphics{Figures/FigureS_violin.pdf}}
+\centerline{\includegraphics{figures/figureS_violin.pdf}}
 \caption{Most hydrophytes are hyperstomatous, having most stomata on the adaxial (`upper') surface (high $\mathrm{SD_{propAd}}$). The violin plot shows stomatal ratio as a function of Raunki\ae r lifeform. The width of the grey polygons indicates the density of data. Length of grey polygon indicate the range of the data; the point indicates the median; the thick lines indicate the 0.25 and 0.75 quantiles. Sample sizes per lifeform in the dataset are given above the upper plot margin. $\mathrm{SD_{ad}}$ and $\mathrm{SD_{total}}$ stand for the stomatal density on the adaxial surface and the total leaf surface (adaxial plus abaxial), respectively.}
 \label{fig:violin}
 \end{figure}
