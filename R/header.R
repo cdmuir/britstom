@@ -28,9 +28,9 @@ library(vioplot)
 path_raw_data <- "raw-data"
 path_proc_data <- "proc-data"
 path_r <- "r"
-  path_objects <- "r/objects"
-pathM_ms <- "ms"
-  path_figures <- "ms/figures"
+  path_objects <- str_c(path_r, "/objects")
+path_ms <- "ms"
+  path_figures <- str_c(path_ms, "/figures")
 
 
 

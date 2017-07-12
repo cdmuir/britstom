@@ -92,6 +92,9 @@ mtext(2, text = expression(
 
 dev.off()
 
+# Export objects to ms
+export2ms(c("aicSR", "fitSRa", "fitSRb", "fitSRc", "fitSRd", "fitSRe"))
+
 # NOTE: Matt suggested deleting this, just using AIC
 # Parametric bootstrap statistical signicance of deltaAIC between model 
 # with interaction (fitSRa) and model without interaction (fitSRb)

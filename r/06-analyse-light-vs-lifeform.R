@@ -61,3 +61,5 @@ for (i in 1:5) {
 
 dev.off()
 
+# Export objects to ms
+export2ms(c("aovLFvEL"))

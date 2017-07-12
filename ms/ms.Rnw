@@ -51,6 +51,14 @@
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
+<<Import objects, echo = FALSE>>=
+
+  source("r/header.R")
+
+  import2ms()
+  
+@
+
 \title{Light and life form interact to shape stomatal ratio among British angiosperms$^1$}
 \author{Christopher D. Muir$^2$}
 \date{} % delete this line to display the current date
@@ -70,7 +78,7 @@ University of British Columbia \\
 Vancouver, BC, Canada \\
 V6T 1Z4 \\
 \\
-Short title: Shedding light on British herbs\\
+Short title: Shedding light on stomatal evolution\\
 \\
 Word count: \\
 Summary:  \\
@@ -238,7 +246,7 @@ Ellenberg light indicator values (\el) differed significantly among life forms (
 
 \subsection*{Interactions between light and Raunki\ae r life form determine stomatal ratio}
 
-Overall, $\mathrm{SR_{even}}$ increased with \el, but there was a significant interaction between Raunki\ae r life form and \el~(Fig.~\ref{fig:SRmultReg}). Both life form and \el~significantly increased model fit, though \el~had a markedly larger effect on model AIC (Table~\ref{table:srAIC}). The significant interaction is caused by different slopes between life forms. Among life forms with the overall greatest \el~(therophytes, hemicryptophytes, and chamaephytes, see Fig.~\ref{fig:lf-light}), there was a strong positive relationship between \el~and $\mathrm{SR_{even}}$. Parametrically bootstrapped 95\% confidence intervals did not overlap zero (Fig.~\ref{fig:SRmultReg}). The slope was weakly positive or not significantly different from zero in the most shade-adapted life forms (geophytes and phanerophytes), albeit the patterns were distinct in these groups. There were both hypostomatous ($\mathrm{SR_{even}} \approx 0$) and amphistomatous ($\mathrm{SR_{even}} \approx 1$) geophytes, but these were distibuted across \el s. In contrast, phanerophytes were nearly always hypostomatous regardless of \el. Allowing slopes to vary across life form signicantly increased model fit (lower AIC, Table~\ref{table:srAIC}, parametric bootstrap $P = \Sexpr{pInteraction}$).
+Overall, $\mathrm{SR_{even}}$ increased with \el, but there was a significant interaction between Raunki\ae r life form and \el~(Fig.~\ref{fig:SRmultReg}). Both life form and \el~significantly increased model fit, though \el~had a markedly larger effect on model AIC (Table~\ref{table:srAIC}). The significant interaction is caused by different slopes between life forms. Among life forms with the overall greatest \el~(therophytes, hemicryptophytes, and chamaephytes, see Fig.~\ref{fig:lf-light}), there was a strong positive relationship between \el~and $\mathrm{SR_{even}}$. Parametrically bootstrapped 95\% confidence intervals did not overlap zero (Fig.~\ref{fig:SRmultReg}). The slope was weakly positive or not significantly different from zero in the most shade-adapted life forms (geophytes and phanerophytes), albeit the patterns were distinct in these groups. There were both hypostomatous ($\mathrm{SR_{even}} \approx 0$) and amphistomatous ($\mathrm{SR_{even}} \approx 1$) geophytes, but these were distibuted across \el s. In contrast, phanerophytes were nearly always hypostomatous regardless of \el. Allowing slopes to vary across life form signicantly increased model fit (lower AIC, Table~\ref{table:srAIC}).
 
 \subsection*{Adaxial stomatal density contributes most of the variation in stomatal ratio}
 

@@ -37,3 +37,6 @@ fitSEM <- sem(model, sample.cov = ppOU$pars$phylocov, sample.nobs = nrow(td))
 # Calculate p-values based on z-scores
 pvalSEM <- pnorm(fitSEM@ParTable$est / fitSEM@ParTable$se, lower.tail = FALSE, log = TRUE)
 names(pvalSEM) <- paste(fitSEM@ParTable$lhs, fitSEM@ParTable$op, fitSEM@ParTable$rhs)
+
+# Export objects to ms
+export2ms(c("covSD", "pvalSEM", "varSDab", "varSDad", "varSR"))
