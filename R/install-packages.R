@@ -1,5 +1,6 @@
 install.packages("ape")
 install.packages("dplyr")
+install.packages("lavaan")
 install.packages("magrittr")
 install.packages("phylolm")
 install.packages("phytools")

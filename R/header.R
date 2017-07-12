@@ -11,6 +11,7 @@ source("R/functions.R")
 # Libraries
 library(ape)
 library(dplyr)
+library(lavaan)
 library(magrittr)
 library(phylolm)
 library(phytools)
