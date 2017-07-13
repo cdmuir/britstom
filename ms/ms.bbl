@@ -1,4 +1,4 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{54}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -6,6 +6,12 @@
 \bibitem[{BEF()}]{BEF}
 ????
 \newblock \urlprefix\url{http://www.ecoflora.co.uk}.
+
+\bibitem[{Bartelheimer and Poschlod(2016)}]{Bartelheimer_Poschlod_2016}
+Bartelheimer, M. and P.~Poschlod, 2016.
+\newblock Functional characterizations of {E}llenberg indicator values--a
+  review on ecophysiological determinants.
+\newblock Functional Ecology 30:506--516.
 
 \bibitem[{Bazzaz(1979)}]{Bazzaz_1979}
 Bazzaz, F., 1979.
@@ -82,6 +88,13 @@ Ellenberg, H., 1974.
 Felsenstein, J., 1985.
 \newblock Phylogenies and the comparative method.
 \newblock The American Naturalist 1:1--15.
+
+\bibitem[{Fior et~al.(2006)Fior, Karis, Casazza, Minuto, and
+  Sala}]{Fior_etal_2006}
+Fior, S., P.~O. Karis, G.~Casazza, L.~Minuto, and F.~Sala, 2006.
+\newblock Molecular phylogeny of the {C}aryophyllaceae ({C}aryophyllales)
+  inferred from chloroplast matk and nuclear {rDNA ITS} sequences.
+\newblock American Journal of Botany 93:399--411.
 
 \bibitem[{Fitter and Peat(1994)}]{Fitter_Peat_1994a}
 Fitter, A. and H.~Peat, 1994.
@@ -284,12 +297,39 @@ Rosseel, Y., 2012.
 \newblock {lavaan}: An {R} package for structural equation modeling.
 \newblock Journal of Statistical Software 48:1--36.
 
+\bibitem[{Salguero-G{\'o}mez et~al.(2016)Salguero-G{\'o}mez, Jones, Jongejans,
+  Blomberg, Hodgson, Mbeau-Ache, Zuidema, de~Kroon, and
+  Buckley}]{Salguero-Gomez_etal_2016}
+Salguero-G{\'o}mez, R., O.~R. Jones, E.~Jongejans, S.~P. Blomberg, D.~J.
+  Hodgson, C.~Mbeau-Ache, P.~A. Zuidema, H.~de~Kroon, and Y.~M. Buckley, 2016.
+\newblock Fast--slow continuum and reproductive strategies structure plant
+  life-history variation worldwide.
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 113:230--235.
+
 \bibitem[{Salisbury(1927)}]{Salisbury_1927}
 Salisbury, E., 1927.
 \newblock On the causes and ecological significance of stomatal frequency, with
   special reference to the woodland flora.
 \newblock Philosophical Transactions of the Royal Society of London. Series B
   216:1--65.
+
+\bibitem[{Salmaki et~al.(2013)Salmaki, Zarre, Ryding, Lindqvist, Br{\"a}uchler,
+  Heubl, Barber, and Bendiksby}]{Salmaki_etal_2013}
+Salmaki, Y., S.~Zarre, O.~Ryding, C.~Lindqvist, C.~Br{\"a}uchler, G.~Heubl,
+  J.~Barber, and M.~Bendiksby, 2013.
+\newblock Molecular phylogeny of tribe {S}tachydeae ({L}amiaceae subfamily
+  {L}amioideae).
+\newblock Molecular Phylogenetics and Evolution 69:535--551.
+
+\bibitem[{Scheen et~al.(2004)Scheen, Brochmann, Brysting, Elven, Morris,
+  Soltis, Soltis, and Albert}]{Scheen_etal_2004}
+Scheen, A.-C., C.~Brochmann, A.~K. Brysting, R.~Elven, A.~Morris, D.~E. Soltis,
+  P.~S. Soltis, and V.~A. Albert, 2004.
+\newblock Northern hemisphere biogeography of \textit{{C}erastium}
+  ({C}aryophyllaceae): insights from phylogenetic analysis of noncoding plastid
+  nucleotide sequences.
+\newblock American Journal of Botany 91:943--952.
 
 \bibitem[{Smith(1981)}]{Smith_1981}
 Smith, W., 1981.

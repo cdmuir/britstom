@@ -18,7 +18,4 @@ source("R/07-analyse-stomatal-ratio.R")
 source("R/08-analyse-stomatal-density.R")
 source("R/09-analyse-phyloSEM.R")
 
-knit("ms/ms.Rnw")
-
 # UPDATE BIBLIOGRAPHY
-# NEED TO KNIT REPORT

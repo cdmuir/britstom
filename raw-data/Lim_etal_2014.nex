@@ -884,7 +884,7 @@ BEGIN TAXA;
             Listera_ovata
             Lithospermum_arvense
             Lithospermum_officinale
-            Lithospermum_purpureocaeruleum
+            Lithospermum_purpurocaeruleum
             Littorella_uniflora
             Lloydia_serotina
             Lobelia_dortmanna
@@ -1173,7 +1173,7 @@ BEGIN TAXA;
             Polystichum_lonchitis
             Polystichum_setiferum
             Populus_alba
-            Populus_nigra_sens.lat.
+            Populus_nigra
             Populus_tremula
             Potamogeton_alpinus
             Potamogeton_berchtoldii
@@ -1288,7 +1288,7 @@ BEGIN TAXA;
             Rosa_agrestis
             Rosa_arvensis
             Rosa_caesia
-            Rosa_canina_agg.
+            Rosa_canina
             Rosa_micrantha
             Rosa_mollis
             Rosa_obtusifolia
@@ -2545,7 +2545,7 @@ BEGIN TREES;
             864  Listera_ovata,
             865  Lithospermum_arvense,
             866  Lithospermum_officinale,
-            867  Lithospermum_purpureocaeruleum,
+            867  Lithospermum_purpurocaeruleum,
             868  Littorella_uniflora,
             869  Lloydia_serotina,
             870  Lobelia_dortmanna,
@@ -2834,7 +2834,7 @@ BEGIN TREES;
             1153 Polystichum_lonchitis,
             1154 Polystichum_setiferum,
             1155 Populus_alba,
-            1156 Populus_nigra_sens.lat.,
+            1156 Populus_nigra,
             1157 Populus_tremula,
             1158 Potamogeton_alpinus,
             1159 Potamogeton_berchtoldii,
@@ -2949,7 +2949,7 @@ BEGIN TREES;
             1268 Rosa_agrestis,
             1269 Rosa_arvensis,
             1270 Rosa_caesia,
-            1271 Rosa_canina_agg.,
+            1271 Rosa_canina,
             1272 Rosa_micrantha,
             1273 Rosa_mollis,
             1274 Rosa_obtusifolia,

@@ -156,3 +156,7 @@ rm(photo, plantatt, xa, xaa, xp, xpa)
 stomata$species %<>% str_replace_all(" ", "_")
 stomata$acceptedname %<>% str_replace_all(" ", "_")
 write_csv(stomata, str_c(path_proc_data, "/stomata.csv"))
+
+# Export objects to ms
+stomata_unfiltered <- stomata
+export2ms(c("stomata_unfiltered"))

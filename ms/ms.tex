@@ -1,3 +1,11 @@
+% Things to do before submission:
+% Sally's notes
+% Matt's notes
+% Remove code to copy refs
+% Github DOI?
+% Finish abstract
+% Finish citations (add citations only mentioned online to MS)
+
 % Notes from call with Rob
 % van Tienderen - sensitivity approach better for evolution
 % send list of species to rob
@@ -83,6 +91,7 @@ Discussion:  \\
 %--------------------------------------------------
 
 \section*{Acknowledgements}
+I thank Sally Otto, Matt Pennell, and Rob Salguero-G\'{o}mez for feedback on this manuscript.
 
 % \section*{Author contribution statement}
 % CDM designed the study, collected data, analyzed the data, and wrote the manuscript.
@@ -143,7 +152,7 @@ To better understand the adapative significance of stomatal ratio, I asked three
 
 The final question is important for telling whether amphistomy is part of a coordinated syndrome of traits that promote higher photosynthetic rate, as both the light and growth form hypotheses assume. If evolved increases in stomatal ratio are mediated by shifting abaxial stomata to the adaxial surface, holding total stomatal density constant, then the overall increase in CO$_2$ diffusion would be limited. In contrast, if amphistomy evolves by increasing adaxial stomatal density while holding abaxial density constant, then \textit{total} stomatal density must increase as well. Evolutionary coordination of amphistomy and high stomatal density would reinforce one another, increasing CO$_2$ supply to chloroplasts more than changes in either trait would in isolation.
 
-To address these questions, I reanalyzed existing data on stomatal ratio, light habitat, and growth form in British angiosperms \citep{Salisbury_1927, Fitter_Peat_1994a, BEF} using phylogenetic comparative methods. The British angiosperm flora is well suited for these questions because this flora has been comprehensively surveyed for many ecologically important traits, meaning it is probably the least biased survey of stomatal trait variation. Salisbury's observations on stomata and ecology in the British flora have heavily influenced plant ecophysiology, but many of his and subsequent authors' analyses have significant limitations because of inadequate statistical methods. For example, few analyses until recently account for phylogenetic nonindependence \citep{Felsenstein_1985}, which can strongly influence inferences on stomatal traits and growth form \citep[this study did not consider light]{Kelly_Beerling_1995}. A species-level phylogeny of the entire British flora \citep{Lim_etal_2014} now allows me for the first time to rigorously analyze evolutionary relationships between stomatal ratio, light, and growth form. 
+To address these questions, I reanalyzed existing data on stomatal ratio, light habitat, and growth form in British angiosperms \citep{Salisbury_1927, Fitter_Peat_1994a, BEF} using phylogenetic comparative methods. The British angiosperm flora is well suited for these questions because this flora has been comprehensively surveyed for many ecologically important traits, meaning it is probably the least biased survey of stomatal trait variation. Salisbury's observations on stomata and ecology in the British flora have heavily influenced plant ecophysiology, but many of his and subsequent authors' analyses have significant limitations because of inadequate statistical methods. For example, few analyses until recently account for phylogenetic nonindependence \citep{Felsenstein_1985}, which can strongly influence inferences on stomatal traits and growth form \citep[this study did not consider light]{Kelly_Beerling_1995}. A species-level phylogeny of the entire British flora \citep{Lim_etal_2014} now allows for the first time rigorous analysis of evolutionary relationships among stomatal ratio, light, and growth form. 
 
 % NOTES , for example, two herbaceous species adapted to different light conditions may not really be comparable since light has a strong impact on life history selection \citep{Franco_Silvertown_1996, Galloway_Etterson_2007}.
 
@@ -158,11 +167,13 @@ To address these questions, I reanalyzed existing data on stomatal ratio, light 
 
 \section*{METHODS}
 
+Data and annotated source code to generate this manuscript are available on GitHub (https://github.com/cdmuir/britstom) and Dryad \citep{Muir_dryad}.
+
 \subsection*{Data on stomatal ratio, light habitat, growth form, and phylogenetic relationships}
 
-I obtained data on ab- and adaxial stomatal density on 370 species from British Ecological Flora \citep{Fitter_Peat_1994a, BEF}. I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). Seventeen species (4.6\%) in the dataset were not present in the phylogeny. For nine species, I used the position a congeneric species as a proxy for the focal species. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species. For the remaining eight missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.5-64 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
+I obtained data on ab- and adaxial stomatal density on 395 species from British Ecological Flora \citep{Salisbury_1927, Fitter_Peat_1994a, BEF}. Following recent comparative analyses \citep[e.g.][]{Bartelheimer_Poschlod_2016, Salguero-Gomez_etal_2016}, I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). 14 species (3.5\%) in the dataset were not present in the phylogeny. For 8 of these species, I used the position a congeneric species as a proxy for the focal species. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species \citep{Scheen_etal_2004, Salmaki_etal_2013}. For the remaining 6 missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree \citep{Fior_etal_2006}. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.5-64 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
 
-I excluded data from hyrdrophytes (14 species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (3 species) and CAM (2 species) plants.. I limited this investigation to angiosperms because only 4 non-angiosperms had stomata data. The final dataset contained 372 species. The R code accompanying this paper documents these decisions with citations to the relevant literature \citep{Muir_dryad}.
+I excluded data on hyrdrophytes (14 species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (3 species) and CAM (2 species) plants. I limited this investigation to angiosperms because only 4 non-angiosperms had stomata data. The final dataset contained 372 species. The R code accompanying this paper documents these decisions with citations to the relevant literature.
 
 Following \cite{Muir_2015}, I calculated stomatal ratio in two different ways depending on what was most appropriate for the question: 
 
@@ -181,13 +192,10 @@ $\mathrm{SD_{ab}}$ and $\mathrm{SD_{ad}}$ are the stomatal densities on abaxial 
 %  papers on Ellenberg light value:
 %  Bartelheimer and Poschlod 2015
 %  Diekmann, 2003
-%  Ellenberg, 1974
-%  Ellenberg et al., 1991
-%  Silvertown et al., 2006
 
 \subsection*{Testing for an association between open habitat and growth form}
 
-I tested whether Raunki\ae r life form was associated \el~values among British angiosperms using ANOVA with Type-2 sum of squares. I did not use phylogenetic ANOVA for this test because there was no phylogenetic signal in the regression fit using \pkg{phylolm} version 2.5 \citep{Ho_Ane_2014}. See the R code accompanying this paper for further detail \citep{Muir_dryad}. I predicted that species with faster life histories, especially therophytes (annuals), would have greater \el~than species with slower life histories, especially phanerophytes, which are mostly long-lived trees. 
+I tested whether Raunki\ae r life form was associated \el~values among British angiosperms using ANOVA with Type-2 sum of squares. I did not use phylogenetic ANOVA for this test because there was no phylogenetic signal in the regression fit using \pkg{phylolm} version 2.5 \citep{Ho_Ane_2014}. See the R code accompanying this paper for further detail. I predicted that species with faster life histories, especially therophytes (annuals), would have greater \el~than species with slower life histories, especially phanerophytes, which are mostly long-lived trees. 
 
 \subsection*{Open habitat, growth form, and stomatal ratio}
 

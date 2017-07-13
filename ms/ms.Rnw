@@ -4,8 +4,7 @@
 % Remove code to copy refs
 % Github DOI?
 % Finish abstract
-% Finish citations
-% Licenses (see http://ropensci.github.io/reproducibility-guide/sections/introduction/)
+% Finish citations (add citations only mentioned online to MS)
 
 % Notes from call with Rob
 % van Tienderen - sensitivity approach better for evolution
@@ -48,6 +47,7 @@
 
 % Command for abbreviating Ellenberg light indicator value
 \newcommand{\el}{L-value} 
+\newcommand{\els}{L-values} 
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
@@ -99,7 +99,8 @@ Discussion:  \\
 %--------------------------------------------------
 
 \section*{Acknowledgements}
-I thank Sally Otto and Matt Pennell for feedback on this manuscript.
+I thank Sally Otto, Matt Pennell, and Rob Salguero-G\'{o}mez for feedback on this manuscript.
+
 % \section*{Author contribution statement}
 % CDM designed the study, collected data, analyzed the data, and wrote the manuscript.
 
@@ -178,9 +179,9 @@ Data and annotated source code to generate this manuscript are available on GitH
 
 \subsection*{Data on stomatal ratio, light habitat, growth form, and phylogenetic relationships}
 
-I obtained data on ab- and adaxial stomatal density on 370 species from British Ecological Flora \citep{Fitter_Peat_1994a, BEF}. I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). Seventeen species (4.6\%) in the dataset were not present in the phylogeny. For nine species, I used the position a congeneric species as a proxy for the focal species. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species. For the remaining eight missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.5-64 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
+I obtained data on ab- and adaxial stomatal density on \Sexpr{nrow(stomata_unfiltered)} species from British Ecological Flora \citep{Salisbury_1927, Fitter_Peat_1994a, BEF}. Following recent comparative analyses \citep[e.g.][]{Bartelheimer_Poschlod_2016, Salguero-Gomez_etal_2016}, I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). \Sexpr{nNotInPhy1} species (\Sexpr{round(100 * nNotInPhy1 / nrow(stomata_unfiltered), 1)}\%) in the dataset were not present in the phylogeny. For \Sexpr{nNotInPhy1 - nNotInPhy2} of these species, I used the position a congeneric species as a proxy for the focal species. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species \citep{Scheen_etal_2004, Salmaki_etal_2013}. For the remaining \Sexpr{nNotInPhy2} missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree \citep{Fior_etal_2006}. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.5-64 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
 
-I excluded data from hyrdrophytes (\Sexpr{nHydrophyte} species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (\Sexpr{nC4} species) and CAM (\Sexpr{nCAM} species) plants.. I limited this investigation to angiosperms because only \Sexpr{nNonangio} non-angiosperms had stomata data. The final dataset contained \Sexpr{nrow(stomata)} species. The R code accompanying this paper documents these decisions with citations to the relevant literature \citep{Muir_dryad}.
+I excluded data on hyrdrophytes (\Sexpr{nHydrophyte} species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (\Sexpr{nC4} species) and CAM (\Sexpr{nCAM} species) plants. I limited this investigation to angiosperms because only \Sexpr{nNonangio} non-angiosperms had stomata data. The final dataset contained \Sexpr{nrow(stomata)} species. The R code accompanying this paper documents these decisions with citations to the relevant literature.
 
 Following \cite{Muir_2015}, I calculated stomatal ratio in two different ways depending on what was most appropriate for the question: 
 
@@ -194,18 +195,9 @@ Following \cite{Muir_2015}, I calculated stomatal ratio in two different ways de
 
 $\mathrm{SD_{ab}}$ and $\mathrm{SD_{ad}}$ are the stomatal densities on abaxial or adaxial surface, respectively. $\mathrm{SD_{total}} = \mathrm{SD_{ab}} + \mathrm{SD_{ad}}$. $\mathrm{SR_{propAd}}$ is the proportion of stomata density on the adaxial surface, which is useful for discriminating among hypostomatous ($\mathrm{SR_{propAd}} = 0$), amphistomatous (0 < $\mathrm{SR_{propAd}} < 1$), and hyperstomatous species ($\mathrm{SR_\mathrm{propAd}} = 1$). $\mathrm{SR_\mathrm{even}}$ indicates how evenly stomatal densities are distributed across both leaf surfaces. This expression is useful because several hypotheses are based on the fact that a more even distribution should optimize leaf CO$_2$ diffusion.
 
-% NOTES
-
-%  papers on Ellenberg light value:
-%  Bartelheimer and Poschlod 2015
-%  Diekmann, 2003
-%  Ellenberg, 1974
-%  Ellenberg et al., 1991
-%  Silvertown et al., 2006
-
 \subsection*{Testing for an association between open habitat and growth form}
 
-I tested whether Raunki\ae r life form was associated \el~values among British angiosperms using ANOVA with Type-2 sum of squares. I did not use phylogenetic ANOVA for this test because there was no phylogenetic signal in the regression fit using \pkg{phylolm} version 2.5 \citep{Ho_Ane_2014}. See the R code accompanying this paper for further detail \citep{Muir_dryad}. I predicted that species with faster life histories, especially therophytes (annuals), would have greater \el~than species with slower life histories, especially phanerophytes, which are mostly long-lived trees. 
+I tested whether Raunki\ae r life form was associated \el~among British angiosperms using ANOVA with Type-2 sum of squares. I did not use phylogenetic ANOVA for this test because there was no phylogenetic signal in the regression fit using \pkg{phylolm} version 2.5 \citep{Ho_Ane_2014}. See the R code accompanying this paper for further detail. I predicted that species with faster life histories, especially therophytes (annuals), would have greater \els~than species with slower life histories, especially phanerophytes, which are mostly long-lived trees. 
 
 \subsection*{Open habitat, growth form, and stomatal ratio}
 
@@ -227,7 +219,7 @@ I used two complementary phylogenetic methods to assess the relative contributio
   \mathrm{sr_{even}} = \mathrm{sd_{ad}} - \mathrm{sd_{ad}}
 \end{equation}
 
-Lowercase variables ($\mathrm{sr}$, $\mathrm{sd}$) indicate log-transformed values. Because some species had zero adaxial stomata, I added one to all values prior to log-transformation. For simplicity, I have defined $\mathrm{SR_{even}}$ here as the ratio of ad- to abaxial stomatal density because in most cases adaxial stomatal density is lower than abaxial (see Eq.~\ref{eq:SReven1}). The variance in $\mathrm{sr_{even}}$ can be decomposed into contributions of $\mathrm{sd_{ad}}$, $\mathrm{sd_{ab}}$, and their covariance:
+Lowercase variables ($\mathrm{sr}$, $\mathrm{sd}$) indicate log-transformed values. Because some species had zero adaxial stomata, I added one to all values prior to log-transformation. To make the variance decomposition calculations tractable, I have defined $\mathrm{SR_{even}}$ here as the ratio of ad- to abaxial stomatal density because in most cases adaxial stomatal density is lower than abaxial (see Eq.~\ref{eq:SReven1}). This was not done in previous analyses because I wanted to test what factors influenced the evenness of stomatal densities, regardless of which surface had higher density. With this modified form, the variance in $\mathrm{sr_{even}}$ can be decomposed into contributions of $\mathrm{sd_{ad}}$, $\mathrm{sd_{ab}}$, and their covariance:
 
 \begin{equation} \label{eq:varDecomp}
 	\mathrm{Var(sr_{even})} = \mathrm{Var(sd_{ad})} + \mathrm{Var(sd_{ad})} - 2 \mathrm{Cov(sd_{ad}, sd_{ab})}
@@ -241,7 +233,7 @@ I estimated the phylogenetic covariance matrix between \el, $\mathrm{sd_{ab}}$, 
 
 respectively. Note that when ab- and adaxial densities positively covary, the contribution will be negative because this reduces the variance in stomatal ratio.
 
-I was interested in whether light-mediated evolution of stomatal ratio acted mostly by increasing adaxial stomatal density while maintaining abaxial density, or keeping total stomatal density the same, but shifting a greater proportion to the adaxial surface. The first scenario predicts that the phylogenetic regression of \el~ on $\mathrm{sd_{ad}}$ is stronger than that for $\mathrm{sd_{ab}}$. The second scenario predicts that \el~acts similarly on both and that there is a negative covariance $\mathrm{Cov(sd_{ad}, sd_{ab}) < 0}$. I tested these competing predictions by fitting a simple phylogenetic structural equation model (SEM). The model uses the phylogenetic covariance matrix to simultaneously estimate regressions of \el~on $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ while allowing covariance between them (i.e. estimating $\mathrm{Cov(sd_{ad}, sd_{ab})}$). To fit the SEM, I used the R package \pkg{lavaan} version 0.5-23.1097 \citep{Rosseel_2012}. I tested whether parameter estimates were significantly different than zero using $z$-scores.
+I was interested in whether light-mediated evolution of stomatal ratio acted mostly by increasing adaxial stomatal density while maintaining abaxial density, or keeping total stomatal density the same, but shifting a greater proportion to the adaxial surface. The first scenario predicts that the phylogenetic regression of \el~ on $\mathrm{sd_{ad}}$ is stronger than that for $\mathrm{sd_{ab}}$. The second scenario predicts that \el~acts similarly on both and that there is a negative covariance $\mathrm{Cov(sd_{ad}, sd_{ab}) < 0}$. I tested these competing predictions by fitting a simple phylogenetic structural equation model (SEM). The model uses the phylogenetic covariance matrix to simultaneously estimate regressions of \el~on $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ while allowing covariance between them (i.e. estimating $\mathrm{Cov(sd_{ad}, sd_{ab})}$). To fit the SEM, I used the R package \pkg{lavaan} version 0.5-23.1097 \citep{Rosseel_2012}. I tested whether parameter estimates were significantly different from zero using $z$-scores.
 
 %--------------------------------------------------
 % Results
@@ -251,7 +243,7 @@ I was interested in whether light-mediated evolution of stomatal ratio acted mos
 
 \subsection*{Light tolerance varies among Raunki\ae r life forms}
 
-Ellenberg light indicator values (\el) differed significantly among life forms (Fig.~\ref{fig:lf-light};ANOVA - $F_{\Sexpr{aovLFvEL$Df[1]}, \Sexpr{aovLFvEL$Df[2]}}$ = \Sexpr{round(aovLFvEL$`F value`[1], 1)}, $P$ = \Sexpr{pval2latex(aovLFvEL$`Pr(>F)`[1])}). Therophytes (annuals), hemicryptophytes (perennial herbs with buds near the soil surface), and chamaephytes (subshrubs) had greater \el~than phanerophytes (large woody plants) and geophytes (perennial herbs with storage organs) (Fig.~\ref{fig:lf-light}).
+Ellenberg light indicator values (\el) differed significantly among life forms (Fig.~\ref{fig:lf-light};ANOVA - $F_{\Sexpr{aovLFvEL$Df[1]}, \Sexpr{aovLFvEL$Df[2]}}$ = \Sexpr{round(aovLFvEL$`F value`[1], 1)}, $P$ = \Sexpr{pval2latex(aovLFvEL$`Pr(>F)`[1])}). Therophytes (annuals), hemicryptophytes (perennial herbs with buds near the soil surface), and chamaephytes (subshrubs) had greater \els~than phanerophytes (large woody plants) and geophytes (perennial herbs with storage organs) (Fig.~\ref{fig:lf-light}).
 
 \subsection*{Interactions between light and Raunki\ae r life form determine stomatal ratio}
 

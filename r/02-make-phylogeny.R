@@ -1,20 +1,31 @@
-source("R/header.R")
+source("r/header.R")
+
+stomata <- read_csv(str_c(path_proc_data, "/stomata.csv"))
 
 ##### Import phylogeny of British Flora -----
 # from Lim et al 2014
 tmp <- read_lines(str_c(path_raw_data, "/S15105.nex"))
 l1 <- str_detect(tmp, "BEGIN CHARACTERS") %>% which() - 1
 l2 <- str_detect(tmp, "BEGIN TREES") %>% which() - 1
+
+# Lithospermum purpurocaeruleum is mispelled
+tmp %<>% str_replace_all("Lithospermum_purpureocaeruleum", "Lithospermum_purpurocaeruleum")
+
+# Changing Populus_nigra_sens.lat. to Populus nigra officinale 
+tmp %<>% str_replace_all("Populus_nigra_sens.lat.", "Populus_nigra")
+
+# Changing Rosa_canina_agg. to Rosa_canina officinale 
+tmp %<>% str_replace_all("Rosa_canina_agg.", "Rosa_canina")
+
 write_lines(tmp[c(1:l1, l2:length(tmp))], 
             path = str_c(path_raw_data, "/Lim_etal_2014.nex"))
 phy <- read_nexus_phylo(str_c(path_raw_data, "/Lim_etal_2014.nex"))
 
 ##### Check for species missing from phylogeny -----
-stomata <- read_csv(str_c(path_proc_data, "/stomata.csv")) %>%
-  mutate(species1 = species)
-stomata$species1 %<>% str_replace_all(" ", "_")
-notInPhy <- which(!stomata$species1 %in% phy$tip.label)
-stomata[notInPhy, ]; length(notInPhy)
+notInPhy <- which(!(stomata$species %in% phy$tip.label |
+                      stomata$acceptedname %in% phy$tip.label))
+stomata[notInPhy, ]
+nNotInPhy1 <- length(notInPhy)
 
 ##### Modify tip labels -----
 
@@ -24,26 +35,14 @@ tmp %<>% str_replace_all("Cerastium_brachypetalum", "Cerastium_cerastoides")
 # Using Coincya monensis as proxy for C. wrightii 
 tmp %<>% str_replace_all("Coincya_monensis", "Coincya_wrightii")
 
-# Using Geranium pusillum as proxy for G. versicolor based on similar divergence in Palazzesi et al. 2012 (Bio J of Linn Soc, 107(1): 67-85)
-# tmp <- gsub("Geranium_pusillum", "Geranium_versicolor", tmp)
-
 # Using Gnaphalium luteoalbum as proxy for G. norvegicum 
 tmp %<>% str_replace_all("Gnaphalium_luteoalbum", "Gnaphalium_norvegicum")
-
-# Lithospermum purpurocaeruleum is mispelled
-tmp %<>% str_replace_all("Lithospermum_purpureocaeruleum", "Lithospermum_purpurocaeruleum")
 
 # Using Lythrum portula as proxy for L. hyssopifolia 
 tmp %<>% str_replace_all("Lythrum_portula", "Lythrum_hyssopifolia")
 
 # Using Peucedanum ostruthium as proxy for P. officinale 
 tmp %<>% str_replace_all("Peucedanum_ostruthium", "Peucedanum_officinale")
-
-# Changing Populus_nigra_sens.lat. to Populus nigra officinale 
-tmp %<>% str_replace_all("Populus_nigra_sens.lat.", "Populus_nigra")
-
-# Changing Rosa_canina_agg. to Rosa_canina officinale 
-tmp %<>% str_replace_all("Rosa_canina_agg.", "Rosa_canina")
 
 # Using Stachys alpina as proxy for S. germanica based on similar divergence in Salmaki et al. 2013 (Mol Phylo Evol, 69(3): 535-551)
 tmp %<>% str_replace_all("Stachys_alpina", "Stachys_germanica")
@@ -65,6 +64,12 @@ nodes <- sapply(tips, function(x,y) which(y == x), y = phy$tip.label)
 edge.lengths <- setNames(phy$edge.length[sapply(nodes, function(x, y) {
   which(y == x) }, y = phy$edge[, 2])], names(nodes))
 
+##### Check for species missing from phylogeny -----
+notInPhy <- which(!(stomata$species %in% phy$tip.label |
+                      stomata$acceptedname %in% phy$tip.label))
+stomata[notInPhy, ]
+nNotInPhy2 <- length(notInPhy)
+
 # Make Agrostemma githago sister to all (Silene sp., Lychnis sp.) [based on Fior et al. 2006, Am J Bot 104(2):399-411]
 n <- getMRCA(phy, phy$tip.label[c(grep("Silene", phy$tip.label), grep("Lychnis", phy$tip.label))])
 
@@ -80,15 +85,6 @@ phy <- bind.tip(phy, "Heracleum_mantegazzianum",
                 edge.length = phy$edge.length[which(phy$tip.label == "Heracleum_sphondylium")],
                 where = which(phy$tip.label == "Heracleum_sphondylium"))
 
-# Make Portulaca oleracea sister to all Claytonia (based on Angiosperm Phylogeny Website v 13 http://www.mobot.org/mobot/research/apweb/welcome.html]
-# n <- getMRCA(phy, phy$tip.label[grep("Claytonia", phy$tip.label)])
-
-# Branch length is average of distance from Claytonia MRCA to Claytonia sp.
-# el1 <- sapply(nodes[grep("Claytonia_", names(nodes))], nodeheight, tree = phy)
-# el2 <- nodeheight(tree = phy, node = n)
-
-# phy <- bind.tip(phy, "Portulaca_oleracea", edge.length = mean(el1 - el2), where = n)
-
 # Make Spartina alterniflora, Spartina maritima, and Spartina x townsendii as sister to S. anglica
 phy <- bind.tip(phy, "Spartina_alterniflora", 
                 edge.length = phy$edge.length[which(phy$tip.label == "Spartina_anglica")],
@@ -97,10 +93,6 @@ phy <- bind.tip(phy, "Spartina_alterniflora",
 phy <- bind.tip(phy, "Spartina_maritima", 
                 edge.length = phy$edge.length[which(phy$tip.label == "Spartina_anglica")],
                 where = which(phy$tip.label == "Spartina_anglica"))
-
-# phy <- bind.tip(phy, "Spartina_x_townsendii", 
-#                 edge.length = phy$edge.length[which(phy$tip.label == "Spartina_anglica")],
-#                 where = which(phy$tip.label == "Spartina_anglica"))
 
 # Make Tephroseris integrifolia sister to all Senecio sp.
 n <- getMRCA(phy, phy$tip.label[grep("Senecio", phy$tip.label)])
@@ -162,3 +154,6 @@ rm("pathd8_out")
 
 # Write ultrametric phylogeny
 write.nexus(phy, file = str_c(path_proc_data, "/Lim_etal_2014_final.nex"))
+
+# Export objects to ms
+export2ms(c("nNotInPhy1", "nNotInPhy2"))
