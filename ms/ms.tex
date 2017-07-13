@@ -47,6 +47,7 @@
 
 % Command for abbreviating Ellenberg light indicator value
 \newcommand{\el}{L-value} 
+\newcommand{\els}{L-values} 
 
 \usepackage{Sweave}
 \begin{document}
@@ -187,15 +188,9 @@ Following \cite{Muir_2015}, I calculated stomatal ratio in two different ways de
 
 $\mathrm{SD_{ab}}$ and $\mathrm{SD_{ad}}$ are the stomatal densities on abaxial or adaxial surface, respectively. $\mathrm{SD_{total}} = \mathrm{SD_{ab}} + \mathrm{SD_{ad}}$. $\mathrm{SR_{propAd}}$ is the proportion of stomata density on the adaxial surface, which is useful for discriminating among hypostomatous ($\mathrm{SR_{propAd}} = 0$), amphistomatous (0 < $\mathrm{SR_{propAd}} < 1$), and hyperstomatous species ($\mathrm{SR_\mathrm{propAd}} = 1$). $\mathrm{SR_\mathrm{even}}$ indicates how evenly stomatal densities are distributed across both leaf surfaces. This expression is useful because several hypotheses are based on the fact that a more even distribution should optimize leaf CO$_2$ diffusion.
 
-% NOTES
-
-%  papers on Ellenberg light value:
-%  Bartelheimer and Poschlod 2015
-%  Diekmann, 2003
-
 \subsection*{Testing for an association between open habitat and growth form}
 
-I tested whether Raunki\ae r life form was associated \el~values among British angiosperms using ANOVA with Type-2 sum of squares. I did not use phylogenetic ANOVA for this test because there was no phylogenetic signal in the regression fit using \pkg{phylolm} version 2.5 \citep{Ho_Ane_2014}. See the R code accompanying this paper for further detail. I predicted that species with faster life histories, especially therophytes (annuals), would have greater \el~than species with slower life histories, especially phanerophytes, which are mostly long-lived trees. 
+I tested whether Raunki\ae r life form was associated \el~among British angiosperms using ANOVA with Type-2 sum of squares. I did not use phylogenetic ANOVA for this test because there was no phylogenetic signal in the regression fit using \pkg{phylolm} version 2.5 \citep{Ho_Ane_2014}. See the R code accompanying this paper for further detail. I predicted that species with faster life histories, especially therophytes (annuals), would have greater \els~than species with slower life histories, especially phanerophytes, which are mostly long-lived trees. 
 
 \subsection*{Open habitat, growth form, and stomatal ratio}
 
@@ -217,7 +212,7 @@ I used two complementary phylogenetic methods to assess the relative contributio
   \mathrm{sr_{even}} = \mathrm{sd_{ad}} - \mathrm{sd_{ad}}
 \end{equation}
 
-Lowercase variables ($\mathrm{sr}$, $\mathrm{sd}$) indicate log-transformed values. Because some species had zero adaxial stomata, I added one to all values prior to log-transformation. For simplicity, I have defined $\mathrm{SR_{even}}$ here as the ratio of ad- to abaxial stomatal density because in most cases adaxial stomatal density is lower than abaxial (see Eq.~\ref{eq:SReven1}). The variance in $\mathrm{sr_{even}}$ can be decomposed into contributions of $\mathrm{sd_{ad}}$, $\mathrm{sd_{ab}}$, and their covariance:
+Lowercase variables ($\mathrm{sr}$, $\mathrm{sd}$) indicate log-transformed values. Because some species had zero adaxial stomata, I added one to all values prior to log-transformation. To make the variance decomposition calculations tractable, I have defined $\mathrm{SR_{even}}$ here as the ratio of ad- to abaxial stomatal density because in most cases adaxial stomatal density is lower than abaxial (see Eq.~\ref{eq:SReven1}). This was not done in previous analyses because I wanted to test what factors influenced the evenness of stomatal densities, regardless of which surface had higher density. With this modified form, the variance in $\mathrm{sr_{even}}$ can be decomposed into contributions of $\mathrm{sd_{ad}}$, $\mathrm{sd_{ab}}$, and their covariance:
 
 \begin{equation} \label{eq:varDecomp}
 	\mathrm{Var(sr_{even})} = \mathrm{Var(sd_{ad})} + \mathrm{Var(sd_{ad})} - 2 \mathrm{Cov(sd_{ad}, sd_{ab})}
@@ -231,7 +226,7 @@ I estimated the phylogenetic covariance matrix between \el, $\mathrm{sd_{ab}}$, 
 
 respectively. Note that when ab- and adaxial densities positively covary, the contribution will be negative because this reduces the variance in stomatal ratio.
 
-I was interested in whether light-mediated evolution of stomatal ratio acted mostly by increasing adaxial stomatal density while maintaining abaxial density, or keeping total stomatal density the same, but shifting a greater proportion to the adaxial surface. The first scenario predicts that the phylogenetic regression of \el~ on $\mathrm{sd_{ad}}$ is stronger than that for $\mathrm{sd_{ab}}$. The second scenario predicts that \el~acts similarly on both and that there is a negative covariance $\mathrm{Cov(sd_{ad}, sd_{ab}) < 0}$. I tested these competing predictions by fitting a simple phylogenetic structural equation model (SEM). The model uses the phylogenetic covariance matrix to simultaneously estimate regressions of \el~on $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ while allowing covariance between them (i.e. estimating $\mathrm{Cov(sd_{ad}, sd_{ab})}$). To fit the SEM, I used the R package \pkg{lavaan} version 0.5-23.1097 \citep{Rosseel_2012}. I tested whether parameter estimates were significantly different than zero using $z$-scores.
+I was interested in whether light-mediated evolution of stomatal ratio acted mostly by increasing adaxial stomatal density while maintaining abaxial density, or keeping total stomatal density the same, but shifting a greater proportion to the adaxial surface. The first scenario predicts that the phylogenetic regression of \el~ on $\mathrm{sd_{ad}}$ is stronger than that for $\mathrm{sd_{ab}}$. The second scenario predicts that \el~acts similarly on both and that there is a negative covariance $\mathrm{Cov(sd_{ad}, sd_{ab}) < 0}$. I tested these competing predictions by fitting a simple phylogenetic structural equation model (SEM). The model uses the phylogenetic covariance matrix to simultaneously estimate regressions of \el~on $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ while allowing covariance between them (i.e. estimating $\mathrm{Cov(sd_{ad}, sd_{ab})}$). To fit the SEM, I used the R package \pkg{lavaan} version 0.5-23.1097 \citep{Rosseel_2012}. I tested whether parameter estimates were significantly different from zero using $z$-scores.
 
 %--------------------------------------------------
 % Results
@@ -241,11 +236,11 @@ I was interested in whether light-mediated evolution of stomatal ratio acted mos
 
 \subsection*{Light tolerance varies among Raunki\ae r life forms}
 
-Ellenberg light indicator values (\el) differed significantly among life forms (Fig.~\ref{fig:lf-light};ANOVA - $F_{4, 367}$ = 18.3, $P$ = 1.1 $\times10^{-13}$). Therophytes (annuals), hemicryptophytes (perennial herbs with buds near the soil surface), and chamaephytes (subshrubs) had greater \el~than phanerophytes (large woody plants) and geophytes (perennial herbs with storage organs) (Fig.~\ref{fig:lf-light}).
+Ellenberg light indicator values (\el) differed significantly among life forms (Fig.~\ref{fig:lf-light};ANOVA - $F_{4, 367}$ = 18.3, $P$ = 1.1 $\times10^{-13}$). Therophytes (annuals), hemicryptophytes (perennial herbs with buds near the soil surface), and chamaephytes (subshrubs) had greater \els~than phanerophytes (large woody plants) and geophytes (perennial herbs with storage organs) (Fig.~\ref{fig:lf-light}).
 
 \subsection*{Interactions between light and Raunki\ae r life form determine stomatal ratio}
 
-Overall, $\mathrm{SR_{even}}$ increased with \el, but there was a significant interaction between Raunki\ae r life form and \el~(Fig.~\ref{fig:SRmultReg}). Both life form and \el~significantly increased model fit, though \el~had a markedly larger effect on model AIC (Table~\ref{table:srAIC}). The significant interaction is caused by different slopes between life forms. Among life forms with the overall greatest \el~(therophytes, hemicryptophytes, and chamaephytes, see Fig.~\ref{fig:lf-light}), there was a strong positive relationship between \el~and $\mathrm{SR_{even}}$. Parametrically bootstrapped 95\% confidence intervals did not overlap zero (Fig.~\ref{fig:SRmultReg}). The slope was weakly positive or not significantly different from zero in the most shade-adapted life forms (geophytes and phanerophytes), albeit the patterns were distinct in these groups. There were both hypostomatous ($\mathrm{SR_{even}} \approx 0$) and amphistomatous ($\mathrm{SR_{even}} \approx 1$) geophytes, but these were distibuted across \el s. In contrast, phanerophytes were nearly always hypostomatous regardless of \el. Allowing slopes to vary across life form signicantly increased model fit (lower AIC, Table~\ref{table:srAIC}).
+Overall, $\mathrm{SR_{even}}$ increased with \el, but there was a significant interaction ($\Delta\mathrm{AIC} > 2$, Table~\ref{table:srAIC}) between Raunki\ae r life form and \el~(Fig.~\ref{fig:SRmultReg}). Both life form and \el~significantly increased model fit, though \el~had a markedly larger effect on model AIC (Table~\ref{table:srAIC}). The significant interaction is caused by different slopes between life forms. Among life forms with the overall greatest \el~(therophytes, hemicryptophytes, and chamaephytes, see Fig.~\ref{fig:lf-light}), there was a strong positive relationship between \el~and $\mathrm{SR_{even}}$. Parametrically bootstrapped 95\% confidence intervals did not overlap zero (Fig.~\ref{fig:SRmultReg}). The slope was weakly positive or not significantly different from zero in the most shade-adapted life forms (geophytes and phanerophytes), albeit the patterns were distinct in these groups. There were both hypostomatous ($\mathrm{SR_{even}} \approx 0$) and amphistomatous ($\mathrm{SR_{even}} \approx 1$) geophytes, but these were distibuted across \el s. In contrast, phanerophytes were nearly always hypostomatous regardless of \el. Allowing slopes to vary across life form signicantly increased model fit (lower AIC, Table~\ref{table:srAIC}).
 
 \subsection*{Adaxial stomatal density contributes most of the variation in stomatal ratio}
 
