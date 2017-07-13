@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  12 JUL 2017 13:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  12 JUL 2017 21:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -372,25 +372,25 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))) (./ms.aux)
 \openout1 = `ms.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 44.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -491,108 +491,105 @@ atibility reasons.
 Package caption Info: End \AtBeginDocument code.
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/aer/m/n --> TS1/aer/bx/n on input line 52.
-Package gensymb Info: Math companion symbols declared on input line 52.
-LaTeX Info: Redefining \degree on input line 52.
-LaTeX Info: Redefining \celsius on input line 52.
+(Font)                  TS1/aer/m/n --> TS1/aer/bx/n on input line 44.
+Package gensymb Info: Math companion symbols declared on input line 44.
+LaTeX Info: Redefining \degree on input line 44.
+LaTeX Info: Redefining \celsius on input line 44.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 52.
-LaTeX Info: Redefining \ohm on input line 52.
-Package gensymb Info: Using \textohm for \ohm on input line 52.
-Package gensymb Info: Using \textmu for \micro on input line 52.
+erthousand on input line 44.
+LaTeX Info: Redefining \ohm on input line 44.
+Package gensymb Info: Using \textohm for \ohm on input line 44.
+Package gensymb Info: Using \textmu for \micro on input line 44.
 
 (./ms-concordance.tex)
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 51.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 59.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 51.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <20.74> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 59.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <14.4> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 59.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 59.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 59.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <7> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 59.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <8> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 61.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 53.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <6> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 61.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 53.
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
 
-Overfull \hbox (12.56961pt too wide) in paragraph at lines 63--82
+Overfull \hbox (12.56961pt too wide) in paragraph at lines 55--74
 []$[]$ \T1/aer/m/n/12 Bio-di-ver-sity Re-search Cen-tre and Botany De-part-ment
 , Uni-ver-sity of British Columbia,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--82
+Underfull \hbox (badness 10000) in paragraph at lines 55--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--82
+Underfull \hbox (badness 10000) in paragraph at lines 55--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--82
+Underfull \hbox (badness 10000) in paragraph at lines 55--74
 
  []
 
-[1
+LaTeX Font Info:    Try loading font information for T1+aett on input line 76.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+) [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+aess on input line 98.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 95.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 ) [2] [3] [4]
 [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
-Overfull \hbox (47.24422pt too wide) in paragraph at lines 239--240
+Overfull \hbox (47.24422pt too wide) in paragraph at lines 236--237
 \T1/aer/m/n/12 Ellenberg light in-di-ca-tor val-ues (L-value) dif-fered sig-nif
 -i-cantly among life forms (Fig. 1[];ANOVA
  []
 
 [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (2.94524pt too wide) in paragraph at lines 282--282
+Overfull \hbox (2.94524pt too wide) in paragraph at lines 279--279
 []\T1/aer/bx/n/14.4 Why does adax-ial stom-atal den-sity con-trol stom-atal ra-
 tio? 
  []
 
-[22] [23] [24] (./ms.bbl
-LaTeX Font Info:    Try loading font information for T1+aett on input line 8.
+[22] [23] [24] (./ms.bbl [25
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [25
-
-] [26] [27]
-[28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 235--239
+] [26] [27] [28] [29]
+Underfull \hbox (badness 10000) in paragraph at lines 230--234
 []\T1/aer/m/n/12 ---------, 2017.  Data from: Hight light in-ter-acts with herb
 a-ceous
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--239
+Underfull \hbox (badness 10000) in paragraph at lines 230--234
 \T1/aer/m/n/12 growth form to fa-vor am-phis-tomy in British an-giosperms.  URL
 
  []
@@ -601,21 +598,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--239
 File: figures/figure_lf-light.pdf Graphic file (type pdf)
 
 <use figures/figure_lf-light.pdf>
-Package pdftex.def Info: figures/figure_lf-light.pdf used on input line 387.
+Package pdftex.def Info: figures/figure_lf-light.pdf used on input line 384.
 (pdftex.def)             Requested size: 215.0023pt x 376.25166pt.
 
 <figures/figure_SRmultReg.pdf, id=117, 289.08pt x 505.89pt>
 File: figures/figure_SRmultReg.pdf Graphic file (type pdf)
 
 <use figures/figure_SRmultReg.pdf>
-Package pdftex.def Info: figures/figure_SRmultReg.pdf used on input line 393.
+Package pdftex.def Info: figures/figure_SRmultReg.pdf used on input line 390.
 (pdftex.def)             Requested size: 215.0023pt x 376.25166pt.
 
 <figures/figure_SD-light.pdf, id=118, 578.16pt x 722.7pt>
 File: figures/figure_SD-light.pdf Graphic file (type pdf)
 
 <use figures/figure_SD-light.pdf>
-Package pdftex.def Info: figures/figure_SD-light.pdf used on input line 399.
+Package pdftex.def Info: figures/figure_SD-light.pdf used on input line 396.
 (pdftex.def)             Requested size: 215.0023pt x 268.75119pt.
  [32
 
@@ -625,16 +622,16 @@ Package pdftex.def Info: figures/figure_SD-light.pdf used on input line 399.
 File: figures/figureS_violin.pdf Graphic file (type pdf)
 
 <use figures/figureS_violin.pdf>
-Package pdftex.def Info: figures/figureS_violin.pdf used on input line 425.
+Package pdftex.def Info: figures/figureS_violin.pdf used on input line 422.
 (pdftex.def)             Requested size: 344.005pt x 225.75331pt.
  [36
 
  <./figures/figureS_violin.pdf>] (./ms.aux) ) 
 Here is how much of TeX's memory you used:
- 6265 strings out of 492995
- 92701 string characters out of 6132704
- 156448 words of memory out of 5000000
- 9634 multiletter control sequences out of 15000+600000
+ 6262 strings out of 492995
+ 92622 string characters out of 6132704
+ 156407 words of memory out of 5000000
+ 9631 multiletter control sequences out of 15000+600000
  42510 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,11n,42p,2169b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -654,7 +651,7 @@ c/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmtt12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm
 -super/sfrm1200.pfb>
-Output written on ms.pdf (36 pages, 510206 bytes).
+Output written on ms.pdf (36 pages, 511113 bytes).
 PDF statistics:
  211 PDF objects out of 1000 (max. 8388607)
  148 compressed objects within 2 object streams
