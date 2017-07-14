@@ -1,5 +1,5 @@
 # britstom
-Light and life form interact to shape stomatal ratio among British angiosperms
+Light and growth form interact to shape stomatal ratio among British angiosperms
 
 This project was developed by [Chris Muir](www.chrisdmuir.com).
 

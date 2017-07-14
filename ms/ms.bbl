@@ -1,4 +1,4 @@
-\begin{thebibliography}{64}
+\begin{thebibliography}{68}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -22,13 +22,13 @@ Beerling, D.~J. and C.~K. Kelly, 1996.
 
 \bibitem[{Beerling and Royer(2011)}]{Beerling_Royer_2011}
 Beerling, D.~J. and D.~L. Royer, 2011.
-\newblock Convergent cenozoic co$_2$ history.
+\newblock Convergent {C}enozoic {CO}$_2$ history.
 \newblock Nature Geoscience 4:418--420.
 
 \bibitem[{Boettiger et~al.(2012)Boettiger, Coop, and
   Ralph}]{Boettiger_etal_2012}
 Boettiger, C., G.~Coop, and P.~Ralph, 2012.
-\newblock Is your phylogeny informative? measuring the power of comparative
+\newblock Is your phylogeny informative? {M}easuring the power of comparative
   methods.
 \newblock Evolution 66:2240--2251.
 
@@ -38,7 +38,7 @@ Bucher, S.~F., K.~Auerswald, C.~Gr{\"u}n-Wenzel, S.~I. Higgins, J.~G. Jorge,
   and C.~R{\"o}mermann, 2017.
 \newblock Stomatal traits relate to habitat preferences of herbaceous species
   in a temperate climate.
-\newblock Flora .
+\newblock Flora 229:107--115.
 
 \bibitem[{Buckley et~al.(2015)Buckley, John, Scoffoni, and
   Sack}]{Buckley_etal_2015}
@@ -51,8 +51,6 @@ Carpenter, R.~J., 1994.
 \newblock Cuticular morphology and aspects of the ecology and fossil history of
   {N}orth {Q}ueensland rainforest {P}roteaceae.
 \newblock Botanical Journal of the Linnean Society 116:249.
-\newblock \urlprefix\url{+
-  http://dx.doi.org/10.1111/j.1095-8339.1994.tb00434.x}.
 
 \bibitem[{Carpenter et~al.(2015)Carpenter, Macphail, Jordan, and
   Hill}]{Carpenter_etal_2015}
@@ -63,7 +61,7 @@ Carpenter, R.~J., M.~K. Macphail, G.~J. Jordan, and R.~S. Hill, 2015.
 
 \bibitem[{Darwin(1886)}]{Darwin_1886}
 Darwin, F., 1886.
-\newblock On the relation between the ''bloom'' on leaves and the distribution
+\newblock On the relation between the ``bloom'' on leaves and the distribution
   of the stomata.
 \newblock Botanical Journal of the Linnean Society 22:99--116.
 
@@ -107,11 +105,24 @@ Fitter, A. and H.~Peat, 1994.
 \newblock Ecological flora of the {B}ritish isles.
 \newblock \urlprefix\url{http://www.ecoflora.co.uk}.
 
+\bibitem[{Fontana et~al.(2017)Fontana, Labrecque, Collin, and
+  B{\'e}langer}]{Fontana_etal_2017}
+Fontana, M., M.~Labrecque, A.~Collin, and N.~B{\'e}langer, 2017.
+\newblock Stomatal distribution patterns change according to leaf development
+  and leaf water status in \textit{{S}alix miyabeana}.
+\newblock Plant Growth Regulation 81:63--70.
+
 \bibitem[{Foster and Smith(1986)}]{Foster_Smith_1986}
 Foster, J. and W.~Smith, 1986.
 \newblock Influence of stomatal distribution on transpiration in low-wind
   environments.
 \newblock Plant, Cell \& Environment 9:751--759.
+
+\bibitem[{Franco and Silvertown(1996)}]{Franco_Silvertown_1996}
+Franco, M. and J.~Silvertown, 1996.
+\newblock Life history variation in plants: an exploration of the fast-slow
+  continuum hypothesis.
+\newblock Philosophical Transactions: Biological Sciences 351:1341--1348.
 
 \bibitem[{Gay and Hurd(1975)}]{Gay_Hurd_1975}
 Gay, A. and R.~Hurd, 1975.
@@ -201,6 +212,13 @@ Lim, J., M.~J. Crawley, N.~De~Vere, T.~Rich, and V.~Savolainen, 2014.
   evolutionary and ecological factors driving plant invasions.
 \newblock Ecology and Evolution 4:4258--4269.
 
+\bibitem[{Mason et~al.(2016)Mason, Goolsby, Humphreys, and
+  Donovan}]{Mason_etal_2016}
+Mason, C.~M., E.~W. Goolsby, D.~P. Humphreys, and L.~A. Donovan, 2016.
+\newblock Phylogenetic structural equation modelling reveals no need for an
+  `origin? of the leaf economics spectrum.
+\newblock Ecology letters 19:54--61.
+
 \bibitem[{McElwain and Steinthorsdottir(2017)}]{McElwain_Steinthorsdottir_2017}
 McElwain, J.~C. and M.~Steinthorsdottir, 2017.
 \newblock Paleoecology, ploidy, paleoatmospheric composition, and developmental
@@ -250,7 +268,7 @@ Mott, K.~A. and O.~Michaelson, 1991.
 Mott, K.~A. and J.~W. O'Leary, 1984.
 \newblock Stomatal behavior and {CO}$_2$ exchange characteristics in
   amphistomatous leaves.
-\newblock Plant physiology 74:47--51.
+\newblock Plant Physiology 74:47--51.
 
 \bibitem[{Muir(2015)}]{Muir_2015}
 Muir, C.~D., 2015.
@@ -285,6 +303,13 @@ Peat, H. and A.~Fitter, 1994.
 \newblock A comparative study of the distribution and density of stomata in the
   {B}ritish flora.
 \newblock Biological Journal of the Linnean Society 52:377--393.
+
+\bibitem[{Pennell et~al.(2016)Pennell, FitzJohn, and
+  Cornwell}]{Pennell_etal_2016}
+Pennell, M.~W., R.~G. FitzJohn, and W.~K. Cornwell, 2016.
+\newblock A simple approach for maximizing the overlap of phylogenetic and
+  comparative data.
+\newblock Methods in Ecology and Evolution 7:751--758.
 
 \bibitem[{Posp{\'\i}{\^s}ilov{\'a} and
   Sol{\'a}rov{\'a}(1984)}]{Pospisilova_Solarova_1980}
@@ -331,7 +356,7 @@ Royer, D.~L., 2001.
 \bibitem[{Sack and Buckley(2016)}]{Sack_Buckley_2016}
 Sack, L. and T.~N. Buckley, 2016.
 \newblock The developmental basis of stomatal density and flux.
-\newblock Plant physiology 171:2358--2363.
+\newblock Plant Physiology 171:2358--2363.
 
 \bibitem[{Salguero-G{\'o}mez et~al.(2016)Salguero-G{\'o}mez, Jones, Jongejans,
   Blomberg, Hodgson, Mbeau-Ache, Zuidema, de~Kroon, and
@@ -388,7 +413,7 @@ Wolfe, J.~A., 1971.
 
 \bibitem[{Woodward(1987)}]{Woodward_1987}
 Woodward, F., 1987.
-\newblock Stomatal numbers are sensitive to increases in co$_2$ from
+\newblock Stomatal numbers are sensitive to increases in {CO}$_2$ from
   pre-industrial levels.
 \newblock Nature 327:617--618.
 
@@ -399,7 +424,7 @@ Woodward, F.~I. and F.~Bazzaz, 1988.
 
 \bibitem[{Wullschleger(1993)}]{Wullschleger_1993}
 Wullschleger, S.~D., 1993.
-\newblock Biochemical limitations to carbon assimilation in {C}$_3$ plants?a
+\newblock Biochemical limitations to carbon assimilation in {C}$_3$ plants? {A}
   retrospective analysis of the {A/Ci} curves from 109 species.
 \newblock Journal of Experimental Botany 44:907--920.
 
