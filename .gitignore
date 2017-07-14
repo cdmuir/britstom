@@ -1,6 +1,8 @@
-#
+# Files to ignore
+Literature/
+Stan/
 CoverLetter.doc
-/.DS_Store
+*.DS_Store
 
 # History files
 .Rhistory
