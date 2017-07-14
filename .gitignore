@@ -1,5 +1,6 @@
 #
-*DS_Store
+CoverLetter.doc
+/.DS_Store
 
 # History files
 .Rhistory

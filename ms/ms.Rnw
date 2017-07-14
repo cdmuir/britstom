@@ -1,10 +1,8 @@
 % Things to do before submission:
 % Matt's notes
 % Remove code to copy refs
-% Github DOI?
-% Finish abstract
-% Finish citations (add citations only mentioned online to MS)
-% Finish conclusions
+% Remove notes
+% word count
 
 \documentclass[12pt, oneside]{article}
 
@@ -43,15 +41,13 @@
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
-\title{Light and life form interact to shape stomatal ratio among British angiosperms$^1$}
-\author{Christopher D. Muir$^2$}
+\title{Light and life form interact to shape stomatal ratio among British angiosperms}
+\author{Christopher D. Muir$^1$}
 \date{} % delete this line to display the current date
 
 \maketitle
 
-$^1$ Manuscript received \underline{     }; revision accepted \underline{     }. \\
-
-$^2$ Biodiversity Research Centre and Botany Department, University of British Columbia, Vancouver, British Columbia V6T 1Z4, Canada \\
+$^1$ Biodiversity Research Centre and Botany Department, University of British Columbia, Vancouver, British Columbia V6T 1Z4, Canada \\
 \\
 \textit{Author for correspondence:} \\
 \textit{Christopher D. Muir} \\
@@ -65,13 +61,15 @@ V6T 1Z4 \\
 Short title: Shedding light on stomatal evolution\\
 \\
 Word count: \\
-Summary:  \\
+Summary:  194\\
 Introduction:  \\
-Methods and Results:  \\
+Materials and Methods:  \\
+Results:  \\
 Discussion:  \\
-\# Figures and \# Tables, \# references
+Acknowledgement:  \\
+3 Figures and 1 Table, 1 Supplemental Figure
 
-<<Import-objects, echo = FALSE>>=
+<<Import-objects, echo = FALSE, results = hide>>=
 
   # Remove before publication
   file.copy(from = "~/Google Drive/CommonResources/refs.bib",
@@ -85,56 +83,34 @@ Discussion:  \\
   
 @
 
-%--------------------------------------------------
-% Acknowledgements and Contributions
-%--------------------------------------------------
-
-\section*{Acknowledgements}
-I thank Sally Otto, Matt Pennell, and Rob Salguero-G\'{o}mez for feedback on this manuscript.
-
-% \section*{Author contribution statement}
-% CDM designed the study, collected data, analyzed the data, and wrote the manuscript.
-
 \linenumbers
 \setstretch{\stretchy}
 % \pagenumbering{gobble}
 
-
-\section*{Abstract}
-
-% (1) the research conducted, including the rationale, (2) methods, (3) key results and (4) the main conclusion, including key points of discussion?
+\section*{Summary}
 
 \begin{itemize}
-	\item In most plants, stomata are located only on the abaxial leaf surface (hypostomy), but many plants have stomata on both surfaces (amphistomy). Variation in stomatal ratio (the ratio of ab- and adaxial stomatal densities) is probably adaptive, but the ecological conditions that favor amphistomy are not well understood. In particular, high light and herbaceous growth form have been hypothesized to favor amphistomy, but these hypotheses have not been rigourously tested together.
+	\item In most plants, stomata are located only on the abaxial leaf surface (hypostomy), but many plants have stomata on both surfaces (amphistomy). High light and herbaceous growth form have been hypothesized to favor amphistomy, but these hypotheses have not been rigourously tested together using phylogenetic comparative methods.
 	\item I leveraged a large dataset including stomatal ratio, Ellenberg light indicator value, Raunki\ae r lifeform, and phylogenetic relationships for \Sexpr{nrow(stomata)} species of British angiosperms. I used phylogenetic comparative methods to test how light and/or growth form influence stomatal ratio.
-	\item (return to this) key results: \el, growth form, and interaction are important
-	\item I show for the first time that light and growth form interact to shape variation in stomatal ratio; amphistomy is advantageous in high light, but mostly for herbs. These results improve our understanding of the adaptive significance of stomatal ratio, use stomatal ratio as proxy for paleo vegetation, and as a target for crop improvement.
+	\item High light and herbaceous growth form are correlated with amphistomy, as predicted, but they also interact; the effects of light are most pronounced in therophytes (annuals) and hemocryptophytic perennials, but less so in phanerophytes (mostly trees). Interestingly, amphistomy and stomatal density evolve together in response to light, suggesting coordinated selection on this trait combination.
+	\item I show for the first time that light and growth form interact to shape variation in stomatal ratio; amphistomy is advantageous in high light, but mostly for herbs. These results improve our understanding of the adaptive significance of stomatal ratio as well as its use as functional trait for paleovegetation reconstruction and crop improvement.
 \end{itemize}
-
-% POSSIBLE CONCLUSION: THIS TELLS US THAT CO2 LIMITS PHOTOSYNTHESIS AND HIGH LIGHT, BUT ONLY STRONG SELECTION IN FAST LIFE HISTORY (HERBS)...OR SOMETHING
 
 \section*{Keywords}
 
 Adaptation, amphistomy, Ellenberg light indicator value, growth form, phylogenetic comparative methods, stomata, stomatal ratio
 
-\section*{INTRODUCTION}
+\section*{Introduction}
 
 %%%%% PARAGRAPH 1-2: general stuff about adaptation, stomata, stomatal ratio %%%%%
-Natural selection shapes leaf anatomy in order to optimize its photosynthetic function in a given environment \citep{Haberlandt_1914, Givnish_1987, Smith_etal_1997}. By understanding the adaptive significance of leaf anatomical variation we can learn about natural history, find targets for crop improvement, and identify anatomical proxies for paleoclimates preserved in the fossil record [CITE]. The size, density, and distribution of stomata on a leaf vary widely and impact functions like the maximum photosynthetic rate, water-use efficiency, photosynthetic nitrogen-use efficiency, and susceptibility to foliar pathogens that infect through stomata [CITATIONS]. Hence, stomata have been especially useful in understanding plastic and evolutionary response to climate change and domestication (Royer, Ward, Woodward, Beerling, Milla et al...).
+Natural selection shapes leaf anatomy in order to optimize its photosynthetic function in a given environment \citep{Haberlandt_1914, Givnish_1987, Smith_etal_1997}. By understanding the adaptive significance of leaf anatomical variation we can learn about natural history, find targets for crop improvement, and identify anatomical proxies for paleoclimates preserved in the fossil record \citep[e.g.][]{Wolfe_1971, Royer_2001, McElwain_Steinthorsdottir_2017}. The size, density, and distribution of stomata on a leaf vary widely and impact the flux of CO$_2$ and water vapour \citep[recently reviewed in][]{Sack_Buckley_2016}, as well as susceptibility to foliar pathogens that infect through stomata \citep{Mckown_etal_2014, Melotto_etal_2017}. Hence, stomata have been especially useful in understanding plastic and evolutionary response to climate change and domestication \citep{Woodward_1987, Beerling_Royer_2011, Milla_etal_2013}.
 
-While the density and size of stomata have been researched extensively [CITATIONS], the adaptive significance of stomatal distribution is less well understood. Stomata are most often found only on the lower leaf surface (hypostomy) but occur on both surfaces (amphistomy) in many species \citep{Metcalfe_Chalk_1950, Parkhurst_1978, Mott_etal_1982}. Theory and experiments demonstrate that amphistomy increases photosynthetic rates under many conditions. By creating a second parallel pathway for CO$_2$ diffusion within the mesophyll, amphistomy optimally supplies CO$_2$ \citep{Parkhurst_1978, Gutschick_1984b, Jones_1985}. Amphistomy is correlated with greater CO$_2$ diffusion \citep{Beerling_Kelly_1996} and higher photosynthetic rates \citep{Mckown_etal_2014}. These observations are corroborated by experiments demonstrating that amphistomy increases maximum photosynthetic rates by up to 20\% \citep{Parkhurst_Mott_1990}. On the other hand, amphistomy can increase transpiration \citep{Jones_1985, Foster_Smith_1986, Buckley_etal_2015}. While transition to amphistomy is thus thought to increase transpiration, empirical studies suggest greater water-use efficiency in amphistomatous species \citep{Bucher_etal_2017}. Hence, amphistomy appears to benefit a plant's carbon use relative to water loss and should be favored when CO$_2$ limits photosynthetic rate. The open questions are under what ecological conditions does CO$_2$ supply most strongly limit photosynthetic rate \citep{Peat_Fitter_1994b} and when is photosynthetic rate most important to fitness?
-
-% NOTES FOR FIRST TWO PARAGRAPHS
-% Stomatal ratio and photo/water use: Parkhurst papers, 
-% from Peat and Fitter 1994b "Jones (1985) found that amphistomaty may be advantageous as it allows greater CO2 transfer through the mesophyll, especially in thicker leaves, and greater leaf conductance in high light conditions when CO2 is limiting photosynthetic rate. However, his models showed that hypostomaty would be advantageous when there are high boundary layer resistances (for example in large leaves or deep within a plant canopy), high humidity or a temperature gradient across the leaf."
+While the density and size of stomata have been researched extensively \citep[and references therin]{Sack_Buckley_2016}, the adaptive significance of stomatal distribution is less well understood. Stomata are most often found only on the lower leaf surface (hypostomy) but occur on both surfaces (amphistomy) in many species \citep{Metcalfe_Chalk_1950, Parkhurst_1978, Mott_etal_1982}. Theory and experiments demonstrate that amphistomy increases photosynthetic rates under many conditions. By creating a second parallel pathway for CO$_2$ diffusion within the mesophyll, amphistomy optimally supplies CO$_2$ \citep{Parkhurst_1978, Gutschick_1984b, Jones_1985}. Amphistomy is correlated with greater CO$_2$ diffusion \citep{Beerling_Kelly_1996} and higher photosynthetic rates \citep{Mckown_etal_2014}. These observations are corroborated by experiments demonstrating that amphistomy increases maximum photosynthetic rates by up to 20\% \citep{Parkhurst_Mott_1990}. On the other hand, amphistomy can increase transpiration \citep{Jones_1985, Foster_Smith_1986, Buckley_etal_2015}. While transition to amphistomy is thus thought to increase transpiration, empirical studies suggest greater water-use efficiency in amphistomatous species \citep{Bucher_etal_2017}. Hence, amphistomy appears to benefit a plant's carbon use relative to water loss and should be favored when CO$_2$ limits photosynthetic rate. The open questions are under what ecological conditions does CO$_2$ supply most strongly limit photosynthetic rate \citep{Peat_Fitter_1994b} and when is photosynthetic rate most important to fitness?
 
 %%%%% PARAGRAPH 3-4: adaptive hypotheses and current limitations %%%%%
 The leading, nonmutually exclusive hypotheses are that 1) open habitats favour amphistomy because CO$_2$ diffusion most strongly limits photosynthetic rate under high light and 2) herbaceous growth form favours amphistomy because traits that maximize photosynthetic rate are often under stronger selection in herbs. \citeauthor{Salisbury_1927} (\citeyear{Salisbury_1927}) first noted that amphistomy is most common in herbaceous plants from open habitats (i.e., with high light) of the British flora. These observations have been replicated in other studies \citep{Mott_etal_1982, Peat_Fitter_1994b, Jordan_etal_2014, Muir_2015} and may support physiological and ecological hypotheses that CO$_2$ most strongly limits photosynthesis in high light and/or photosynthesis contributes most to fitness in herbaceous plants. Under high light, CO$_2$ can strongly limit maximum photosynthetic rates, espcecially in thick leaves \citep{Jones_1985}. Hence, having stomata on both surfaces relieves this limitation by adding a second parallel pathway for CO$_2$ diffusion. Parkhurst \citeyear{Parkhurst_1978} argued that greater leaf thickness \textit{per se} selected for amphistomy, but there is little evidence for correlations between leaf thickness and stomatal ratio independent of light \citep{Mott_etal_1982, Gibson_1996, Muir_2015}. Amphistomy is correlated with open habitat in warm desert plants of western North America \citep{Mott_etal_1982, Gibson_1996}, among the Proteaceae \citep{Jordan_etal_2014}, and in continental European herbs \citep{Bucher_etal_2017}.
 
-Stomatal ratio is also associated with growth form. In the British flora, \citeauthor{Salisbury_1927} (\citeyear{Salisbury_1927}) found that trees and shurbs are nearly always hypostomatous, whereas herbs from open habitats are amphistomatous. This pattern holds when data are averaged by family to coarsely control for phylogenetic nonindependence \citep{Peat_Fitter_1994b} or when using alternative classification schemes, such as Raunki\ae r life form \citep{Peat_Fitter_1994b}. Across plants from ~90 familes worldwide, growth form is the strongest predictor of stomatal ratio when multiple factors are estimated simultaneously and controlling for phylogenetic nonindependence \citep{Muir_2015}. These patterns are consistent with other data indicating that many herbaceous plants are under strong selection for high maximum photosynthetic rates. \citep{Bazzaz_1979, Korner_etal_1989}. NEED MORE RECENT CITATIONS ON THIS.
-
-% NOTES FOR PARAGRAPHS 3-4:
-% From Mott et al 1982: ''Korner, Scheel \& Bauer (1979) have recently reviewed the literature on maximum stomatal conductance and photosynthetic rates for plants of specific habitats and growth forms. Low maximum photosynthetic rates are observed for succulents, evergreen conifers, deciduous woody plants, herbs from shady habitats, evergreen woody plants, and desert and steppe shrubs. Higher maximum values are obtained for deciduous fruit trees, wild grasses, cultivated C$_4$ and C$_3$ grasses, herbaceous crop plants, herbs from open habitats, and plants from aquatic habitats and swamps. Bazzaz (1979) cites evidence that the maximum photosynthetic rate declines through successional stages in a plant community, pointing to higher rates for open field plants and grasses and lower rates for canopy deciduous trees and shade habitat herbs. Early successional trees appear to be intermediate in photosynthetic rates.''
+Stomatal ratio is also associated with growth form. In the British flora, \citeauthor{Salisbury_1927} (\citeyear{Salisbury_1927}) found that trees and shurbs are nearly always hypostomatous, whereas herbs from open habitats are amphistomatous. This pattern holds when data are averaged by family to coarsely control for phylogenetic nonindependence \citep{Peat_Fitter_1994b} or when using alternative classification schemes, such as Raunki\ae r life form \citep{Peat_Fitter_1994b}. Across plants from $\sim 90$ familes worldwide, growth form is the strongest predictor of stomatal ratio when multiple factors are estimated simultaneously and controlling for phylogenetic nonindependence \citep{Muir_2015}. These patterns are consistent with other data indicating that many herbaceous plants are under strong selection for high maximum photosynthetic rates. \citep{Bazzaz_1979, Korner_etal_1989, Wullschleger_1993}.
 
 %%%% PARAGRAPH 5-6 %%%%%
 Although previous comparative studies have tested whether open habitat and growth form influence stomatal ratio, we do not know if these effects are independent of one another. Open habitat and growth form may not be independent because open habitats generally consist of more short-statured, herbaceous plants. Some authors have attempted to disentangle light and growth form by contrasting herbs from open and understory habiats \citep{Salisbury_1927}. However, this is problematic if phylogenetic relationships are not controlled for, because shade species may share traits simply because they are more closely related to each other than they are to high light species. Finally, open habitat and groth form may also interact with one another. For example, amphistomy may only be favored when CO$_2$ strongly limits photosynthetic rate (e.g. in high light) \textit{and} photosynthetic rate strongly limits fitness (e.g. in herbs).
@@ -153,17 +129,11 @@ The final question is important for telling whether amphistomy is part of a coor
 
 To address these questions, I reanalyzed existing data on stomatal ratio, light habitat, and growth form in British angiosperms \citep{Salisbury_1927, Fitter_Peat_1994a, BEF} using phylogenetic comparative methods. The British angiosperm flora is well suited for these questions because this flora has been comprehensively surveyed for many ecologically important traits, meaning it is probably the least biased survey of stomatal trait variation. Salisbury's observations on stomata and ecology in the British flora have heavily influenced plant ecophysiology, but many of his and subsequent authors' analyses have significant limitations because of inadequate statistical methods. For example, few analyses until recently account for phylogenetic nonindependence \citep{Felsenstein_1985}, which can strongly influence inferences on stomatal traits and growth form \citep[this study did not consider light]{Kelly_Beerling_1995}. A species-level phylogeny of the entire British flora \citep{Lim_etal_2014} now allows for the first time rigorous analysis of evolutionary relationships among stomatal ratio, light, and growth form. 
 
-
-% from previous paper
-% Here, we examine whether stomata on the abaxial (`lower') surface of the leaf evolve independently of adaxial (`upper') stomata. Stomata are microscopic pores on the leaf surface formed by a pair of guard cells. The density, size, and arrangement of stomata on a leaf set the maximum stomatal conductance to CO$_2$ diffusing into a leaf and the amount of water that transpires from it \citep{Parkhurst_1978, Sack_etal_2003, Franks_Farquhar_2001, Galmes_etal_2013}. Hence, stomatal traits like density, size, and ratio of upper to lower stomata have strong effects on carbon assimilation and water-use efficiency.
-
-% The proportion of stomata found on the upper surface also tends to increase during domestication, even as the total stomatal density stays constant \citep{Milla_etal_2013}. Amphistomy increases CO$_2$ diffusion within the leaf by opening up a second parallel pathway in the intercellular airspace for diffusion from substomatal cavities to mesophyll cell walls. However, stomata on the upper surface in particular may be costly. For example, upper stomata increase the susceptibility to rust pathogens in \textit{Populus} \citep{Mckown_etal_2014}. Amphistomy may also cause the palisade mesophyll to dry out under strong vapor pressure deficits \citep{Buckley_etal_2015}. \cite{Muir_2015} reviewed the literature on other possible fitness costs. 
-
 %--------------------------------------------------
-% Methods
+% Materials and Methods
 %--------------------------------------------------
 
-\section*{METHODS}
+\section*{Materials and Methods}
 
 Data and annotated source code to generate this manuscript are available on GitHub (https://github.com/cdmuir/britstom) and Dryad \citep{Muir_dryad}.
 
@@ -229,7 +199,7 @@ I was interested in whether light-mediated evolution of stomatal ratio acted mos
 % Results
 %--------------------------------------------------
 
-\section*{RESULTS}
+\section*{Results}
 
 \subsection*{Light tolerance varies among Raunki\ae r life forms}
 
@@ -256,7 +226,7 @@ Similarly, the phylogenetic SEM showed that changes in stomatal ratio associated
 % Discussion
 %--------------------------------------------------
 
-\section*{DISCUSSION}
+\section*{Discussion}
 
 The ratio of stomatal densities on the abaxial (`lower') to that of the adaxial (`upper') surface varies greatly across plant species, but the adaptive significance is not clear. Comparative studies correlating stomatal ratio to ecological factors can distinguish among competing hypotheses and reveal critical experiments for future work. Previous comparative studies suggested that high light and herbaceous growth form favor amphistomy \citep{Mott_etal_1982, Jordan_etal_2014, Muir_2015, Bucher_etal_2017}, particularly in the British flora \citep{Salisbury_1927, Peat_Fitter_1994b}. However, none of these studies have accounted for the fact thats light and growth form are often confounded -- open, high light habitats are often dominated by herbs -- or the fact that species are not independent because of shared evolutionary hisory. Here, I reanalyzed data on stomata, light tolerance, and growth form in British angiosperms using phylogenetic comparative methods. As expected, species' light tolerance (Ellenberg light indicator or \el) is confounded with growth form (Raunki\ae r life form; Fig.~\ref{fig:lf-light}). Nevertheless, both \el~and Raunki\ae r life form affect stomatal ratio, but these factors also interact; the influence of \el~on stomatal ratio varies across forms. These novel findings provide further evidence that variation in stomatal ratio is adaptive and have important implications for interpreting changes in stomatal ratio through the paleo record \citep{Jordan_etal_2014} and during domestication \citep{Milla_etal_2013}.
 
@@ -274,43 +244,32 @@ The nonsignificant relationship between \el~and stomatal ratio in geophytes and 
 
 Finally, phylogenetic information should improve inferences about paleoclimates because there is appreciable phylogenetic signal in stomatal ratio. The phylogenetic half-life of stomatal ratio evolution, after accounting for \el~and Raunki\ae r life form, is $\mathrm{log}(2) / \alpha = \Sexpr{round(log(2) / fitSRa$optpar, 1)}$ my (see Table~\ref{table:srAIC} for maximum likelihood estimates of $\alpha$, the return rate in the Ornstein-Uhlenbeck model of trait evolution). This lag time may indicate that evolving to the `optimum' is constrained by the shape of the fitness landscape \citep{Muir_2015} or that other unmeasured factors which affect stomatal ratio have some phylogenetic signal. Regardless of the mechanism, this fact means that researchers may be able to use data from closely related species to improve paleoenvironment reconstruction.
 
-% phylo half-life estimate from Muir 2015 is 22my
-
 \subsection*{Why does adaxial stomatal density control stomatal ratio?}
 
 Variation in stomatal ratio is determined primarily by evolution of adaxial stomatal density and is coordinated with increases in total leaf stomatal density summed across both surfaces. Note here that I am referring only to evolutionary variation in stomatal ratio among species; different processes may mediate within species variation or plastic responses. Phylogenetic analyses show that changes in stomatal ratio and total stomatal density, especially in response to \el, are predominantly mediated by changes in adaxial stomatal density. This highly nonrandom pattern among British angiosperms mirrors evolutionary changes wrought by domestication \citep{Milla_etal_2013}; crop species tend to have higher adaxial stomatal density than their wild relatives. 
 
 There are at least two hypotheses that could explain why adaxial stomatal density is the most responsive. The first I refer to as the `real estate' hypothesis. In hypostomatous plants, the lower surface is already crowded with stomata, and hence plants must increase the real estate available for stomata by developing them on the upper surface whenever there is selection for greater stomatal density. When stomata are packed too densely on one surface, stomatal interference limits their functioning and hence may create a strong selective pressure for amphistomy \citep{Parlange_Waggoner_1970, Dow_etal_2014a}. 
 
-I refer to the second hypothesis as the `coordination' hypothesis. In this scenario, ecological conditions such as high light select for both increased total stomatal density and for amphistomy because these traits work well in coordination with one another. For example, if stomatal density were very high on a hypostomatous plant, then CO$_2$ would be more strongly limited by the mesophyll. Adding a second parallel pathway for diffusion by developing stomata on both surfaces would restore a more optimal balance between stomatal and mesophyll limitations. Conversely, there would be little benefit to amphistomy when total stomatal density is low because CO$_2$ diffusion is strongly limited by stomatal resistance, and therefore photosynthetic rate is not sensitive to changes in mesophyll diffusion mediated by stomatal ratio.
+I refer to the second hypothesis as the `coordination' hypothesis. In this scenario, ecological conditions such as high light select for both increased total stomatal density and for amphistomy because these traits work well in coordination with one another. For example, if stomatal density were very high on a hypostomatous plant, then CO$_2$ would be more strongly limited by the mesophyll. Adding a second parallel pathway for diffusion by developing stomata on both surfaces would restore a more optimal balance between stomatal and mesophyll limitations. Conversely, there would be little benefit to amphistomy when total stomatal density is low because CO$_2$ diffusion is strongly limited by stomatal resistance, and therefore photosynthetic rate is not sensitive to changes in mesophyll diffusion mediated by stomatal ratio. A related prediction is that increased atmospheric CO$_2$ may select for reduced stomatal ratio and density primarily by decreasing adaxial stomatal density, but this has not been well tested \citep[but see][]{Woodward_Bazzaz_1988}.
 
+\subsection*{Conclusions}
 
-% alternatives are different benefits and costs
-% leaf orientation \citep{Smith_etal_1998}, stomatal interference , leaf hydraulic conductance (Sack, Buckley, de Boer?), change in stomatal ratio may be important to CO2 in amphi species (Vaccinium myrttillus, \citep{Woodward_Bazzaz_1988})
+By revisiting this classic ecological dataset with modern phylogenetic comparative methods, I have shown that amphistomy is strongly associated with both light and growth form, but the interaction between these factors is also important. Furthermore, amphistomy and high stomatal density are closely connected in species from high light environments, suggesting selective for coordination between these traits.
 
-\subsection*{Conclusions - finish when analysis is complete}
+%--------------------------------------------------
+% Acknowledgements and Contributions
+%--------------------------------------------------
 
+\section*{Acknowledgements}
+I thank Sally Otto, Matt Pennell, and Rob Salguero-G\'{o}mez for feedback on this manuscript. I was supported by an NSERC CREATE grant.
 
-
-
-
-
-
-
-% From previous paper:
-% Adaptive evolution may be constrained if traits cannot evolve independently. In particular, if traits share developmental pathways, then they may be unable to respond differentially to selection. In this study, we examined whether stomata on the abaxial (lower) and adaxial (upper) surfaces can evolve independently. We adduce two new lines of evidence which suggest that stomatal function on each surface can readily respond to selection. First, species possess heritable variation that allows partially independent evolution of stomatal densities in response to selection; every study reviewed found loci which alter stomatal density on one surface but not the other. Second, the anatomical trait most closely connected to stomatal conductance, stomatal pore index \citep{Sack_etal_2003}, evolves independently on ab- and adaxial surfaces among wild tomato species. Together, these new lines of evidence demonstrate that natural selection on stomatal arrangement is not strongly constrained by development, although we lacked statistical power to detect weak constraint. It is therefore likely that variation in how stomatal conductance is partitioned between leaf surfaces is due to adaptive rather than nonadaptive forces.
-
-% Indeed, much recent evidence indicates that selection finely tunes the ratio of stomata on the upper and lower leaf surface, although the adaptive significance of variation in stomatal ratio is unresolved. Stomatal ratio affects leaf function, increasing CO$_2$ diffusion \citep{Parkhurst_1978, Parkhurst_Mott_1990, Gutschick_1984b, Parkhurst_1994} and hydraulic conductance outside the xylem \citep{Buckley_etal_2015}. As predicted, amphistomy seems to be more common in circumstances when efficient CO$_2$ supply is important, such as high irradiance \citep{Mott_etal_1982, Gibson_1996, Smith_etal_1997, Jordan_etal_2014}, thick leaves \citep{Parkhurst_1978, Muir_etal_2014b}, herbaceous growth form \citep{Salisbury_1927, Muir_2015}, and domestication \citep{Milla_etal_2013}. Despite potential benefits of amphistomy, most plant species are hypostomatous, implying a fitness cost of upper stomata, such as increased infection by foliar pathogens \citep{Gutschick_1984b, Mckown_etal_2014}. For example, `upside-down' (resupinate) leaves with the abaxial surface facing upward have re-evolved hypostomy \citep{Lyshede_2002}, strongly implying a cost of upward facing stomata. 
-
-% To optimally balance fitness costs and benefits, natural selection must be able to change stomatal traits on one surface independently of the other. The present study shows that this is likely true and strikingly consistent on micro- and macroevolutionary timescales. Among \textit{Populus trichocarpa} populations and \textit{Solanum} species, the ratio of adaxial to abaxial $\mathrm{SPI}$ ($\mathrm{SPI}$ ratio) evolves mostly by changes in stomatal density rather than guard cell size. Within \textit{Populus}, populations are more amphistomatous at Northern latitudes with shorter growing seasons that may select for faster carbon assimilation \citep{Mckown_etal_2014, Kaluthota_etal_2015}. Latitudinal variation \textit{Populus trichocarpa} is due mostly to adaptive variation in adaxial stomatal density \citep{Mckown_etal_2014, Porth_etal_2015}. Stomatal density rather than size may have responded more readily to selection because there is no genetic covariance between ab- and adaxial stomatal density, permitting independent evolution \citep{Porth_etal_2015}. In contrast ab- and adaxial guard cell length positively covary, likely constraining evolution. Similarly, we found that over macroevolutionary timescales most of the variation in $\mathrm{SPI}$ among wild tomato species is due to changes in adaxial stomatal density rather than size. Indeed, stomatal density on each surface evolved independently, whereas guard cell lengths positively covaried (Table~\ref{table:Table2}). Adaptive evolution will likely take advantage of traits that evolve independently because this minimizes antagonistic pleiotropy. In a previous study, we found that loci affecting adaxial stomatal density were likely fixed by selection, but we did not measure stomatal size \citep{Muir_etal_2014a}. Overall, patterns within and between species indicate that selection on $\mathrm{SPI}$ ratio leads to greater change in stomatal densities rather sizes on each surface. Based on the analysis here, we conclude that changing stomatal density on one surface incurs less cost than changing size because the former is less constrained by shared developmental pathways.
-
-% However, simulations show that model identification (e.g. Brownian motion versus Ornstein-Uhlenbeck) is usually correct, even when sample sizes are moderate \citep{Cressler_etal_2015, Ho_Ane_2014}. 
-
+\section*{Author contribution statement}
+CDM designed the study, collected data, analyzed the data, and wrote the manuscript.
 
 \clearpage
 
 %--------------------------------------------------
-% Literature Cited
+% References
 %--------------------------------------------------
 
 \bibliography{refs}

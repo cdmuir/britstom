@@ -1,11 +1,7 @@
-\begin{thebibliography}{54}
+\begin{thebibliography}{64}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
-
-\bibitem[{BEF()}]{BEF}
-????
-\newblock \urlprefix\url{http://www.ecoflora.co.uk}.
 
 \bibitem[{Bartelheimer and Poschlod(2016)}]{Bartelheimer_Poschlod_2016}
 Bartelheimer, M. and P.~Poschlod, 2016.
@@ -23,6 +19,11 @@ Beerling, D.~J. and C.~K. Kelly, 1996.
 \newblock Evolutionary comparative analyses of the relationship between leaf
   structure and function.
 \newblock New Phytologist 134:35--51.
+
+\bibitem[{Beerling and Royer(2011)}]{Beerling_Royer_2011}
+Beerling, D.~J. and D.~L. Royer, 2011.
+\newblock Convergent cenozoic co$_2$ history.
+\newblock Nature Geoscience 4:418--420.
 
 \bibitem[{Boettiger et~al.(2012)Boettiger, Coop, and
   Ralph}]{Boettiger_etal_2012}
@@ -100,6 +101,11 @@ Fior, S., P.~O. Karis, G.~Casazza, L.~Minuto, and F.~Sala, 2006.
 Fitter, A. and H.~Peat, 1994.
 \newblock The ecological flora database.
 \newblock Journal of Ecology 82:415--425.
+
+\bibitem[{Fitter and Peat(2017)}]{BEF}
+---{}---{}---, 2017.
+\newblock Ecological flora of the {B}ritish isles.
+\newblock \urlprefix\url{http://www.ecoflora.co.uk}.
 
 \bibitem[{Foster and Smith(1986)}]{Foster_Smith_1986}
 Foster, J. and W.~Smith, 1986.
@@ -195,6 +201,12 @@ Lim, J., M.~J. Crawley, N.~De~Vere, T.~Rich, and V.~Savolainen, 2014.
   evolutionary and ecological factors driving plant invasions.
 \newblock Ecology and Evolution 4:4258--4269.
 
+\bibitem[{McElwain and Steinthorsdottir(2017)}]{McElwain_Steinthorsdottir_2017}
+McElwain, J.~C. and M.~Steinthorsdottir, 2017.
+\newblock Paleoecology, ploidy, paleoatmospheric composition, and developmental
+  biology: a review of the multiple uses of fossil stomata.
+\newblock Plant Physiology 174:650--664.
+
 \bibitem[{McKown et~al.(2014)McKown, Guy, Quamme, Kl{\'a}p{\v{s}}t{\v{e}},
   La~Mantia, Constabel, El-Kassaby, Hamelin, Zifkin, and
   Azam}]{Mckown_etal_2014}
@@ -204,6 +216,12 @@ McKown, A.~D., R.~D. Guy, L.~Quamme, J.~Kl{\'a}p{\v{s}}t{\v{e}}, J.~La~Mantia,
   patterning in \textit{{P}opulus trichocarpa} with carbon gain and disease
   resistance trade-offs.
 \newblock Molecular Ecology 23:5771--5790.
+
+\bibitem[{Melotto et~al.(2017)Melotto, Zhang, Oblessuc, and
+  He}]{Melotto_etal_2017}
+Melotto, M., L.~Zhang, P.~R. Oblessuc, and S.~Y. He, 2017.
+\newblock Stomatal defense a decade later.
+\newblock Plant Physiology 174:561--571.
 
 \bibitem[{Metcalfe and Chalk(1950)}]{Metcalfe_Chalk_1950}
 Metcalfe, C.~R. and L.~Chalk, 1950.
@@ -241,8 +259,8 @@ Muir, C.~D., 2015.
 
 \bibitem[{Muir(2017)}]{Muir_dryad}
 ---{}---{}---, 2017.
-\newblock Data from: Hight light interacts with herbaceous growth form to favor
-  amphistomy in {B}ritish angiosperms.
+\newblock Data from: Light and life form interact to shape stomatal ratio among
+  {B}ritish angiosperms.
 \newblock \urlprefix\url{http://dx.doi.org/10.5061/dryad.?????}
 
 \bibitem[{Parkhurst(1978)}]{Parkhurst_1978}
@@ -292,10 +310,28 @@ Revell, L.~J., 2012.
   other things).
 \newblock Methods in Ecology and Evolution 3:217--223.
 
+\bibitem[{Richardson et~al.(2017)Richardson, Brodribb, and
+  Jordan}]{Richardson_etal_2017}
+Richardson, F., T.~J. Brodribb, and G.~J. Jordan, 2017.
+\newblock Amphistomatic leaf surfaces independently regulate gas exchange in
+  response to variations in evaporative demand.
+\newblock Tree Physiology Pp. 1--10.
+
 \bibitem[{Rosseel(2012)}]{Rosseel_2012}
 Rosseel, Y., 2012.
 \newblock {lavaan}: An {R} package for structural equation modeling.
 \newblock Journal of Statistical Software 48:1--36.
+
+\bibitem[{Royer(2001)}]{Royer_2001}
+Royer, D.~L., 2001.
+\newblock Stomatal density and stomatal index as indicators of paleoatmospheric
+  {CO}$_2$ concentration.
+\newblock Review of Palaeobotany and Palynology 114:1--28.
+
+\bibitem[{Sack and Buckley(2016)}]{Sack_Buckley_2016}
+Sack, L. and T.~N. Buckley, 2016.
+\newblock The developmental basis of stomatal density and flux.
+\newblock Plant physiology 171:2358--2363.
 
 \bibitem[{Salguero-G{\'o}mez et~al.(2016)Salguero-G{\'o}mez, Jones, Jongejans,
   Blomberg, Hodgson, Mbeau-Ache, Zuidema, de~Kroon, and
@@ -343,5 +379,28 @@ Smith, W.~K., T.~C. Vogelmann, E.~H. DeLucia, D.~T. Bell, and K.~A. Shepherd,
   1997.
 \newblock Leaf form and photosynthesis.
 \newblock BioScience 11:785--793.
+
+\bibitem[{Wolfe(1971)}]{Wolfe_1971}
+Wolfe, J.~A., 1971.
+\newblock Tertiary climatic fluctuations and methods of analysis of {T}ertiary
+  floras.
+\newblock Palaeogeography, Palaeoclimatology, Palaeoecology 9:27--57.
+
+\bibitem[{Woodward(1987)}]{Woodward_1987}
+Woodward, F., 1987.
+\newblock Stomatal numbers are sensitive to increases in co$_2$ from
+  pre-industrial levels.
+\newblock Nature 327:617--618.
+
+\bibitem[{Woodward and Bazzaz(1988)}]{Woodward_Bazzaz_1988}
+Woodward, F.~I. and F.~Bazzaz, 1988.
+\newblock The responses of stomatal density to {CO}$_2$ partial pressure.
+\newblock Journal of Experimental Botany 39:1771--1781.
+
+\bibitem[{Wullschleger(1993)}]{Wullschleger_1993}
+Wullschleger, S.~D., 1993.
+\newblock Biochemical limitations to carbon assimilation in {C}$_3$ plants?a
+  retrospective analysis of the {A/Ci} curves from 109 species.
+\newblock Journal of Experimental Botany 44:907--920.
 
 \end{thebibliography}
