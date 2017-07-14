@@ -1,5 +1,4 @@
 % Things to do before submission:
-% Matt's notes
 % Remove code to copy refs
 % Remove notes
 % word count
@@ -12,7 +11,6 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{topcapt}
-% \usepackage[labelformat=empty]{caption} % for empty caption labels
 \usepackage{caption}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -26,7 +24,6 @@
 \usepackage{array}
 \usepackage{lscape}
 \usepackage{multirow}
-% \usepackage[none]{hyphenat}
 
 % Make helvetica the default sans-serif font
 \renewcommand\sfdefault{phv}
@@ -61,7 +58,7 @@ V6T 1Z4 \\
 Short title: Shedding light on stomatal evolution\\
 \\
 Word count: \\
-Summary:  194\\
+Summary:  193\\
 Introduction:  \\
 Materials and Methods:  \\
 Results:  \\
@@ -72,8 +69,8 @@ Acknowledgement:  \\
 <<Import-objects, echo = FALSE, results = hide>>=
 
   # Remove before publication
-  file.copy(from = "~/Google Drive/CommonResources/refs.bib",
-            to = "~/Google Drive/britstom/ms/refs.bib", overwrite = TRUE)
+  #file.copy(from = "~/Google Drive/CommonResources/refs.bib",
+  #          to = "~/Google Drive/britstom/ms/refs.bib", overwrite = TRUE)
 
   setwd("..")
   source("r/header.R")
@@ -92,7 +89,7 @@ Acknowledgement:  \\
 \begin{itemize}
 	\item In most plants, stomata are located only on the abaxial leaf surface (hypostomy), but many plants have stomata on both surfaces (amphistomy). High light and herbaceous growth form have been hypothesized to favor amphistomy, but these hypotheses have not been rigourously tested together using phylogenetic comparative methods.
 	\item I leveraged a large dataset including stomatal ratio, Ellenberg light indicator value, Raunki\ae r lifeform, and phylogenetic relationships for \Sexpr{nrow(stomata)} species of British angiosperms. I used phylogenetic comparative methods to test how light and/or growth form influence stomatal ratio.
-	\item High light and herbaceous growth form are correlated with amphistomy, as predicted, but they also interact; the effects of light are most pronounced in therophytes (annuals) and hemocryptophytic perennials, but less so in phanerophytes (mostly trees). Interestingly, amphistomy and stomatal density evolve together in response to light, suggesting coordinated selection on this trait combination.
+	\item High light and herbaceous growth form are correlated with amphistomy, as predicted, but they also interact; the effects of light are most pronounced in therophytes (annuals) and perennial herbs, but less so in phanerophytes (mostly trees). Interestingly, amphistomy and stomatal density evolve together in response to light, suggesting coordinated selection on this trait combination.
 	\item I show for the first time that light and growth form interact to shape variation in stomatal ratio; amphistomy is advantageous in high light, but mostly for herbs. These results improve our understanding of the adaptive significance of stomatal ratio as well as its use as functional trait for paleovegetation reconstruction and crop improvement.
 \end{itemize}
 
@@ -102,17 +99,14 @@ Adaptation, amphistomy, Ellenberg light indicator value, growth form, phylogenet
 
 \section*{Introduction}
 
-%%%%% PARAGRAPH 1-2: general stuff about adaptation, stomata, stomatal ratio %%%%%
 Natural selection shapes leaf anatomy in order to optimize its photosynthetic function in a given environment \citep{Haberlandt_1914, Givnish_1987, Smith_etal_1997}. By understanding the adaptive significance of leaf anatomical variation we can learn about natural history, find targets for crop improvement, and identify anatomical proxies for paleoclimates preserved in the fossil record \citep[e.g.][]{Wolfe_1971, Royer_2001, McElwain_Steinthorsdottir_2017}. The size, density, and distribution of stomata on a leaf vary widely and impact the flux of CO$_2$ and water vapour \citep[recently reviewed in][]{Sack_Buckley_2016}, as well as susceptibility to foliar pathogens that infect through stomata \citep{Mckown_etal_2014, Melotto_etal_2017}. Hence, stomata have been especially useful in understanding plastic and evolutionary response to climate change and domestication \citep{Woodward_1987, Beerling_Royer_2011, Milla_etal_2013}.
 
 While the density and size of stomata have been researched extensively \citep[and references therin]{Sack_Buckley_2016}, the adaptive significance of stomatal distribution is less well understood. Stomata are most often found only on the lower leaf surface (hypostomy) but occur on both surfaces (amphistomy) in many species \citep{Metcalfe_Chalk_1950, Parkhurst_1978, Mott_etal_1982}. Theory and experiments demonstrate that amphistomy increases photosynthetic rates under many conditions. By creating a second parallel pathway for CO$_2$ diffusion within the mesophyll, amphistomy optimally supplies CO$_2$ \citep{Parkhurst_1978, Gutschick_1984b, Jones_1985}. Amphistomy is correlated with greater CO$_2$ diffusion \citep{Beerling_Kelly_1996} and higher photosynthetic rates \citep{Mckown_etal_2014}. These observations are corroborated by experiments demonstrating that amphistomy increases maximum photosynthetic rates by up to 20\% \citep{Parkhurst_Mott_1990}. On the other hand, amphistomy can increase transpiration \citep{Jones_1985, Foster_Smith_1986, Buckley_etal_2015}. While transition to amphistomy is thus thought to increase transpiration, empirical studies suggest greater water-use efficiency in amphistomatous species \citep{Bucher_etal_2017}. Hence, amphistomy appears to benefit a plant's carbon use relative to water loss and should be favored when CO$_2$ limits photosynthetic rate. The open questions are under what ecological conditions does CO$_2$ supply most strongly limit photosynthetic rate \citep{Peat_Fitter_1994b} and when is photosynthetic rate most important to fitness?
 
-%%%%% PARAGRAPH 3-4: adaptive hypotheses and current limitations %%%%%
 The leading, nonmutually exclusive hypotheses are that 1) open habitats favour amphistomy because CO$_2$ diffusion most strongly limits photosynthetic rate under high light and 2) herbaceous growth form favours amphistomy because traits that maximize photosynthetic rate are often under stronger selection in herbs. \citeauthor{Salisbury_1927} (\citeyear{Salisbury_1927}) first noted that amphistomy is most common in herbaceous plants from open habitats (i.e., with high light) of the British flora. These observations have been replicated in other studies \citep{Mott_etal_1982, Peat_Fitter_1994b, Jordan_etal_2014, Muir_2015} and may support physiological and ecological hypotheses that CO$_2$ most strongly limits photosynthesis in high light and/or photosynthesis contributes most to fitness in herbaceous plants. Under high light, CO$_2$ can strongly limit maximum photosynthetic rates, espcecially in thick leaves \citep{Jones_1985}. Hence, having stomata on both surfaces relieves this limitation by adding a second parallel pathway for CO$_2$ diffusion. Parkhurst \citeyear{Parkhurst_1978} argued that greater leaf thickness \textit{per se} selected for amphistomy, but there is little evidence for correlations between leaf thickness and stomatal ratio independent of light \citep{Mott_etal_1982, Gibson_1996, Muir_2015}. Amphistomy is correlated with open habitat in warm desert plants of western North America \citep{Mott_etal_1982, Gibson_1996}, among the Proteaceae \citep{Jordan_etal_2014}, and in continental European herbs \citep{Bucher_etal_2017}.
 
 Stomatal ratio is also associated with growth form. In the British flora, \citeauthor{Salisbury_1927} (\citeyear{Salisbury_1927}) found that trees and shurbs are nearly always hypostomatous, whereas herbs from open habitats are amphistomatous. This pattern holds when data are averaged by family to coarsely control for phylogenetic nonindependence \citep{Peat_Fitter_1994b} or when using alternative classification schemes, such as Raunki\ae r life form \citep{Peat_Fitter_1994b}. Across plants from $\sim 90$ familes worldwide, growth form is the strongest predictor of stomatal ratio when multiple factors are estimated simultaneously and controlling for phylogenetic nonindependence \citep{Muir_2015}. These patterns are consistent with other data indicating that many herbaceous plants are under strong selection for high maximum photosynthetic rates. \citep{Bazzaz_1979, Korner_etal_1989, Wullschleger_1993}.
 
-%%%% PARAGRAPH 5-6 %%%%%
 Although previous comparative studies have tested whether open habitat and growth form influence stomatal ratio, we do not know if these effects are independent of one another. Open habitat and growth form may not be independent because open habitats generally consist of more short-statured, herbaceous plants. Some authors have attempted to disentangle light and growth form by contrasting herbs from open and understory habiats \citep{Salisbury_1927}. However, this is problematic if phylogenetic relationships are not controlled for, because shade species may share traits simply because they are more closely related to each other than they are to high light species. Finally, open habitat and groth form may also interact with one another. For example, amphistomy may only be favored when CO$_2$ strongly limits photosynthetic rate (e.g. in high light) \textit{and} photosynthetic rate strongly limits fitness (e.g. in herbs).
 
 To better understand the adapative significance of stomatal ratio, I asked three main questions:
@@ -139,7 +133,7 @@ Data and annotated source code to generate this manuscript are available on GitH
 
 \subsection*{Data on stomatal ratio, light habitat, growth form, and phylogenetic relationships}
 
-I obtained data on ab- and adaxial stomatal density on \Sexpr{nrow(stomata_unfiltered)} species from British Ecological Flora \citep{Salisbury_1927, Fitter_Peat_1994a, BEF}. Following recent comparative analyses \citep[e.g.][]{Bartelheimer_Poschlod_2016, Salguero-Gomez_etal_2016}, I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). \Sexpr{nNotInPhy1} species (\Sexpr{round(100 * nNotInPhy1 / nrow(stomata_unfiltered), 1)}\%) in the dataset were not present in the phylogeny. For \Sexpr{nNotInPhy1 - nNotInPhy2} of these species, I used the position a congeneric species as a proxy for the focal species. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species \citep{Scheen_etal_2004, Salmaki_etal_2013}. For the remaining \Sexpr{nNotInPhy2} missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree \citep{Fior_etal_2006}. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.5-64 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
+I obtained data on ab- and adaxial stomatal density on \Sexpr{nrow(stomata_unfiltered)} species from British Ecological Flora \citep{Salisbury_1927, Fitter_Peat_1994a, BEF}. Following recent comparative analyses \citep[e.g.][]{Bartelheimer_Poschlod_2016, Salguero-Gomez_etal_2016}, I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). \Sexpr{nNotInPhy1} species (\Sexpr{round(100 * nNotInPhy1 / nrow(stomata_unfiltered), 1)}\%) in the dataset were not present in the phylogeny. For \Sexpr{nNotInPhy1 - nNotInPhy2} of these species, I used the position a congeneric species as a proxy for the focal species. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species \citep{Scheen_etal_2004, Salmaki_etal_2013}. For the remaining \Sexpr{nNotInPhy2} missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree \citep{Fior_etal_2006}. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.6-00 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
 
 I excluded data on hyrdrophytes (\Sexpr{nHydrophyte} species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (\Sexpr{nC4} species) and CAM (\Sexpr{nCAM} species) plants. I limited this investigation to angiosperms because only \Sexpr{nNonangio} non-angiosperms had stomata data. The final dataset contained \Sexpr{nrow(stomata)} species. The R code accompanying this paper documents these decisions with citations to the relevant literature.
 
@@ -161,11 +155,11 @@ I tested whether Raunki\ae r life form was associated \el~among British angiospe
 
 \subsection*{Open habitat, growth form, and stomatal ratio}
 
-I compared phylogenetic linear models to test whether Raunki\ae r life form, \el, or interactions between them predicted $\textrm{SR}_\textrm{even}$. I used $\textrm{SR}_\textrm{even}$ rather than $\textrm{SR}_\textrm{propAd}$ as the response variable because the hypothesis is that faster life history and/or high light favor more even stomatal densities on each surface. I fit models using \pkg{phylolm} and extracted Akaike Information Criteria (AIC). For these and subsequent analyses, I assumed an Ornstein-Uhlenbeck process model for the residuals with the root character state integrated over the stationary distribution. I used a 10,000 parametric bootstrap samples of the full model (including main effects and interactions) to calculate parameter confidence intervals \citep{Boettiger_etal_2012}. Likewise, to determine whether the interaction between Raunki\ae r life form and \el~was statistically significant, I used a parametric bootstrap to generate the null distribution of $\Delta$AIC values ($\Delta$AIC is the difference in AIC between competing models). Specifically, I sampled 1000 random datasets from the estimated model with main effects of Raunki\ae r life form and \el~but no interaction. I fit these simulated datasets to models with and without interactions and  calculated $\Delta$AIC. The statistical significance of the observed $\Delta$AIC is the proportion of simulated $\Delta$AIC greater than the observed.
+I compared phylogenetic linear models to test whether Raunki\ae r life form, \el, or interactions between them predicted $\textrm{SR}_\textrm{even}$. I used $\textrm{SR}_\textrm{even}$ rather than $\textrm{SR}_\textrm{propAd}$ as the response variable because the hypothesis is that faster life history and/or high light favor more even stomatal densities on each surface. I fit models using \pkg{phylolm} and extracted Akaike Information Criteria (AIC). For these and subsequent analyses, I assumed an Ornstein-Uhlenbeck process model for the residuals with the root character state integrated over the stationary distribution. I used a 10$^4$ parametric bootstrap samples of the full model (including main effects and interactions) to calculate parameter confidence intervals \citep{Boettiger_etal_2012}. % REMOVING, but keep text in case I decide to replace: Likewise, to determine whether the interaction between Raunki\ae r life form and \el~was statistically significant, I used a parametric bootstrap to generate the null distribution of $\Delta$AIC values ($\Delta$AIC is the difference in AIC between competing models). Specifically, I sampled 1000 random datasets from the estimated model with main effects of Raunki\ae r life form and \el~but no interaction. I fit these simulated datasets to models with and without interactions and  calculated $\Delta$AIC. The statistical significance of the observed $\Delta$AIC is the proportion of simulated $\Delta$AIC greater than the observed.
 
 \subsection*{Does ab- or adaxial stomatal density contribute more to stomatal ratio evolution?}
 
-I used two complementary phylogenetic methods to assess the relative contribution of ab- versus adaxial stomatal density to light-mediated stomatal ratio evolution. The contribution of each can be formalized using standard variance decomposition methods as derived below. Because stomatal density is highly skewed, I log-transformed values for normality:
+I used two related phylogenetic methods, variance decomposition and structural equation modeling (SEM), to assess the relative contribution of ab- versus adaxial stomatal density to light-mediated stomatal ratio evolution. First, the contribution of each ab- versus adaxial stomatal density can be calculated using phylogenetic variance decomposition methods as derived below. Because stomatal density is highly skewed, I log-transformed values for normality:
  
 \begin{equation} \label{eq:SReven2} 
   \mathrm{SR_{even}} = \frac{\mathrm{SD_{ad}}}{\mathrm{SD_{ab}}}
@@ -179,21 +173,29 @@ I used two complementary phylogenetic methods to assess the relative contributio
   \mathrm{sr_{even}} = \mathrm{sd_{ad}} - \mathrm{sd_{ad}}
 \end{equation}
 
-Lowercase variables ($\mathrm{sr}$, $\mathrm{sd}$) indicate log-transformed values. Because some species had zero adaxial stomata, I added one to all values prior to log-transformation. To make the variance decomposition calculations tractable, I have defined $\mathrm{SR_{even}}$ here as the ratio of ad- to abaxial stomatal density because in most cases adaxial stomatal density is lower than abaxial (see Eq.~\ref{eq:SReven1}). This was not done in previous analyses because I wanted to test what factors influenced the evenness of stomatal densities, regardless of which surface had higher density. With this modified form, the variance in $\mathrm{sr_{even}}$ can be decomposed into contributions of $\mathrm{sd_{ad}}$, $\mathrm{sd_{ab}}$, and their covariance:
+Lowercase variables ($\mathrm{sr}$, $\mathrm{sd}$) indicate log-transformed values. Because some species had zero adaxial stomata, I added one to all values prior to log-transformation. To make the variance decomposition calculations tractable, I have defined $\mathrm{SR_{even}}$ here as the ratio of ad- to abaxial stomatal density because in most cases adaxial stomatal density is lower than abaxial (see Eq.~\ref{eq:SReven1}). This differs from analyses described above because in those I wanted to test what factors influenced the evenness of stomatal densities, regardless of which surface had higher density. With this modified form, the variance in $\mathrm{sr_{even}}$ can readily be decomposed into contributions of $\mathrm{sd_{ad}}$, $\mathrm{sd_{ab}}$, and their covariance:
 
 \begin{equation} \label{eq:varDecomp}
 	\mathrm{Var(sr_{even})} = \mathrm{Var(sd_{ad})} + \mathrm{Var(sd_{ad})} - 2 \mathrm{Cov(sd_{ad}, sd_{ab})}
 \end{equation}
 
-I estimated the phylogenetic covariance matrix between \el, $\mathrm{sd_{ab}}$, and $\mathrm{sd_{ad}}$ using a multivariate Ornstein-Uhlenbeck model fit in \pkg{Rphylopars} version 0.2.9 \citep{Goolsby_etal_2016, Goolsby_etal_2017}. From the covariance matrix, I estimated the contribution of abaxial density, adaxial density, and their covariance as:
+I did not use the raw covariance, but rather estimated the phylogenetic covariance matrix between \el, $\mathrm{sd_{ab}}$, and $\mathrm{sd_{ad}}$ using a multivariate Ornstein-Uhlenbeck model fit in \pkg{Rphylopars} version 0.2.9 \citep{Goolsby_etal_2016, Goolsby_etal_2017}. From the covariance matrix, I estimated the contribution of abaxial density, adaxial density, and their covariance as:
 
-\begin{equation} \label{eq:contribution}
-	\frac{\mathrm{Var(sd_{ad})}}{\mathrm{Var(sr_{even})}}, \frac{\mathrm{Var(sd_{ab})}}{\mathrm{Var(sr_{even})}},~\textrm{and}~\frac{\mathrm{Cov(sd_{ad}, sd_{ab})}}{\mathrm{Var(sr_{even})}},
+\begin{equation} \label{eq:contribution_ad}
+	\mathrm{Contribution~of~sd_{ad}} = \frac{\mathrm{Var(sd_{ad})}}{\mathrm{Var(sr_{even})}}
+\end{equation}
+
+\begin{equation} \label{eq:contribution_ab}
+ \mathrm{Contribution~of~sd_{ab}} = \frac{\mathrm{Var(sd_{ab})}}{\mathrm{Var(sr_{even})}}
+\end{equation}
+
+\begin{equation} \label{eq:contribution_cov}
+ \mathrm{Contribution~of~Cov(sd_{ad}, sd_{ab})} = \frac{\mathrm{Cov(sd_{ad}, sd_{ab})}}{\mathrm{Var(sr_{even})}}
 \end{equation}
 
 respectively. Note that when ab- and adaxial densities positively covary, the contribution will be negative because this reduces the variance in stomatal ratio.
 
-I was interested in whether light-mediated evolution of stomatal ratio acted mostly by increasing adaxial stomatal density while maintaining abaxial density, or keeping total stomatal density the same, but shifting a greater proportion to the adaxial surface. The first scenario predicts that the phylogenetic regression of \el~ on $\mathrm{sd_{ad}}$ is stronger than that for $\mathrm{sd_{ab}}$. The second scenario predicts that \el~acts similarly on both and that there is a negative covariance $\mathrm{Cov(sd_{ad}, sd_{ab}) < 0}$. I tested these competing predictions by fitting a simple phylogenetic structural equation model (SEM). The model uses the phylogenetic covariance matrix to simultaneously estimate regressions of \el~on $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ while allowing covariance between them (i.e. estimating $\mathrm{Cov(sd_{ad}, sd_{ab})}$). To fit the SEM, I used the R package \pkg{lavaan} version 0.5-23.1097 \citep{Rosseel_2012}. I tested whether parameter estimates were significantly different from zero using $z$-scores.
+I also wanted to test whether light-mediated evolution of stomatal ratio acted mostly by 1) increasing adaxial stomatal density while maintaining abaxial density, or 2) keeping total stomatal density the same, but shifting a greater proportion to the adaxial surface. The first scenario predicts that the phylogenetic regression of \el~ on $\mathrm{sd_{ad}}$ is stronger than that for $\mathrm{sd_{ab}}$. The second scenario predicts that \el~acts similarly on both and that there is a negative covariance $\mathrm{Cov(sd_{ad}, sd_{ab}) < 0}$. I tested these competing predictions by fitting a very simple phylogenetic SEM. The model uses the phylogenetic covariance matrix, as described above, to simultaneously estimate regressions of \el~on $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ while allowing covariance between them (i.e. estimating $\mathrm{Cov(sd_{ad}, sd_{ab})}$). To fit the SEM, I used the R package \pkg{lavaan} version 0.5-23.1097 \citep{Rosseel_2012}. I tested whether parameter estimates were significantly different from zero using $z$-scores.
 
 %--------------------------------------------------
 % Results
@@ -254,7 +256,7 @@ I refer to the second hypothesis as the `coordination' hypothesis. In this scena
 
 \subsection*{Conclusions}
 
-By revisiting this classic ecological dataset with modern phylogenetic comparative methods, I have shown that amphistomy is strongly associated with both light and growth form, but the interaction between these factors is also important. Furthermore, amphistomy and high stomatal density are closely connected in species from high light environments, suggesting selective for coordination between these traits.
+By revisiting this classic ecological dataset with modern phylogenetic comparative methods, I have shown that amphistomy is strongly associated with both light and growth form, but the interaction between these factors is also important. Furthermore, amphistomy and high stomatal density are closely connected in species from high light environments, suggesting selection for coordination between these traits.
 
 %--------------------------------------------------
 % Acknowledgements and Contributions
@@ -347,7 +349,7 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SRmultReg.pdf}}
-\caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 1000 parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity.} 
+\caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity.} 
 \label{fig:SRmultReg}
 \end{figure}
 
