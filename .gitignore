@@ -1,6 +1,7 @@
 # Files to ignore
 extra/
 CoverLetter.doc
+CoverLetter.pdf
 *.DS_Store
 PATHd8/headers
 PATHd8/PATHd8
