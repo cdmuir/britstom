@@ -15,7 +15,7 @@ More information about the method is available in a preprint which you can find 
 You can source all the code you need in the correct order using `r/run-all.R`. Even if you don't want to run all the code, you may need to install some packages (`r/install-packages.R`) and attach them (`r/header.R`).
 
 - To use premade R output, simply open `ms/ms.Rnw` and compile using RStudio.
-- To rerun all analyses, first compile locally [PATHd8](http://www2.math.su.se/PATHd8/). Change code in `r/header.R` to:
+- To rerun all analyses, first compile [PATHd8](http://www2.math.su.se/PATHd8/) locally. Change code in `r/header.R` to:
 
 ```
 compile_pathd8 <- TRUE
