@@ -1,5 +1,4 @@
 # Files to ignore
-Stan/
 extra/
 CoverLetter.doc
 *.DS_Store
