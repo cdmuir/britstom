@@ -2,6 +2,9 @@
 extra/
 CoverLetter.doc
 *.DS_Store
+PATHd8/headers
+PATHd8/PATHd8
+PATHd8/PATHd8.c
 
 # History files
 .Rhistory
