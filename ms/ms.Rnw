@@ -340,6 +340,7 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SRmultReg.pdf}}
+%\centerline{\includegraphics[angle=270]{figures/figure_SRmultReg.eps}} % Needed this to upload file to journal website
 \caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity.} 
 \label{fig:SRmultReg}
 \end{figure}

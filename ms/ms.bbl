@@ -1,4 +1,4 @@
-\begin{thebibliography}{68}
+\begin{thebibliography}{69}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -391,6 +391,18 @@ Scheen, A.-C., C.~Brochmann, A.~K. Brysting, R.~Elven, A.~Morris, D.~E. Soltis,
   ({C}aryophyllaceae): insights from phylogenetic analysis of noncoding plastid
   nucleotide sequences.
 \newblock American Journal of Botany 91:943--952.
+
+\bibitem[{Shipley et~al.()Shipley, Belluau, Kühn, Soudzilovskaia, Bahn,
+  Penuelas, Kattge, Sack, Cavender-Bares, Ozinga, Blonder, van Bodegom,
+  Manning, Hickler, Sosinski, Pillar, and Onipchenko}]{Shipley_etal_2017}
+Shipley, B., M.~Belluau, I.~Kühn, N.~A. Soudzilovskaia, M.~Bahn, J.~Penuelas,
+  J.~Kattge, L.~Sack, J.~Cavender-Bares, W.~A. Ozinga, B.~Blonder, P.~M. van
+  Bodegom, P.~Manning, T.~Hickler, E.~Sosinski, V.~D.~P. Pillar, and
+  V.~Onipchenko, ????
+\newblock Predicting habitat affinities of plant species using commonly
+  measured functional traits.
+\newblock Journal of Vegetation Science Pp. n/a--n/a.
+\newblock \urlprefix\url{http://dx.doi.org/10.1111/jvs.12554}.
 
 \bibitem[{Smith(1981)}]{Smith_1981}
 Smith, W., 1981.

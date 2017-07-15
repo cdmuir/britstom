@@ -29,11 +29,11 @@ dnsAd <- tapply(log10(stomata$ad_density + 1), stomata$ellenberg_light, function
   ret
 } )
 
-pdf(str_c(path_figures, "/figure_SD-light.pdf"), 8, 10)
+pdf(str_c(path_figures, "/figure_SD-light.pdf"), 8, 10, useDingbats = FALSE)
 par(mar = rep(0, 4), oma = c(5, 6, 1, 1), las = 1, mfrow = c(2, 1))
 plot(0, 0, xlim = c(2.5, 9.5), ylim = c(0, 3), type = "n", axes = F, frame.plot = T)
 
-mtext(1, text = "Ellenberg light indicator value", outer = T, cex = 2, line = 3)
+mtext(1, text = "Ellenberg light indicator", outer = T, cex = 2, line = 3)
 mtext(2, text = expression(paste("Stomatal density (no. ", mu, m^-2, ") [log scale]")), 
       outer = T, cex = 2, las = 0, line = 3)
 axis(2, at = 0:3, labels = c(1, 10, 100, 1000))

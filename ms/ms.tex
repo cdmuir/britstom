@@ -116,7 +116,7 @@ Data and annotated source code to generate this manuscript are available on GitH
 
 \subsection*{Data on stomatal ratio, light habitat, growth form, and phylogenetic relationships}
 
-I obtained data on ab- and adaxial stomatal density on 395 species from British Ecological Flora \citep{Salisbury_1927, Fitter_Peat_1994a, BEF}. Following recent comparative analyses \citep[e.g.][]{Bartelheimer_Poschlod_2016, Salguero-Gomez_etal_2016}, I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). 14 species (3.5\%) in the dataset were not present in the phylogeny. For 8 of these species, I used the position a congeneric species as a proxy for the focal species \citep[following][]{Pennell_etal_2016}. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species \citep{Scheen_etal_2004, Salmaki_etal_2013}. For the remaining 6 missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree \citep{Fior_etal_2006}. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.6-00 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
+I obtained data on ab- and adaxial stomatal density on 395 species from British Ecological Flora \citep{Salisbury_1927, Fitter_Peat_1994a, BEF}. Following recent comparative analyses \citep[e.g.][]{Bartelheimer_Poschlod_2016, Salguero-Gomez_etal_2016, Shipley_etal_2017}, I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). 14 species (3.5\%) in the dataset were not present in the phylogeny. For 8 of these species, I used the position a congeneric species as a proxy for the focal species \citep[following][]{Pennell_etal_2016}. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species \citep{Scheen_etal_2004, Salmaki_etal_2013}. For the remaining 6 missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree \citep{Fior_etal_2006}. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.6-00 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
 
 I excluded data on hyrdrophytes (14 species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (3 species) and CAM (2 species) plants. I limited this investigation to angiosperms because only 4 non-angiosperms had stomata data. The final dataset contained 372 species. The R code accompanying this paper documents these decisions with citations to the relevant literature.
 
@@ -196,9 +196,9 @@ Overall, $\mathrm{SR_{even}}$ increased with \el, but there was a significant in
 
 \subsection*{Adaxial stomatal density contributes most of the variation in stomatal ratio}
 
-Adaxial (`upper') stomatal density contributed most to the evolutionary variation in stomatal ratio. The contributions of adaxial density, abaxial density, and their covariance are 1.14, 0.38, and -0.53, respectively. This implies that evolutionary variation in adaxial stomatal density is greater than that for stomatal ratio due to positive covariance between ab- and adaxial stomatal density.
+Adaxial (`upper') stomatal density contributed most to the evolutionary variation in stomatal ratio. The contributions of adaxial density, abaxial density, and their covariance are 1.12, 0.38, and -0.5, respectively. This implies that evolutionary variation in adaxial stomatal density is greater than that for stomatal ratio due to positive covariance between ab- and adaxial stomatal density.
 
-Similarly, the phylogenetic SEM showed that changes in stomatal ratio associated with \el~can be attributed mostly to evolution of adaxial stomatal density (Fig.~\ref{fig:SD-light}). Both $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ increased with \el~($P =$ 6.1 $\times10^{-7}$ and 2.9 $\times10^{-5}$, respectively). However, the regression of \el~on $\mathrm{sd_{ad}}$ was 2.1$\times$ that of \el~on $\mathrm{sd_{ab}}$ (0.21 versus 0.1). Because stomatal densities were natural log-transformed, this implies an increase in \el~by one leads to a 1.23-fold change in adaxial stomatal density versus a 1.1-fold change in abaxial stomatal density. The SEM also showed a significant positive covariance between stomatal densities on each surface ($P = $1.7 $\times10^{-11}$). These results together imply that total stomatal density increases with \el, but the response is mediated mostly by increases in adaxial stomatal density.
+Similarly, the phylogenetic SEM showed that changes in stomatal ratio associated with \el~can be attributed mostly to evolution of adaxial stomatal density (Fig.~\ref{fig:SD-light}). Both $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ increased with \el~($P =$ 1.2 $\times10^{-8}$ and 8.8 $\times10^{-7}$, respectively). However, the regression of \el~on $\mathrm{sd_{ad}}$ was 2$\times$ that of \el~on $\mathrm{sd_{ab}}$ (0.24 versus 0.12). Because stomatal densities were natural log-transformed, this implies an increase in \el~by one leads to a 1.27-fold change in adaxial stomatal density versus a 1.13-fold change in abaxial stomatal density. The SEM also showed a significant positive covariance between stomatal densities on each surface ($P = $2.5 $\times10^{-10}$). These results together imply that total stomatal density increases with \el, but the response is mediated mostly by increases in adaxial stomatal density.
 
 % NOTES FOR CALCULATING fold-chage
 % log(sd1) = b1 * 3
@@ -279,25 +279,25 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
   & 0.068
   & 0.34
   & 12
-  & -33.3
-  & 90.6
+  & -33.2
+  & 90.4
   & 0 \\
     \el~+ lifeform
-  & 0.47
-  & 0.072
+  & 0.46
+  & 0.071
   & 0.32
   & 8
-  & -40.3
-  & 96.5
+  & -40.2
+  & 96.4
   & 6 \\
     \el
   & 0.64
-  & 0.108
+  & 0.107
   & 0.26
   & 4
   & -59.3
   & 126.6
-  & 36.1 \\
+  & 36.2 \\
     lifeform
   & 0.34
   & 0.067
@@ -305,15 +305,15 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
   & 7
   & -79.2
   & 172.4
-  & 81.8 \\
+  & 82 \\
     null
   & 0.29
   & 0.067
   & 0
   & 3
   & -107.5
-  & 221
-  & 130.5 \\
+  & 221.1
+  & 130.7 \\
 	\bottomrule
 	\end{tabular}
 	\label{table:srAIC}
@@ -332,6 +332,7 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SRmultReg.pdf}}
+%\centerline{\includegraphics[angle=270]{figures/figure_SRmultReg.eps}} % Needed this to upload file to journal website
 \caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity.} 
 \label{fig:SRmultReg}
 \end{figure}

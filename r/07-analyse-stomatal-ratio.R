@@ -33,7 +33,8 @@ fitSR_pl <- read_rds(str_c(path_objects, "/fitSR_pl.rds"))
 
 # Figure
 
-pdf(str_c(path_figures, "/figure_SRmultReg.pdf"), 4, 7)
+pdf(str_c(path_figures, "/figure_SRmultReg.pdf"), 4, 7, useDingbats = FALSE)
+#postscript(str_c(path_figures, "/figure_SRmultReg.ps"), width = 4, height = 7) # need for submitting to journal website
 par(mfrow = c(5, 1), mar = rep(0, 4), cex.lab = 1, oma = c(5, 7, 1, 1))
 
 for (i in 5:1) {
@@ -98,60 +99,3 @@ dev.off()
 
 # Export objects to ms
 export2ms(c("aicSR", "fitSRa", "fitSRb", "fitSRc", "fitSRd", "fitSRe"))
-
-# NOTE: Matt suggested deleting this, just using AIC
-# Parametric bootstrap statistical signicance of deltaAIC between model 
-# with interaction (fitSRa) and model without interaction (fitSRb)
-# set.seed(444294)
-# bootModB <- predict(fitSRb) + rTrait(n = 1e3, modAngioPhy, "OU", 
-#                                     list(sigma2 = fitSRb$sigma2, alpha = fitSRb$optpar))
-# colnames(bootModB) <- paste0("b", 1:ncol(bootModB))
-
-# fit model of model A to data simulated from model B
-# fitA2B <- lapply(colnames(bootModB), function(col) {
-#  stomata$Y <- bootModB[, col]
-#  phylolm(Y ~ lifeform * ellenberg_light, model = "OUrandomRoot", data = stomata, 
-#          phy = modAngioPhy, upper.bound = 10)
-#  })
-
-# fit model of model A to data simulated from model B
-# fitB2B <- lapply(colnames(bootModB), function(col) {
-#  stomata$Y <- bootModB[, col]
-#  phylolm(Y ~ lifeform + ellenberg_light, model = "OUrandomRoot", data = stomata, 
-#          phy = modAngioPhy, upper.bound = 10)
-#  })
-
-# refit models at parameter bounds
-# for (i in which(round(sapply(fitA2B, function(X) X$optpar), 2) == 10)) {
-#  stomata$Y <- bootModB[, colnames(bootModB)[i]]
-#  fitA2B[[i]] <- phylolm(Y ~ lifeform * ellenberg_light, model = "OUrandomRoot", data = stomata,
-#                        phy = modAngioPhy, lower.bound = 10, upper.bound = 200, 
-#                         starting.value = 10)
-# }
-
-# refit models at parameter bounds
-# for (i in which(round(sapply(fitB2B, function(X) X$optpar), 2) == 10)) {
-#  stomata$Y <- bootModB[, colnames(bootModB)[i]]
-#  fitB2B[[i]] <- phylolm(Y ~ lifeform + ellenberg_light, model = "OUrandomRoot", data = stomata,
-#                        phy = modAngioPhy, lower.bound = 10, upper.bound = 200,
-#                        starting.value = 10)
-# }
-
-# for some reason, this fixes those with alpha estimated at upper bound
-# for (i in which(round(sapply(fitB2B, function(X) X$optpar), 2) == 200)) {
-#   stomata$Y <- bootModB[, colnames(bootModB)[i]]
-#   fitB2B[[i]] <- phylolm(Y ~ lifeform + ellenberg_light, model = "OUrandomRoot", data = stomata,
-#                          phy = modAngioPhy, lower.bound = 0, upper.bound = 300, 
-#                          starting.value = 1)
-# }
-
-# saveRDS(fitA2B, paste0(pathR, "/fitA2B.rds"))
-# saveRDS(fitB2B, paste0(pathR, "/fitB2B.rds"))
-
-# fitA2B <- readRDS(paste0(pathR, "/fitA2B.rds"))
-# fitB2B <- readRDS(paste0(pathR, "/fitB2B.rds"))
-
-# Distribution of deltaAIC
-# obsDeltaAIC <- fitSRa$aic - fitSRb$aic
-# distDeltaAIC <- sapply(fitA2B, function(X) X$aic) - sapply(fitB2B, function(X) X$aic)
-# pInteraction <- length(which(obsDeltaAIC > distDeltaAIC)) / 1e3
