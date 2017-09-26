@@ -1,5 +1,24 @@
 # R functions associated with Muir 2017
 
+# Draw wedge fot plotting trait data against radial phylogeny
+draw_wedge <- function(theta1, theta2, r1, r2, col) {
+  
+  # for debug
+  # theta1 = 0
+  # theta2 = 1
+  # r1 = 1
+  # r2 = 1.1
+  
+  x <- c(cos(seq(theta1, theta2, length.out = 1e2)) * r1,
+         cos(seq(theta2, theta1, length.out = 1e2)) * r2)
+  
+  y <- c(sin(seq(theta1, theta2, length.out = 1e2)) * r1,
+         sin(seq(theta2, theta1, length.out = 1e2)) * r2)
+  
+  polygon(x, y, col = col, border = NA)
+  
+}
+
 # Export objects to ms
 export2ms <- function(x, path_export = getOption("path_export", "/export")) {
   
