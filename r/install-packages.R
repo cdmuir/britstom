@@ -1,5 +1,7 @@
 install.packages("ape")
+source("https://bioconductor.org/biocLite.R")
 install.packages("dplyr")
+biocLite("ggtree")
 install.packages("lavaan")
 install.packages("magrittr")
 install.packages("phylolm")

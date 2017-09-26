@@ -9,6 +9,7 @@ if (compile_pathd8) {
 # Libraries
 library(ape)
 library(dplyr)
+library(ggtree)
 library(lavaan)
 library(magrittr)
 library(phylolm)
