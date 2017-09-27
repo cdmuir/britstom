@@ -13,7 +13,7 @@ source("r/05-modify-phylogeny.R")
 source("r/06-plot-phylogeny.R")
 
 # Analyze data
-source("r/07-analyse-light-vs-lifeform.R")
+source("r/07-analyse-light-vs-form.R")
 source("r/08-analyse-stomatal-ratio.R")
 source("r/09-analyse-stomatal-density.R")
 source("r/10-analyse-phyloSEM.R")
