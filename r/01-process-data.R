@@ -1,10 +1,20 @@
 source("R/header.R")
 
 # British Ecological Flora
-stomata <- read_csv(str_c(path_raw_data, "/stomata.csv"))
+stomata <- read_csv(str_c(path_raw_data, "/stomata.csv"), 
+                    col_types = cols(
+                      species = col_character(),
+                      ab_density = col_double(),
+                      ad_density = col_double()
+                    ))
 
 # Salisbury 1927
-salisbury <- read_csv(str_c(path_raw_data, "/salisbury_1927.csv"))
+salisbury <- read_csv(str_c(path_raw_data, "/salisbury_1927.csv"),
+                      col_types = cols(
+                        species = col_character(),
+                        ad_density = col_double(),
+                        ab_density = col_double()
+                      ))
 
 # Taxize Salisbury dataset - this is done as a loop to prevent timing out
 # tnr <- tnrs(query = salisbury$species[1], source = "iPlant_TNRS")
@@ -12,7 +22,16 @@ salisbury <- read_csv(str_c(path_raw_data, "/salisbury_1927.csv"))
 #   tnr %<>% bind_rows(tnrs(query = salisbury$species[i], source = "iPlant_TNRS"))
 # }
 # write_csv(tnr, path = str_c(path_raw_data, "/taxized_salisbury_1927.csv"))
-tnr <- read_csv(str_c(path_raw_data, "/taxized_salisbury_1927.csv"))
+tnr <- read_csv(str_c(path_raw_data, "/taxized_salisbury_1927.csv"),
+                col_types = cols(
+                  submittedname = col_character(),
+                  acceptedname = col_character(),
+                  sourceid = col_character(),
+                  score = col_double(),
+                  matchedname = col_character(),
+                  authority = col_character(),
+                  uri = col_character()
+                ))
 
 # When TNRS does not give an accepted name, I am using these based on searching The Plant List
 # http://www.theplantlist.org/
@@ -102,7 +121,12 @@ stomata %<>% mutate(sr_propAd = ad_density / (ab_density + ad_density),
 stomata %<>% filter(!is.na(sr_propAd))
 
 # Photosynthetic pathway
-photo <- read_csv(str_c(path_raw_data, "/photo.csv"))
+photo <- read_csv(str_c(path_raw_data, "/photo.csv"),
+                  col_types = cols(
+                    species = col_character(),
+                    photo = col_character()
+                  ))
+
 # All missing taxa are C3 
 # Not C4 based on Sage et al 2011 (JXB 62:9 3155-3169)
 # Not CAM based on photosynthetic pathway of congeneric species in the data
@@ -118,8 +142,66 @@ stopifnot(all(stomata$species %in% photo$species |
 rm(missing_photo)
 
 # PLANTATT (Hill et al 2004) for lifeform and Ellenberg light indicator values
-plantatt <- read_csv(str_c(path_raw_data, "/plantatt.csv")) %>%
-  select(species = `Taxon name`, lifeform = LF1, ellenberg_light = L)
+plantatt <- read_csv(str_c(path_raw_data, "/plantatt.csv"),
+                     col_types = cols(
+                       .default = col_character(),
+                       Chg = col_double(),
+                       Hght = col_integer(),
+                       Len = col_double(),
+                       NBI = col_integer(),
+                       SBI = col_integer(),
+                       GB = col_integer(),
+                       IR = col_integer(),
+                       CI = col_integer(),
+                       Tjan = col_double(),
+                       Tjul = col_double(),
+                       Prec = col_integer(),
+                       L = col_integer(),
+                       F = col_integer(),
+                       R = col_integer(),
+                       N = col_integer(),
+                       S = col_integer()
+                     )) %>%
+  select(species = `Taxon name`, 
+         lifeform = LF1, perennation1 = P1, perennation2 = P2, woodiness = W, height = Hght,
+         ellenberg_light = L)
+
+# Define growth form
+plantatt$growthform <- factor(NA, levels = c("annual", "biennial", "perennial",
+                                             "shrub", "tree"))
+  
+# Annual if P1 == annual and is.na(P2)
+x <- which(plantatt$perennation1 == "a" & is.na(plantatt$perennation2))
+plantatt$growthform[x] <- "annual"
+
+# Biennial if P1 == biennial & is.na(P2)
+# or P1 == annual & !is.na(P2)l
+# or P1 == biennial & !is.na(P2)
+# or P1 == perennial & !is.na(P2)
+
+x <- which(plantatt$perennation1 == "b" & is.na(plantatt$perennation2) |
+             plantatt$perennation1 == "a" & !is.na(plantatt$perennation2) |
+             plantatt$perennation1 == "b" & !is.na(plantatt$perennation2) |
+             plantatt$perennation1 == "p" & !is.na(plantatt$perennation2))
+
+plantatt$growthform[x] <- "biennial"
+
+# Perennial if P1 == perennial and is.na(P2)
+x <- which(plantatt$perennation1 == "p" & is.na(plantatt$perennation2))
+plantatt$growthform[x] <- "perennial"
+
+# Reclassify as shrub if woody
+x <- which(plantatt$woodiness == "w")
+plantatt$growthform[x] <- "shrub"
+
+# Reclassify as tree if height > 1 m
+message("need to determine height cutoff for trees, or alternative classification scheme")
+x <- which(plantatt$woodiness == "w" & plantatt$height >= 1000)
+plantatt$growthform[x] <- "tree"
+
+#summary(plantatt$growthform)
+rm(x)
+plantatt %<>% select(species, lifeform, ellenberg_light, growthform)
 
 # stomata$species[!(stomata$species %in% plantatt$species |
 #                    stomata$acceptedname %in% plantatt$species)] # Missing data for several
@@ -141,6 +223,7 @@ xa[is.na(xa)] <- xaa[is.na(xa)]
 stomata$photo <- photo$photo[xp]
 stomata$lifeform <- plantatt$lifeform[xa]
 stomata$ellenberg_light <- plantatt$ellenberg_light[xa]
+stomata$growthform <- plantatt$growthform[xa]
 
 # Remove missing values
 stomata %<>% filter(!is.na(sr_propAd), !is.na(lifeform), !is.na(ellenberg_light))

@@ -1,6 +1,17 @@
 source("R/header.R")
 
-stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"))
+stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"),
+                    col_types = cols(
+                      species = col_character(),
+                      ab_density = col_double(),
+                      ad_density = col_double(),
+                      sr_propAd = col_double(),
+                      sr_even = col_double(),
+                      lifeform = col_character(),
+                      ellenberg_light = col_integer(),
+                      growthform = col_character()
+                    ))
+
 angio_phy <- read.nexus(file = str_c(path_proc_data, "/angio_phy.nex"))
 
 ##### Make dichotomous and slightly adjust edge lengths to make exactly ultrametric -----

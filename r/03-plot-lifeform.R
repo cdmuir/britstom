@@ -1,6 +1,18 @@
 source("R/header.R")
 
-stomata <- read_csv(str_c(path_proc_data, "/stomata.csv"))
+stomata <- read_csv(str_c(path_proc_data, "/stomata.csv"), 
+                    col_types = cols(
+                      species = col_character(),
+                      ab_density = col_double(),
+                      ad_density = col_double(),
+                      acceptedname = col_character(),
+                      sr_propAd = col_double(),
+                      sr_even = col_double(),
+                      photo = col_character(),
+                      lifeform = col_character(),
+                      ellenberg_light = col_integer(),
+                      growthform = col_character()
+                    ))
 
 ##### Plot lifeform versus stomatal ratio -----
 
