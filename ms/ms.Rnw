@@ -126,7 +126,7 @@ Data and annotated source code to generate this manuscript are available on GitH
 
 I obtained data on ab- and adaxial stomatal density on \Sexpr{nrow(stomata_unfiltered)} species from British Ecological Flora \citep{Salisbury_1927, Fitter_Peat_1994a, BEF}. Following recent comparative analyses \citep[e.g.][]{Bartelheimer_Poschlod_2016, Salguero-Gomez_etal_2016, Shipley_etal_2017}, I used Ellenberg light indicator values \citep{Ellenberg_1974} and Raunki\ae r life form \citep{Raunkiaer_1934} as measures of light habitat and growth form, respectively. Hence, I am assuming that the species' light habitat is closely related to the type of habitat (open versus closed) where that species is found. Both attributes have been recently updated by taxonomic experts of the British flora (PLANTATT, \cite{Hill_etal_2004}). Ellenberg light indicator values are hereafter abbreviated \el. I used a dated molecular phylogeny of the British flora \citep{Lim_etal_2014} available from TreeBASE (http://treebase.org/; accession number 15105). \Sexpr{nNotInPhy1} species (\Sexpr{round(100 * nNotInPhy1 / nrow(stomata_unfiltered), 1)}\%) in the dataset were not present in the phylogeny. For \Sexpr{nNotInPhy1 - nNotInPhy2} of these species, I used the position of a congeneric species as a proxy for the focal species \citep[following][]{Pennell_etal_2016}. When multiple congeneric species were present, I consulted the phylogenetic literature to identify the most closely related proxy species \citep{Scheen_etal_2004, Salmaki_etal_2013}. For the remaining \Sexpr{nNotInPhy2} missing species, I positioned them in the tree based on phylogenetic relationships to other genera or families present in the tree \citep{Fior_etal_2006}. Because many phylogenetic comparative methods do not allow polytomies, zero-length branches, and non-ultrametric trees, I made several small adjustments to the tree. I resolved polytomies randomly using the `multi2di' function in \pkg{phytools} version 0.6-00 \citep{Revell_2012}. I added 0.02 my to all zero-length branches, as this was approximately the length of the shortest nonzero branch length in the tree. After these changes, I slightly altered terminal branch lengths to make the tree precisely ultrametric.
 
-I excluded data on hyrdrophytes (\Sexpr{nHydrophyte} species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (\Sexpr{nC4} species) and CAM (\Sexpr{nCAM} species) plants. I limited this investigation to angiosperms because only \Sexpr{nNonangio} non-angiosperms had stomata data. The final dataset contained \Sexpr{nrow(stomata)} species. The R code accompanying this paper documents these decisions with citations to the relevant literature.
+I excluded data on hyrdrophytes (\Sexpr{nHydrophyte} species) because many of these species are hyperstomatous (Fig. \ref{fig:violin}) due to the fact that leaves may rest on the water's surface, selecting for stomata to be present on the upper surface only. I also excluded C$_4$ (\Sexpr{nC4} species) and CAM (\Sexpr{nCAM} species) plants. I limited this investigation to angiosperms because only \Sexpr{nNonangio} non-angiosperms had stomata data. The final dataset contained \Sexpr{nrow(stomata)} species (Fig.~\ref{fig:phylo}). The R code accompanying this paper documents these decisions with citations to the relevant literature.
 
 Following \cite{Muir_2015}, I calculated stomatal ratio in two different ways depending on what was most appropriate for the question: 
 
@@ -331,6 +331,12 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 %--------------------------------------------------
 % Figures
 %--------------------------------------------------
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=\textwidth]{figures/figure_phylo.pdf}}
+\caption{CAPTION} 
+\label{fig:phylo}
+\end{figure}
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_lf-light.pdf}}
