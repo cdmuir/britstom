@@ -38,13 +38,14 @@ stomata$lifeform %<>% factor(levels = names(lf))
 phy$edge.length %<>% divide_by(max(nodeHeights(phy)[, 2]))
 
 # Angle for calculating position of data in fan phylogeny
-theta_mid <- seq(0, 2 * pi, length.out = Ntip(phy))
+theta_mid <- seq(0, 2 * pi, length.out = Ntip(phy) + 1)
+theta_mid %<>% extract(1:Ntip(phy))
 theta_left <- theta_mid - pi / Ntip(phy)
 theta_right <- theta_mid + pi / Ntip(phy)
 
 # Main plot
-pdf(str_c(path_figures, "/figure_phylo.pdf"), w = 6.5, h = 6.5, 
-    useDingbats = FALSE)
+pdf(str_c(path_figures, "/figure_phylo.pdf"), w = 6.5, h = 6.5)#, 
+   # useDingbats = FALSE)
 par(mai = c(1, 0, 1, 2))
 gp <- plot(phy, type = "fan", show.tip.label = FALSE,
            x.lim = c(-1.25, 1.25), y.lim = c(-1.25, 1.25))
@@ -55,12 +56,28 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
   palette(brewer.pal(5, "Greens"))
 
   ## Plot wedges
+  message("double check that wedges are drawn in same order as data")
   for (i in 1:Ntip(phy)) {
     draw_wedge(theta_left[i], theta_right[i], r1 = 1.025, r2 = 1.075, 
                col = stomata$lifeform[i])
   }  
 
-  ## Legend? ...
+  ## Legend
+  clip(grconvertX(0, "ndc", "user"), grconvertX(1, "ndc", "user"),
+       grconvertY(0, "ndc", "user"), grconvertY(1, "ndc", "user"))
+  points(rep(grconvertX(5, "in", "user"), 5),
+         seq(0.1, 0.9, 0.2) * 1.25,
+         pch = 21, col = "black", bg = 1:5, cex = 3)
+  text(rep(grconvertX(5, "in", "user"), 5),
+       seq(0.1, 0.9, 0.2) * 1.25,
+       labels = lf, pos = 4, offset = 1)
+
+# Stomatal ratio
+  
+  
+  ## Histofan
+  draw_histofan(stomata$sr_even, 1.1, 1.2)
+  
   dev.off()
   
 

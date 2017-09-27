@@ -1,6 +1,46 @@
 # R functions associated with Muir 2017
 
-# Draw wedge fot plotting trait data against radial phylogeny
+# Draw 'histofan' around phylogeny
+draw_histofan <- function(y, r1, r2) {
+  
+  # for debugging
+  # y <- stomata$sr_even
+  # r1 <- 1.1
+  # r2 <- 1.2
+  
+  # rescale y to fit between radii
+  y %<>% 
+    divide_by(max(.) - min(.)) %>% 
+    multiply_by(r2 - r1) %>% 
+    subtract(min(.)) %>% 
+    add(r1)
+  
+  n <- length(y)
+  theta_mid <- seq(0, 2 * pi, length.out = n + 1)
+
+  # Rings for guidance
+  points(cos(theta_mid) * r1, sin(theta_mid) * r1, col = "grey", type = "l") # sr_even = 0
+  points(cos(theta_mid) * (r1 + r2) / 2, sin(theta_mid) * (r1 + r2) / 2, 
+         col = "grey", type = "l") # sr_even = 0
+  points(cos(theta_mid) * r2, sin(theta_mid) * r2, col = "grey", type = "l") # sr_even = 0
+
+  theta_mid %<>% extract(1:n)
+  theta_left <- theta_mid - pi / (n + 1)
+  theta_right <- theta_mid + pi / (n + 1)
+  
+  X <- Y <- numeric()
+  for (i in 1:n) {
+    X %<>% c(cos(seq(theta_left[i], theta_right[i], length.out = 1e2)) * y[i])
+    Y %<>% c(sin(seq(theta_left[i], theta_right[i], length.out = 1e2)) * y[i])
+  }
+  
+  X %<>% c(.[1])
+  Y %<>% c(.[1])
+  points(X, Y, type = "l")
+
+}
+
+# Draw wedge for plotting trait data against radial phylogeny
 draw_wedge <- function(theta1, theta2, r1, r2, col) {
   
   # for debug
