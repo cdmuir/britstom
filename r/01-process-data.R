@@ -194,9 +194,10 @@ plantatt$growthform[x] <- "perennial"
 x <- which(plantatt$woodiness == "w")
 plantatt$growthform[x] <- "shrub"
 
-# Reclassify as tree if height > 1 m
+# Reclassify as tree if height > 4 m
 message("need to determine height cutoff for trees, or alternative classification scheme")
-x <- which(plantatt$woodiness == "w" & plantatt$height >= 1000)
+shrub_cutoff <- 4
+x <- which(plantatt$woodiness == "w" & plantatt$height >= (shrub_cutoff * 1e3))
 plantatt$growthform[x] <- "tree"
 
 #summary(plantatt$growthform)
@@ -242,4 +243,4 @@ write_csv(stomata, str_c(path_proc_data, "/stomata.csv"))
 
 # Export objects to ms
 stomata_unfiltered <- stomata
-export2ms(c("stomata_unfiltered"))
+export2ms(c("shrub_cutoff", "stomata_unfiltered"))

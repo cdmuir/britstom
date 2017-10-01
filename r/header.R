@@ -1,6 +1,10 @@
 rm(list = ls())
 graphics.off()
 
+# remove before final publication
+file.copy("~/Google Drive/CommonResources/refs.bib",
+          "~/Google Drive/britstom/ms/refs.bib", overwrite = TRUE)
+
 compile_pathd8 <- FALSE # changed to TRUE if you need to compile PATHd8
 if (compile_pathd8) {
   system("cd PATHd8; cc PATHd8.c -O3 -lm -o PATHd8")
@@ -9,7 +13,6 @@ if (compile_pathd8) {
 # Libraries
 library(ape)
 library(dplyr)
-library(ggtree)
 library(lavaan)
 library(magrittr)
 library(phylolm)
@@ -21,6 +24,7 @@ library(RColorBrewer)
 library(Rphylopars)
 library(stringr)
 library(taxize)
+library(tidyr)
 library(vioplot)
 
 # Directories

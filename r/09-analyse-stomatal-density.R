@@ -1,14 +1,19 @@
 source("R/header.R")
 
 phy <- read.nexus(file = str_c(path_proc_data, "/angio_phy_modified.nex"))
-stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"))
+stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"),
+                    col_types = cols(
+                      species = col_character(),
+                      ab_density = col_double(),
+                      ad_density = col_double(),
+                      sr_propAd = col_double(),
+                      sr_even = col_double(),
+                      lifeform = col_character(),
+                      ellenberg_light = col_integer(),
+                      growthform = col_character()
+                    ))
 
-##### Stomatal density, light, and lifeform -----
-  
-lf <- c("chamaephyte", "geophyte", "hemicryptophyte", "hydrophyte", 
-        "phanerophyte", "therophyte")
-names(lf) <- c("Ch", "Gn", "hc", "Hy", "Ph", "Th")
-lf <- lf[names(sort(tapply(stomata$sr_propAd, stomata$lifeform, mean)))]
+##### Stomatal density and light -----
 
 # density of stomatal density by side and L-value
 dnsAb <- tapply(log10(stomata$ab_density + 1), stomata$ellenberg_light, function(X) {

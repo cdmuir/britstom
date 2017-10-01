@@ -1,5 +1,23 @@
 # R functions associated with Muir 2017
 
+# Convenience function to remove combinations of same growth form
+remove_diag <- function(df) {
+  
+  df <- df[which(df[, 1] != df[, 2]), ]
+  df
+  
+}
+
+# Compare bootstrap samples to determine whether slopes are significantly different
+compare_slopes <- function(s1, s2) {
+  d <- s1 - s2
+  ret <- mean(d)
+  ret %<>% c(median(d))
+  ret %<>% c(quantile(d, probs = c(0.025, 0.975)))
+  ret %<>% set_names(c("mean", "median", "lower", "upper"))
+  ret
+}
+
 # Draw 'histofan' around phylogeny
 draw_histofan <- function(y, r1, r2) {
   
@@ -24,7 +42,7 @@ draw_histofan <- function(y, r1, r2) {
          col = "grey", type = "l") # sr_even = 0
   points(cos(theta_mid) * r2, sin(theta_mid) * r2, col = "grey", type = "l") # sr_even = 0
 
-  theta_mid %<>% extract(1:n)
+  theta_mid %<>% magrittr::extract(1:n)
   theta_left <- theta_mid - pi / (n + 1)
   theta_right <- theta_mid + pi / (n + 1)
   

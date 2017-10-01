@@ -14,7 +14,7 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"),
                     ))
 
 # Arrange stomata in same order as phylogeny for plotting
-stomata %<>% extract(match(phy$tip.label, .$species), 1:ncol(.))
+stomata %<>% magrittr::extract(match(phy$tip.label, .$species), 1:ncol(.))
 
 gf <- c("tree", "shrub", "perennial", "biennial", "annual")
 
@@ -31,7 +31,7 @@ phy$edge.length %<>% divide_by(max(nodeHeights(phy)[, 2]))
 
 # Angle for calculating position of data in fan phylogeny
 theta_mid <- seq(0, 2 * pi, length.out = Ntip(phy) + 1)
-theta_mid %<>% extract(1:Ntip(phy))
+theta_mid %<>% magrittr::extract(1:Ntip(phy))
 theta_left <- theta_mid - pi / Ntip(phy)
 theta_right <- theta_mid + pi / Ntip(phy)
 

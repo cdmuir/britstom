@@ -1,4 +1,4 @@
-\begin{thebibliography}{69}
+\begin{thebibliography}{70}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -280,6 +280,12 @@ Muir, C.~D., 2015.
 \newblock Data from: Light and life form interact to shape stomatal ratio among
   {B}ritish angiosperms.
 \newblock \urlprefix\url{http://dx.doi.org/10.5061/dryad.?????}
+
+\bibitem[{Niinemets and Valladares(2006)}]{Niinemets_Valladares_2006}
+Niinemets, {\"U}. and F.~Valladares, 2006.
+\newblock Tolerance to shade, drought, and waterlogging of temperate {N}orthern
+  {H}emisphere trees and shrubs.
+\newblock Ecological Monographs 76:521--547.
 
 \bibitem[{Parkhurst(1978)}]{Parkhurst_1978}
 Parkhurst, D.~F., 1978.
