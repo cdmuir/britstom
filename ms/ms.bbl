@@ -1,4 +1,4 @@
-\begin{thebibliography}{70}
+\begin{thebibliography}{71}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -335,8 +335,13 @@ Reich, P., 1984.
   {CO}$_2$ exchange, and water-use efficiency in hybrid poplar.
 \newblock Photosynthetica 18:445--453.
 
+\bibitem[{Revell(2010)}]{Revell_2010}
+Revell, L.~J., 2010.
+\newblock Phylogenetic signal and linear regression on species data.
+\newblock Methods in Ecology and Evolution 1:319--329.
+
 \bibitem[{Revell(2012)}]{Revell_2012}
-Revell, L.~J., 2012.
+---{}---{}---, 2012.
 \newblock phytools: An {R} package for phylogenetic comparative biology (and
   other things).
 \newblock Methods in Ecology and Evolution 3:217--223.
