@@ -239,7 +239,7 @@ These observations from the British flora partially support the hypothesis that 
 
 The weak or nonsignificant relationship between \el~and stomatal ratio in geophytes and phanerophytes suggests that in some cases amphistomy may not reliably indicate open habitat without further information. For example, perhaps amphistomatous geophytes from partially shaded habitats are spring ephemerals, so they  experience high light during their growth phase, but this has not been tested. Likewise, phanerophytes (most tall trees) are almost always hypostomatous (see also \cite{Muir_2015}). Most British phanerophytes are tall, hypostomatous trees, but the exceptions are telling. For example, the most amphistomatous phanerophyte in this dataset is \textit{Brassica oleracea}, a short-statured biennial that has more in common physiologically with hemicryptophytes than other phanerophytes. The other amphistomatous phanerophytes in this data set (\textit{Populus nigra} and \textit{Lavatera arborea}) are fast-growing pioneer species.
 
-Finally, phylogenetic information should improve inferences about paleoclimates because there is appreciable phylogenetic signal in stomatal ratio. The phylogenetic half-life of stomatal ratio evolution, after accounting for \el~and Raunki\ae r life form, is $\mathrm{log}(2) / \alpha = \Sexpr{round(log(2) / fitSRa$optpar, 1)}$ my (see Table~\ref{table:srAIC} for maximum likelihood estimates of $\alpha$, the return rate in the Ornstein-Uhlenbeck model of trait evolution). This lag time may indicate that evolving to the `optimum' is constrained by the shape of the fitness landscape \citep{Muir_2015} or that other unmeasured factors which affect stomatal ratio have some phylogenetic signal. Regardless of the mechanism, this fact means that researchers may be able to use data from closely related species to improve paleoenvironment reconstruction.
+Finally, phylogenetic information should improve inferences about paleoclimates because there is appreciable phylogenetic signal in stomatal ratio. The phylogenetic half-life of stomatal ratio evolution, after accounting for \el~and Raunki\ae r life form, is $\mathrm{log}(2) / \alpha = \Sexpr{round(log(2) / fitSR_lf_a$optpar, 1)}$ my (see Table~\ref{table:srAIC} for maximum likelihood estimates of $\alpha$, the return rate in the Ornstein-Uhlenbeck model of trait evolution). This lag time may indicate that evolving to the `optimum' is constrained by the shape of the fitness landscape \citep{Muir_2015} or that other unmeasured factors which affect stomatal ratio have some phylogenetic signal. Regardless of the mechanism, this fact means that researchers may be able to use data from closely related species to improve paleoenvironment reconstruction.
 
 \subsection*{Why does adaxial stomatal density control stomatal ratio?}
 
@@ -286,22 +286,54 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
   \toprule
   Model: $\mathrm{SR_{even}} \sim$ &  $\alpha$ & $\sigma^2$ &  $r^2$ & $k$ &  log($\mathcal{L}$) &  AIC &  $\Delta$AIC \\
   \midrule  
-    \el~$\times$ lifeform
-  & \Sexpr{round(fitSRa$optpar, 2)}
-  & \Sexpr{round(fitSRa$sigma2, 3)}
-  & \Sexpr{round(cor(fitSRa$fitted.values, fitSRa$fitted.values + fitSRa$residuals) ^ 2, 2)}
-  & \Sexpr{length(coef(fitSRa)) + 2}
-  & \Sexpr{round(fitSRa$logLik, 1)}
-  & \Sexpr{round(fitSRa$aic, 1)}
-  & \Sexpr{round(fitSRa$aic - min(aicSR), 1)} \\
-    \el~+ lifeform
-  & \Sexpr{round(fitSRb$optpar, 2)}
-  & \Sexpr{round(fitSRb$sigma2, 3)}
-  & \Sexpr{round(cor(fitSRb$fitted.values, fitSRb$fitted.values + fitSRb$residuals) ^ 2, 2)}
-  & \Sexpr{length(coef(fitSRb)) + 2}
-  & \Sexpr{round(fitSRb$logLik, 1)}
-  & \Sexpr{round(fitSRb$aic, 1)}
-  & \Sexpr{round(fitSRb$aic - min(aicSR), 1)} \\
+    \el~$\times$ Raunki\ae r lifeform
+  & \Sexpr{round(fitSR_lf_a$optpar, 2)}
+  & \Sexpr{round(fitSR_lf_a$sigma2, 3)}
+  & \Sexpr{round(cor(fitSR_lf_a$fitted.values, fitSR_lf_a$fitted.values + fitSR_lf_a$residuals) ^ 2, 2)}
+  & \Sexpr{length(coef(fitSR_lf_a)) + 2}
+  & \Sexpr{round(fitSR_lf_a$logLik, 1)}
+  & \Sexpr{round(fitSR_lf_a$aic, 1)}
+  & \Sexpr{round(fitSR_lf_a$aic - min(aicSR), 1)} \\
+    \el~$\times$ growth form
+  & \Sexpr{round(fitSR_gf_f$optpar, 2)}
+  & \Sexpr{round(fitSR_gf_f$sigma2, 3)}
+  & \Sexpr{round(cor(fitSR_gf_f$fitted.values, fitSR_gf_f$fitted.values + fitSR_gf_f$residuals) ^ 2, 2)}
+  & \Sexpr{length(coef(fitSR_gf_f)) + 2}
+  & \Sexpr{round(fitSR_gf_f$logLik, 1)}
+  & \Sexpr{round(fitSR_gf_f$aic, 1)}
+  & \Sexpr{round(fitSR_gf_f$aic - min(aicSR), 1)} \\
+    \el~+ Raunki\ae r lifeform
+  & \Sexpr{round(fitSR_lf_b$optpar, 2)}
+  & \Sexpr{round(fitSR_lf_b$sigma2, 3)}
+  & \Sexpr{round(cor(fitSR_lf_b$fitted.values, fitSR_lf_b$fitted.values + fitSR_lf_b$residuals) ^ 2, 2)}
+  & \Sexpr{length(coef(fitSR_lf_b)) + 2}
+  & \Sexpr{round(fitSR_lf_b$logLik, 1)}
+  & \Sexpr{round(fitSR_lf_b$aic, 1)}
+  & \Sexpr{round(fitSR_lf_b$aic - min(aicSR), 1)} \\
+     \el~+ growth form
+  & \Sexpr{round(fitSR_gf_g$optpar, 2)}
+  & \Sexpr{round(fitSR_gf_g$sigma2, 3)}
+  & \Sexpr{round(cor(fitSR_gf_g$fitted.values, fitSR_gf_g$fitted.values + fitSR_gf_g$residuals) ^ 2, 2)}
+  & \Sexpr{length(coef(fitSR_gf_g)) + 2}
+  & \Sexpr{round(fitSR_gf_g$logLik, 1)}
+  & \Sexpr{round(fitSR_gf_g$aic, 1)}
+  & \Sexpr{round(fitSR_gf_g$aic - min(aicSR), 1)} \\
+    Raunki\ae r lifeform
+  & \Sexpr{round(fitSR_lf_d$optpar, 2)}
+  & \Sexpr{round(fitSR_lf_d$sigma2, 3)}
+  & \Sexpr{round(cor(fitSR_lf_d$fitted.values, fitSR_lf_d$fitted.values + fitSR_lf_d$residuals) ^ 2, 2)}
+  & \Sexpr{length(coef(fitSR_lf_d)) + 2}
+  & \Sexpr{round(fitSR_lf_d$logLik, 1)}
+  & \Sexpr{round(fitSR_lf_d$aic, 1)}
+  & \Sexpr{round(fitSR_lf_d$aic - min(aicSR), 1)} \\
+    growth form
+  & \Sexpr{round(fitSR_gf_h$optpar, 2)}
+  & \Sexpr{round(fitSR_gf_h$sigma2, 3)}
+  & \Sexpr{round(cor(fitSR_gf_h$fitted.values, fitSR_gf_h$fitted.values + fitSR_gf_h$residuals) ^ 2, 2)}
+  & \Sexpr{length(coef(fitSR_gf_h)) + 2}
+  & \Sexpr{round(fitSR_gf_h$logLik, 1)}
+  & \Sexpr{round(fitSR_gf_h$aic, 1)}
+  & \Sexpr{round(fitSR_gf_h$aic - min(aicSR), 1)} \\
     \el
   & \Sexpr{round(fitSRc$optpar, 2)}
   & \Sexpr{round(fitSRc$sigma2, 3)}
@@ -310,14 +342,6 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
   & \Sexpr{round(fitSRc$logLik, 1)}
   & \Sexpr{round(fitSRc$aic, 1)}
   & \Sexpr{round(fitSRc$aic - min(aicSR), 1)} \\
-    lifeform
-  & \Sexpr{round(fitSRd$optpar, 2)}
-  & \Sexpr{round(fitSRd$sigma2, 3)}
-  & \Sexpr{round(cor(fitSRd$fitted.values, fitSRd$fitted.values + fitSRd$residuals) ^ 2, 2)}
-  & \Sexpr{length(coef(fitSRd)) + 2}
-  & \Sexpr{round(fitSRd$logLik, 1)}
-  & \Sexpr{round(fitSRd$aic, 1)}
-  & \Sexpr{round(fitSRd$aic - min(aicSR), 1)} \\
     null
   & \Sexpr{round(fitSRe$optpar, 2)}
   & \Sexpr{round(fitSRe$sigma2, 3)}
