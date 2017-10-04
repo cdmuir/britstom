@@ -1,7 +1,5 @@
 # source("r/install-packages.R")
 
-# source("r/session-info.R")
-
 source("r/header.R")
 
 # Prepare data

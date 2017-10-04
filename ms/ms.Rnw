@@ -176,7 +176,7 @@ Lowercase variables ($\mathrm{sr}$, $\mathrm{sd}$) indicate log-transformed valu
 	\mathrm{Var(sr_{even})} = \mathrm{Var(sd_{ad})} + \mathrm{Var(sd_{ad})} - 2 \mathrm{Cov(sd_{ad}, sd_{ab})}
 \end{equation}
 
-I did not use the raw covariance, but rather estimated the phylogenetic covariance matrix between \el, $\mathrm{sd_{ab}}$, and $\mathrm{sd_{ad}}$ using a multivariate Ornstein-Uhlenbeck model fit in \pkg{Rphylopars} version 0.2.9 \citep{Goolsby_etal_2016, Goolsby_etal_2017}. From the covariance matrix, I estimated the contribution of abaxial density, adaxial density, and their covariance as:
+I did not use the raw covariance, but rather estimated the phylogenetic covariance matrix between \el, $\mathrm{sd_{ab}}$, and $\mathrm{sd_{ad}}$ using a multivariate Ornstein-Uhlenbeck model fit in \pkg{Rphylopars} version 0.2.9 \citep{Goolsby_etal_2016, Goolsby_etal_2017}. The phylogenetic covariance measures how strongly a set of traits evolve together over macroevolutionary timescales. From the covariance matrix, I estimated the contribution of abaxial density, adaxial density, and their covariance as:
 
 \begin{equation} \label{eq:contribution_ad}
 	\mathrm{Contribution~of~sd_{ad}} = \frac{\mathrm{Var(sd_{ad})}}{\mathrm{Var(sr_{even})}}
@@ -192,7 +192,7 @@ I did not use the raw covariance, but rather estimated the phylogenetic covarian
 
 respectively. Note that when ab- and adaxial densities positively covary, the contribution will be negative because this reduces the variance in stomatal ratio.
 
-I also wanted to test whether light-mediated evolution of stomatal ratio acted mostly by 1) increasing adaxial stomatal density while maintaining abaxial density, or 2) keeping total stomatal density the same, but shifting a greater proportion to the adaxial surface. The first scenario predicts that the phylogenetic regression of \el~ on $\mathrm{sd_{ad}}$ is stronger than that for $\mathrm{sd_{ab}}$. The second scenario predicts that \el~acts similarly on both and that there is a negative covariance ($\mathrm{Cov(sd_{ad}, sd_{ab}) < 0}$). I tested these competing predictions by fitting a very simple phylogenetic SEM \citep[see][for a similar approach]{Mason_etal_2016}. The model uses the phylogenetic covariance matrix, as described above, to simultaneously estimate regressions of \el~on $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ while allowing covariance between them (i.e. estimating $\mathrm{Cov(sd_{ad}, sd_{ab})}$). To fit the SEM, I used the R package \pkg{lavaan} version 0.5-23.1097 \citep{Rosseel_2012}. I tested whether parameter estimates were significantly different from zero using $z$-scores.
+I also wanted to test whether light-mediated evolution of stomatal ratio acted mostly by 1) increasing adaxial stomatal density while maintaining abaxial density, or 2) keeping total stomatal density the same, but shifting a greater proportion to the adaxial surface. The first scenario predicts that the phylogenetic regression of \el~ on $\mathrm{sd_{ad}}$ is stronger than that for $\mathrm{sd_{ab}}$. The second scenario predicts that \el~acts similarly on both and that there is a negative covariance ($\mathrm{Cov(sd_{ad}, sd_{ab}) < 0}$). I tested these competing predictions by fitting a very simple phylogenetic SEM \citep[see][for a similar approach]{Mason_etal_2016}. In general, SEMs attempt to determine whether variables are related causally or whether a relationship is mediated by another correlated variable. Phylogenetic SEMs use the phylogenetic covariance matrix, as described above, rather than the raw covariance. Here, I used a phylogenetic SEM to simultaneously estimate regressions of \el~on $\mathrm{sd_{ad}}$ and $\mathrm{sd_{ab}}$ while allowing covariance between them (i.e. estimating $\mathrm{Cov(sd_{ad}, sd_{ab})}$). To fit the SEM, I used the R package \pkg{lavaan} version 0.5-23.1097 \citep{Rosseel_2012}. I tested whether parameter estimates were significantly different from zero using $z$-scores.
 
 %--------------------------------------------------
 % Results
@@ -200,9 +200,9 @@ I also wanted to test whether light-mediated evolution of stomatal ratio acted m
 
 \section*{Results}
 
-\subsection*{Light tolerance varies among Raunki\ae r life forms}
+\subsection*{Light tolerance varies among growth forms}
 
-Ellenberg light indicator values (\el) differed significantly among life forms (Fig.~\ref{fig:lf-light};ANOVA - $F_{\Sexpr{aovLFvEL$Df[1]}, \Sexpr{aovLFvEL$Df[2]}}$ = \Sexpr{round(aovLFvEL$`F value`[1], 1)}, $P$ = \Sexpr{pval2latex(aovLFvEL$`Pr(>F)`[1])}). Therophytes (annuals), hemicryptophytes (perennial herbs with buds near the soil surface), and chamaephytes (subshrubs) had greater \els~than phanerophytes (large woody plants) and geophytes (perennial herbs with storage organs) (Fig.~\ref{fig:lf-light}).
+Ellenberg light indicator values (\el) differed significantly among growth forms. Among Raunki\ae r life forms, therophytes (annuals), hemicryptophytes (perennial herbs with buds near the soil surface), and chamaephytes (subshrubs) had greater \els~than phanerophytes (woody plants) and geophytes (perennial herbs with storage organs) (Fig.~\ref{fig:lf-light}; ANOVA - $F_{\Sexpr{aovLFvEL$Df[1]}, \Sexpr{aovLFvEL$Df[2]}}$ = \Sexpr{round(aovLFvEL$`F value`[1], 1)}, $P$ = \Sexpr{pval2latex(aovLFvEL$`Pr(>F)`[1])}). Likewise, herbaceous plants (annual, biennial, and perennials) had greater \els~than shrubs and trees (Fig.~\ref{fig:gf-light}; ANOVA - $F_{\Sexpr{aovGFvEL$Df[1]}, \Sexpr{aovGFvEL$Df[2]}}$ = \Sexpr{round(aovGFvEL$`F value`[1], 1)}, $P$ = \Sexpr{pval2latex(aovGFvEL$`Pr(>F)`[1])})
 
 \subsection*{Interactions between light and Raunki\ae r life form determine stomatal ratio}
 
