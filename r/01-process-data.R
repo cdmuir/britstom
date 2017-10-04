@@ -197,7 +197,7 @@ plantatt$growthform[x] <- "shrub"
 # Reclassify as tree if height > 4 m
 message("need to determine height cutoff for trees, or alternative classification scheme")
 shrub_cutoff <- 4
-x <- which(plantatt$woodiness == "w" & plantatt$height >= (shrub_cutoff * 1e3))
+x <- which(plantatt$woodiness == "w" & plantatt$height >= (shrub_cutoff * 1e2))
 plantatt$growthform[x] <- "tree"
 
 #summary(plantatt$growthform)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 OCT 2017 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  3 OCT 2017 22:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -622,43 +622,51 @@ Package pdftex.def Info: figures/figure_SD-light.pdf used on input line 351.
 ] [31 <./figures/figure_phylo-lifeform.pdf>] [32 <./figures/figure_lf-light.pdf
 >] [33 <./figures/figure_SRmultReg.pdf>]
 [34 <./figures/figure_SD-light.pdf>]
-<figures/figureS_violin.pdf, id=155, 578.16pt x 379.4175pt>
+<figures/figureS_compare-growth-forms.pdf, id=155, 289.08pt x 433.62pt>
+File: figures/figureS_compare-growth-forms.pdf Graphic file (type pdf)
+
+<use figures/figureS_compare-growth-forms.pdf>
+Package pdftex.def Info: figures/figureS_compare-growth-forms.pdf used on input
+ line 377.
+(pdftex.def)             Requested size: 344.005pt x 516.03406pt.
+
+<figures/figureS_violin.pdf, id=156, 578.16pt x 379.4175pt>
 File: figures/figureS_violin.pdf Graphic file (type pdf)
 
 <use figures/figureS_violin.pdf>
-Package pdftex.def Info: figures/figureS_violin.pdf used on input line 377.
+Package pdftex.def Info: figures/figureS_violin.pdf used on input line 383.
 (pdftex.def)             Requested size: 344.005pt x 225.75331pt.
  [35
 
- <./figures/figureS_violin.pdf>] (./ms.aux) ) 
+] [36 <./figures/figureS_compare-growth-forms.pdf>] [37 <./figures/figureS_viol
+in.pdf>] (./ms.aux) ) 
 Here is how much of TeX's memory you used:
- 6276 strings out of 493014
- 93584 string characters out of 6133351
- 156772 words of memory out of 5000000
- 9633 multiletter control sequences out of 15000+600000
+ 6282 strings out of 493014
+ 93821 string characters out of 6133351
+ 156782 words of memory out of 5000000
+ 9638 multiletter control sequences out of 15000+600000
  41537 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,11n,42p,1636b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dis
-t/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/local/texlive/2016/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmss8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmtt12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm
--super/sfrm1200.pfb>
-Output written on ms.pdf (35 pages, 1210190 bytes).
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-sup
+er/cm-super-ts1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmb10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on ms.pdf (37 pages, 1216344 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
+ 228 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 35 words of extra memory for PDF output out of 10000 (max. 10000000)
 

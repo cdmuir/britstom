@@ -1,5 +1,56 @@
 # R functions associated with Muir 2017
 
+# Make cross tab table of growth form and life form
+prop_table <- function(x1, x2) {
+  
+  tab <- table(x1, x2) %>%
+    apply(1, function(X) X / sum(X)) %>% 
+    as.matrix()
+  tab
+  
+}
+
+# Draw connector to show overlap between Raunkiaer life form and growth form
+draw_connector <- function(x, y1, y2, col, nslice = 1e2) {
+  
+  # for debug
+  # x <- c(0.2, 0.8)
+  # y1 <- c(0.3, 0.5)
+  # y2 <- c(0.2, 0.6)
+  # nslice = 1e2
+  # col <- c("#EDF8E9", "#006D2C")
+  
+  stopifnot(length(x) == 2L)
+  stopifnot(length(y1) == 2L)
+  stopifnot(length(y2) == 2L)
+  stopifnot(length(col) == 2L)
+  
+  col <- colorRamp(col)(seq(0, 1, length.out = nslice))
+  
+  x_left <- seq(x[1], x[2], length.out = nslice + 1)
+  nudge <- diff(x_left)[1] / 10
+  x_right <- x_left[2:(nslice + 1)] %>% add(nudge)
+  x_left <- x_left[1:nslice] %>% subtract(nudge)
+  
+  slope_bottom <- (y2[1] - y1[1]) / (x[2] - x[1])
+  slope_top <- (y2[2] - y1[2]) / (x[2] - x[1])
+
+  y_bottom_left <- slope_bottom * (x_left - x[1]) + y1[1] 
+  y_bottom_right <- slope_bottom * (x_right - x[1]) + y1[1] 
+  y_top_left <- slope_top * (x_left - x[1]) + y1[2]
+  y_top_right <- slope_top * (x_right - x[1]) + y1[2]
+  
+  for (i in 1:nslice) {
+    
+    polygon(c(x_left[i], x_right[i], x_right[i], x_left[i]), 
+            c(y_bottom_left[i], y_bottom_right[i], y_top_right[i], y_top_left[i]), 
+            col = rgb(col[i, 1], col[i, 2], col[i, 3], maxColorValue = 255), 
+            border = NA, lty = 0)
+
+  }
+  
+}
+
 # Convenience function to remove combinations of same growth form
 remove_diag <- function(df) {
   

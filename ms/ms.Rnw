@@ -382,6 +382,12 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 %--------------------------------------------------
 
 \begin{figure}[ht]
+\centerline{\includegraphics{figures/figureS_compare-growth-forms.pdf}}
+\caption{CAPTION}
+\label{fig:compare-growth-forms}
+\end{figure}
+
+\begin{figure}[ht]
 \centerline{\includegraphics{figures/figureS_violin.pdf}}
 \caption{Most hydrophytes are hyperstomatous, having most stomata on the adaxial (`upper') surface (high $\mathrm{SD_{propAd}}$). The violin plot shows stomatal ratio as a function of Raunki\ae r lifeform. The width of the grey polygons indicates the density of data. Length of grey polygon indicate the range of the data; the point indicates the median; the thick lines indicate the 0.25 and 0.75 quantiles. Sample sizes per lifeform in the dataset are given above the upper plot margin. $\mathrm{SD_{ad}}$ and $\mathrm{SD_{total}}$ stand for the stomatal density on the adaxial surface and the total leaf surface (adaxial plus abaxial), respectively.}
 \label{fig:violin}
