@@ -4,7 +4,7 @@ Light and growth form interact to shape stomatal ratio among British angiosperms
 
 This project was developed by [Chris Muir](www.chrisdmuir.com).
 
-** (10-01-2017) Please note that I am actively revising this manuscript after peer review and that the ouput may be unstable during this time. **
+**(10-01-2017) Please note that I am actively revising this manuscript after peer review and that the ouput may be unstable during this time.**
 
 More information about the study is available in a preprint which you can find on [biorxiv](https://doi.org/10.1101/163873) or on [github](https://github.com/cdmuir/britstom/blob/master/ms/ms.pdf).
 
