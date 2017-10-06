@@ -10,7 +10,7 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"),
                       sr_even = col_double(),
                       lifeform = col_character(),
                       ellenberg_light = col_integer(),
-                      growthform = col_character()
+                      habit = col_character()
                     ))
 
 ##### Raunikaer life form and Ellenberg light indicator values versus sr_even -----
@@ -125,33 +125,33 @@ for (i in 1:nrow(lf)) {
   
 }
 
-##### Growth form and Ellenberg light indicator values versus sr_even -----
+##### Habit and Ellenberg light indicator values versus sr_even -----
 
-gf <- c("tree", "shrub", "perennial", "biennial", "annual")
+hf <- c("tree", "shrub", "perennial", "biennial", "annual")
 
 # Phylogenetic regression model comparison
 stomata %<>% as.data.frame() %>% set_rownames(.$species) # need to change row names for phylolm
-fitSR_gf_f <- phylolm(sr_even ~ growthform * ellenberg_light, model = "OUrandomRoot",
+fitSR_hf_f <- phylolm(sr_even ~ habit * ellenberg_light, model = "OUrandomRoot",
                       data = stomata, phy = phy, upper.bound = 10)
-fitSR_gf_g <- phylolm(sr_even ~ growthform + ellenberg_light, model = "OUrandomRoot",
+fitSR_hf_g <- phylolm(sr_even ~ habit + ellenberg_light, model = "OUrandomRoot",
                       data = stomata, phy = phy, upper.bound = 10)
-fitSR_gf_h <- phylolm(sr_even ~ growthform, model = "OUrandomRoot",
+fitSR_hf_h <- phylolm(sr_even ~ habit, model = "OUrandomRoot",
                       data = stomata, phy = phy, upper.bound = 10)
 aicSR <- sapply(list(fitSR_lf_a, fitSR_lf_b, fitSRc, fitSR_lf_d, fitSRe,
-                     fitSR_gf_f, fitSR_gf_g, fitSR_gf_h), AIC)
+                     fitSR_hf_f, fitSR_hf_g, fitSR_hf_h), AIC)
 
 # Parametric bootstrap CIs of full model for p-values
 # set.seed(807420)
-# fitSR_gf_pl <- phylolm(sr_even ~ -1 + growthform + ellenberg_light:growthform, 
+# fitSR_hf_pl <- phylolm(sr_even ~ -1 + habit + ellenberg_light:habit, 
 #                        model = "OUrandomRoot", data = stomata, phy = phy, 
 #                        boot = 1e4, upper.bound = 10)
-# write_rds(fitSR_gf_pl, path = str_c(path_objects, "/fitSR_gf_pl.rds"))
-fitSR_gf_pl <- read_rds(str_c(path_objects, "/fitSR_gf_pl.rds"))
+# write_rds(fitSR_hf_pl, path = str_c(path_objects, "/fitSR_hf_pl.rds"))
+fitSR_hf_pl <- read_rds(str_c(path_objects, "/fitSR_hf_pl.rds"))
 
 # Figure
 
-pdf(str_c(path_figures, "/figure_SR-gf.pdf"), 4, 7, useDingbats = FALSE)
-#postscript(str_c(path_figures, "/figure_SR-gf.ps"), width = 4, height = 7) # need for submitting to journal website
+pdf(str_c(path_figures, "/figure_SR-hf.pdf"), 4, 7, useDingbats = FALSE)
+#postscript(str_c(path_figures, "/figure_SR-hf.ps"), width = 4, height = 7) # need for submitting to journal website
 par(mfrow = c(5, 1), mar = rep(0, 4), cex.lab = 1, oma = c(5, 7, 1, 1))
 
 for (i in 5:1) {
@@ -162,13 +162,13 @@ for (i in 5:1) {
                                 las = 1)
   
   # polygon of confidence intervals
-  x <- seq(min(stomata$ellenberg_light[stomata$growthform == gf[i]]),
-           max(stomata$ellenberg_light[stomata$growthform == gf[i]]), 
+  x <- seq(min(stomata$ellenberg_light[stomata$habit == hf[i]]),
+           max(stomata$ellenberg_light[stomata$habit == hf[i]]), 
            length.out = 1e3)
   bs <- sapply(x, function(X) {
-    fitSR_gf_pl$bootstrap[, sprintf('growthform%s', gf[i])] + 
-      fitSR_gf_pl$bootstrap[, sprintf('growthform%s:ellenberg_light', 
-                                   gf[i])] * X
+    fitSR_hf_pl$bootstrap[, sprintf('habit%s', hf[i])] + 
+      fitSR_hf_pl$bootstrap[, sprintf('habit%s:ellenberg_light', 
+                                   hf[i])] * X
   } )
   ci <- apply(bs, 2, quantile, probs = c(0.025, 0.5, 0.975))
   polygon(c(x, rev(x)), c(ci[1, ], rev(ci[3, ])), col = "grey", border = NA)
@@ -177,18 +177,18 @@ for (i in 5:1) {
   points(x, ci[3, ], lwd = 2, lty = 2, type = "l") # upper 95%
   
   # plot points
-  with(subset(stomata, stomata$growthform == gf[i]), 
+  with(subset(stomata, stomata$habit == hf[i]), 
        points(jitter(ellenberg_light), sr_even, pch = 21, bg = rgb(0, 0, 0, 0.1), 
               cex = 2))
   
   # label life forms, slope, and statistical significance
-  s1 <- sprintf("%s (%s)", gf[i], table(stomata$growthform)[gf[i]])
+  s1 <- sprintf("%s (%s)", hf[i], table(stomata$habit)[hf[i]])
   text(1 + 0.5 * strwidth(s1), 1.05, labels = s1, pos = 1, adj = 1)
-  slopeCI <- confint(fitSR_gf_pl)[sprintf("growthform%s:ellenberg_light", gf[i]), ]
-  pval <- 1 - length(which(fitSR_gf_pl$bootstrap[, sprintf("growthform%s:ellenberg_light", 
-                                                        gf[i])] > 0)) / fitSR_gf_pl$boot 
-  s2 <- bquote(slope == .(round(coef(fitSR_gf_pl)[sprintf("growthform%s:ellenberg_light", 
-                                                          gf[i])], 3))^.(sigStar(pval)))
+  slopeCI <- confint(fitSR_hf_pl)[sprintf("habit%s:ellenberg_light", hf[i]), ]
+  pval <- 1 - length(which(fitSR_hf_pl$bootstrap[, sprintf("habit%s:ellenberg_light", 
+                                                        hf[i])] > 0)) / fitSR_hf_pl$boot 
+  s2 <- bquote(slope == .(round(coef(fitSR_hf_pl)[sprintf("habit%s:ellenberg_light", 
+                                                          hf[i])], 3))^.(sigStar(pval)))
   text(1 + 0.5 * strwidth(s2), 1.05 - 1.5 * strheight(s1), labels = s2, pos = 1, adj = 1)
   
 }
@@ -216,4 +216,4 @@ dev.off()
 
 # Export objects to ms
 export2ms(c("aicSR", "fitSR_lf_a", "fitSR_lf_b", "fitSRc", "fitSR_lf_d", 
-            "fitSRe", "fitSR_gf_f", "fitSR_gf_g", "fitSR_gf_h"))
+            "fitSRe", "fitSR_hf_f", "fitSR_hf_g", "fitSR_hf_h"))

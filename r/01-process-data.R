@@ -166,13 +166,13 @@ plantatt <- read_csv(str_c(path_raw_data, "/plantatt.csv"),
          lifeform = LF1, perennation1 = P1, perennation2 = P2, woodiness = W, height = Hght,
          ellenberg_light = L)
 
-# Define growth form
-plantatt$growthform <- factor(NA, levels = c("annual", "biennial", "perennial",
-                                             "shrub", "tree"))
+# Define habit
+plantatt$habit <- factor(NA, levels = c("annual", "biennial", "perennial",
+                                        "shrub", "tree"))
   
 # Annual if P1 == annual and is.na(P2)
 x <- which(plantatt$perennation1 == "a" & is.na(plantatt$perennation2))
-plantatt$growthform[x] <- "annual"
+plantatt$habit[x] <- "annual"
 
 # Biennial if P1 == biennial & is.na(P2)
 # or P1 == annual & !is.na(P2)l
@@ -184,25 +184,23 @@ x <- which(plantatt$perennation1 == "b" & is.na(plantatt$perennation2) |
              plantatt$perennation1 == "b" & !is.na(plantatt$perennation2) |
              plantatt$perennation1 == "p" & !is.na(plantatt$perennation2))
 
-plantatt$growthform[x] <- "biennial"
+plantatt$habit[x] <- "biennial"
 
 # Perennial if P1 == perennial and is.na(P2)
 x <- which(plantatt$perennation1 == "p" & is.na(plantatt$perennation2))
-plantatt$growthform[x] <- "perennial"
+plantatt$habit[x] <- "perennial"
 
 # Reclassify as shrub if woody
 x <- which(plantatt$woodiness == "w")
-plantatt$growthform[x] <- "shrub"
+plantatt$habit[x] <- "shrub"
 
 # Reclassify as tree if height > 4 m
-message("need to determine height cutoff for trees, or alternative classification scheme")
 shrub_cutoff <- 4
 x <- which(plantatt$woodiness == "w" & plantatt$height >= (shrub_cutoff * 1e2))
-plantatt$growthform[x] <- "tree"
+plantatt$habit[x] <- "tree"
 
-#summary(plantatt$growthform)
 rm(x)
-plantatt %<>% select(species, lifeform, ellenberg_light, growthform)
+plantatt %<>% select(species, lifeform, ellenberg_light, habit)
 
 # stomata$species[!(stomata$species %in% plantatt$species |
 #                    stomata$acceptedname %in% plantatt$species)] # Missing data for several
@@ -224,7 +222,7 @@ xa[is.na(xa)] <- xaa[is.na(xa)]
 stomata$photo <- photo$photo[xp]
 stomata$lifeform <- plantatt$lifeform[xa]
 stomata$ellenberg_light <- plantatt$ellenberg_light[xa]
-stomata$growthform <- plantatt$growthform[xa]
+stomata$habit <- plantatt$habit[xa]
 
 # Remove missing values
 stomata %<>% filter(!is.na(sr_propAd), !is.na(lifeform), !is.na(ellenberg_light))

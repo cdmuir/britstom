@@ -11,7 +11,7 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata.csv"),
                       photo = col_character(),
                       lifeform = col_character(),
                       ellenberg_light = col_integer(),
-                      growthform = col_character()
+                      habit = col_character()
                     ))
 
 ##### Import phylogeny of British Flora -----

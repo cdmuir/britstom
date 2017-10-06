@@ -1,4 +1,4 @@
-species,ab_density,ad_density,sr_propAd,sr_even,lifeform,ellenberg_light,growthform
+species,ab_density,ad_density,sr_propAd,sr_even,lifeform,ellenberg_light,habit
 Acer_pseudoplatanus,400,0,0,0,Ph,4,tree
 Achillea_millefolium,16,103,0.865546218487395,0.1553398058252427,Ch,7,perennial
 Achillea_ptarmica,125,130,0.5098039215686274,0.9615384615384616,hc,7,perennial

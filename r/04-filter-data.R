@@ -11,7 +11,7 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata.csv"),
                       photo = col_character(),
                       lifeform = col_character(),
                       ellenberg_light = col_integer(),
-                      growthform = col_character()
+                      habit = col_character()
                     ))
 phy <- read.nexus(file = str_c(path_proc_data, "/Lim_etal_2014_final.nex"))
 

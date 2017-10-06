@@ -10,20 +10,20 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"),
                       sr_even = col_double(),
                       lifeform = col_character(),
                       ellenberg_light = col_integer(),
-                      growthform = col_character()
+                      habit = col_character()
                     ))
 
 # Arrange stomata in same order as phylogeny for plotting
 stomata %<>% magrittr::extract(match(phy$tip.label, .$species), 1:ncol(.))
 
-gf <- c("tree", "shrub", "perennial", "biennial", "annual")
+hf <- c("tree", "shrub", "perennial", "biennial", "annual")
 
 lf <- c("chamaephyte", "geophyte", "hemicryptophyte", "phanerophyte", "therophyte")
 names(lf) <- c("Ch", "Gn", "hc", "Ph", "Th")
 lf <- lf[names(sort(tapply(stomata$sr_propAd, stomata$lifeform, mean)))]
 
-# Factor growthform and lifeform for plotting
-stomata$growthform %<>% factor(levels = gf)
+# Factor habit and lifeform for plotting
+stomata$habit %<>% factor(levels = hf)
 stomata$lifeform %<>% factor(levels = names(lf))
 
 # Rescale phylogeny for plotting
@@ -35,10 +35,10 @@ theta_mid %<>% magrittr::extract(1:Ntip(phy))
 theta_left <- theta_mid - pi / Ntip(phy)
 theta_right <- theta_mid + pi / Ntip(phy)
 
-##### Using growth form -----
+##### Using habit -----
 
 # Main plot
-pdf(str_c(path_figures, "/figure_phylo-growthform.pdf"), w = 6.5, h = 6.5)#, 
+pdf(str_c(path_figures, "/figure_phylo-habit.pdf"), w = 6.5, h = 6.5)#, 
 # useDingbats = FALSE)
 par(mai = c(1, 0, 1, 2))
 gp <- plot(phy, type = "fan", show.tip.label = FALSE,
@@ -53,7 +53,7 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
   message("double check that wedges are drawn in same order as data")
   for (i in 1:Ntip(phy)) {
     draw_wedge(theta_left[i], theta_right[i], r1 = 1.025, r2 = 1.075, 
-               col = stomata$growthform[i])
+               col = stomata$habit[i])
   }  
 
   ## Legend
@@ -66,7 +66,7 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
          pch = 21, col = "black", bg = 1:5, cex = 3)
   text(rep(grconvertX(5, "in", "user"), 5),
        seq(0.1, 0.9, 0.2) * 1.25,
-       labels = gf, pos = 4, offset = 1)
+       labels = hf, pos = 4, offset = 1)
 
 # Stomatal ratio
 

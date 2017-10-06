@@ -9,7 +9,7 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"),
                       sr_even = col_double(),
                       lifeform = col_character(),
                       ellenberg_light = col_integer(),
-                      growthform = col_character()
+                      habit = col_character()
                     ))
 
 angio_phy <- read.nexus(file = str_c(path_proc_data, "/angio_phy.nex"))
