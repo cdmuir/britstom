@@ -38,8 +38,8 @@ theta_right <- theta_mid + pi / Ntip(phy)
 ##### Using habit -----
 
 # Main plot
-pdf(str_c(path_figures, "/figure_phylo-habit.pdf"), w = 6.5, h = 6.5)#, 
-# useDingbats = FALSE)
+pdf(str_c(path_figures, "/figure_phylo-habit.pdf"), w = 6.5, h = 6.5, 
+    useDingbats = FALSE)
 par(mai = c(1, 0, 1, 2))
 gp <- plot(phy, type = "fan", show.tip.label = FALSE,
            x.lim = c(-1.25, 1.25), y.lim = c(-1.25, 1.25))
@@ -118,8 +118,8 @@ dev.off()
 ##### Using Raunkiaer lifeform -----
 
 # Main plot
-pdf(str_c(path_figures, "/figure_phylo-lifeform.pdf"), w = 6.5, h = 6.5)#, 
-   # useDingbats = FALSE)
+pdf(str_c(path_figures, "/figure_phylo-lifeform.pdf"), w = 6.5, h = 6.5, 
+    useDingbats = FALSE)
 par(mai = c(1, 0, 1, 2))
 gp <- plot(phy, type = "fan", show.tip.label = FALSE,
            x.lim = c(-1.25, 1.25), y.lim = c(-1.25, 1.25))
