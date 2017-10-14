@@ -1,4 +1,4 @@
-\begin{thebibliography}{71}
+\begin{thebibliography}{72}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -13,6 +13,12 @@ Bartelheimer, M. and P.~Poschlod, 2016.
 Bazzaz, F., 1979.
 \newblock The physiological ecology of plant succession.
 \newblock Annual Review of Ecology and Systematics 10:351--71.
+
+\bibitem[{Beaulieu and O'Meara(2016)}]{Beaulieu_OMeara_2016}
+Beaulieu, J.~M. and B.~O'Meara, 2016.
+\newblock OUwie: Analysis of Evolutionary Rates in an OU Framework.
+\newblock \urlprefix\url{https://CRAN.R-project.org/package=OUwie}.
+\newblock R package version 1.50.
 
 \bibitem[{Beerling and Kelly(1996)}]{Beerling_Kelly_1996}
 Beerling, D.~J. and C.~K. Kelly, 1996.

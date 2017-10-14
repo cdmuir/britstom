@@ -14,5 +14,6 @@ source("r/07-plot-phylogeny.R")
 # Analyze data
 source("r/08-analyse-light-vs-form.R")
 source("r/09-analyse-stomatal-ratio.R")
-source("r/10-analyse-stomatal-density.R")
-source("r/11-analyse-phyloSEM.R")
+source("r/10-analyse-variance.R")
+source("r/11-analyse-stomatal-density.R")
+source("r/12-analyse-phyloSEM.R")

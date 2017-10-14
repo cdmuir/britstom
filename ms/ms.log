@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 OCT 2017 07:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 OCT 2017 23:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -551,112 +551,111 @@ File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
  [4] [5] [6]
-[7] [8] [9] [10] [11] [12] [13]
-Overfull \hbox (6.10344pt too wide) in paragraph at lines 199--200
+[7] [8] [9] [10] [11] [12] [13] [14]
+Overfull \hbox (6.10344pt too wide) in paragraph at lines 203--204
 \T1/aer/m/n/12 Overall, $[]$ in-creased with L-value, but there was a sig-nif-i
 -cant in-ter-ac-tion ($\OT1/cmr/m/n/12 ^^A[] \OML/cmm/m/it/12 >
  []
 
-[14] [15] [16] [17] [18] [19]
-Overfull \hbox (2.94524pt too wide) in paragraph at lines 237--237
+[15] [16] [17] [18] [19] [20]
+Overfull \hbox (2.94524pt too wide) in paragraph at lines 244--244
 []\T1/aer/bx/n/14.4 Why does adax-ial stom-atal den-sity con-trol stom-atal ra-
 tio? 
  []
 
-[20] [21]
-Overfull \hbox (32.74548pt too wide) in paragraph at lines 257--258
+[21] [22]
+Overfull \hbox (32.74548pt too wide) in paragraph at lines 264--265
 \T1/aer/m/n/12 CDM de-signed the study, col-lected data, an-a-lyzed the data, a
 nd wrote the manuscript. 
  []
 
-[22] (./ms.bbl [23
-
-]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 106.
-
+[23] [24] (./ms.bbl
+LaTeX Font Info:    Try loading font information for T1+aett on input line 20.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 104--107
+) [25
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 110--113
 []\T1/aer/m/n/12 ---------, 2017.  Eco-log-i-cal flora of the British isles.  U
 RL
  []
 
-[24] [25] [26] [27] [28] [29] [30]) [31]
-<figures/figure_phylo-lifeform.pdf, id=116, 469.755pt x 469.755pt>
+[26] [27] [28] [29] [30] [31] [32]) [33]
+<figures/figure_phylo-lifeform.pdf, id=122, 469.755pt x 469.755pt>
 File: figures/figure_phylo-lifeform.pdf Graphic file (type pdf)
 
 <use figures/figure_phylo-lifeform.pdf>
 Package pdftex.def Info: figures/figure_phylo-lifeform.pdf used on input line 3
-57.
+64.
 (pdftex.def)             Requested size: 430.00462pt x 430.00798pt.
 
-<figures/figure_lf-light.pdf, id=117, 289.08pt x 505.89pt>
+<figures/figure_lf-light.pdf, id=123, 289.08pt x 505.89pt>
 File: figures/figure_lf-light.pdf Graphic file (type pdf)
 
 <use figures/figure_lf-light.pdf>
-Package pdftex.def Info: figures/figure_lf-light.pdf used on input line 363.
+Package pdftex.def Info: figures/figure_lf-light.pdf used on input line 370.
 (pdftex.def)             Requested size: 215.0023pt x 376.25166pt.
 
-<figures/figure_SR-lf.pdf, id=118, 289.08pt x 505.89pt>
+<figures/figure_SR-lf.pdf, id=124, 289.08pt x 505.89pt>
 File: figures/figure_SR-lf.pdf Graphic file (type pdf)
 
 <use figures/figure_SR-lf.pdf>
-Package pdftex.def Info: figures/figure_SR-lf.pdf used on input line 369.
+Package pdftex.def Info: figures/figure_SR-lf.pdf used on input line 376.
 (pdftex.def)             Requested size: 215.0023pt x 376.25166pt.
 
-<figures/figure_SD-light.pdf, id=119, 578.16pt x 722.7pt>
+<figures/figure_SD-light.pdf, id=125, 578.16pt x 722.7pt>
 File: figures/figure_SD-light.pdf Graphic file (type pdf)
 
 <use figures/figure_SD-light.pdf>
-Package pdftex.def Info: figures/figure_SD-light.pdf used on input line 376.
+Package pdftex.def Info: figures/figure_SD-light.pdf used on input line 383.
 (pdftex.def)             Requested size: 215.0023pt x 268.75119pt.
- [32
+ [34
 
-] [33 <./figures/figure_phylo-lifeform.pdf>] [34 <./figures/figure_lf-light.pdf
->] [35 <./figures/figure_SR-lf.pdf>]
-[36 <./figures/figure_SD-light.pdf>]
-<figures/figureS_violin.pdf, id=161, 578.16pt x 379.4175pt>
+] [35 <./figures/figure_phylo-lifeform.pdf>] [36 <./figures/figure_lf-light.pdf
+>] [37 <./figures/figure_SR-lf.pdf>]
+[38 <./figures/figure_SD-light.pdf>]
+<figures/figureS_violin.pdf, id=167, 578.16pt x 379.4175pt>
 File: figures/figureS_violin.pdf Graphic file (type pdf)
 
 <use figures/figureS_violin.pdf>
-Package pdftex.def Info: figures/figureS_violin.pdf used on input line 402.
+Package pdftex.def Info: figures/figureS_violin.pdf used on input line 409.
 (pdftex.def)             Requested size: 344.005pt x 225.75331pt.
 
-<figures/figureS_compare-growth-forms.pdf, id=162, 289.08pt x 433.62pt>
+<figures/figureS_compare-growth-forms.pdf, id=168, 289.08pt x 433.62pt>
 File: figures/figureS_compare-growth-forms.pdf Graphic file (type pdf)
 
 <use figures/figureS_compare-growth-forms.pdf>
 Package pdftex.def Info: figures/figureS_compare-growth-forms.pdf used on input
- line 408.
+ line 415.
 (pdftex.def)             Requested size: 344.005pt x 516.03406pt.
 
-<figures/figure_hf-light.pdf, id=163, 289.08pt x 505.89pt>
+<figures/figure_hf-light.pdf, id=169, 289.08pt x 505.89pt>
 File: figures/figure_hf-light.pdf Graphic file (type pdf)
 
 <use figures/figure_hf-light.pdf>
-Package pdftex.def Info: figures/figure_hf-light.pdf used on input line 414.
+Package pdftex.def Info: figures/figure_hf-light.pdf used on input line 421.
 (pdftex.def)             Requested size: 215.0023pt x 376.25166pt.
 
-<figures/figure_SR-hf.pdf, id=164, 289.08pt x 505.89pt>
+<figures/figure_SR-hf.pdf, id=170, 289.08pt x 505.89pt>
 File: figures/figure_SR-hf.pdf Graphic file (type pdf)
 
 <use figures/figure_SR-hf.pdf>
-Package pdftex.def Info: figures/figure_SR-hf.pdf used on input line 420.
+Package pdftex.def Info: figures/figure_SR-hf.pdf used on input line 427.
 (pdftex.def)             Requested size: 215.0023pt x 376.25166pt.
- [37
+ [39
 
- <./figures/figureS_violin.pdf>] [38 <./figures/figureS_compare-growth-forms.pd
-f>] [39 <./figures/figure_hf-light.pdf>]
-[40 <./figures/figure_SR-hf.pdf>] (./ms.aux) ) 
+ <./figures/figureS_violin.pdf>] [40 <./figures/figureS_compare-growth-forms.pd
+f>] [41 <./figures/figure_hf-light.pdf>]
+[42 <./figures/figure_SR-hf.pdf>] (./ms.aux) ) 
 Here is how much of TeX's memory you used:
- 6297 strings out of 493014
- 94165 string characters out of 6133351
- 157828 words of memory out of 5000000
- 9651 multiletter control sequences out of 15000+600000
+ 6300 strings out of 493014
+ 94249 string characters out of 6133351
+ 157868 words of memory out of 5000000
+ 9654 multiletter control sequences out of 15000+600000
  41537 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,11n,42p,1831b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,42p,1831b,374s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-di
 st/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/local/texlive/2016/texmf-dist/
@@ -673,10 +672,10 @@ ic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmtt12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/c
 m-super/sfrm1200.pfb>
-Output written on ms.pdf (40 pages, 1370188 bytes).
+Output written on ms.pdf (42 pages, 1376884 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
+ 258 PDF objects out of 1000 (max. 8388607)
+ 181 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

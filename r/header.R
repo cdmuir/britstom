@@ -2,8 +2,8 @@ rm(list = ls())
 graphics.off()
 
 # remove before final publication
-# file.copy("~/Google Drive/CommonResources/refs.bib",
-#           "~/Google Drive/britstom/ms/refs.bib", overwrite = TRUE)
+file.copy("~/Google Drive/CommonResources/refs.bib",
+          "~/Google Drive/britstom/ms/refs.bib", overwrite = TRUE)
 
 compile_pathd8 <- FALSE # changed to TRUE if you need to compile PATHd8
 if (compile_pathd8) {
@@ -15,6 +15,7 @@ library(ape)
 library(dplyr)
 library(lavaan)
 library(magrittr)
+library(OUwie)
 library(phylolm)
 library(phytools)
 library(plyr)

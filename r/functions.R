@@ -142,15 +142,27 @@ export2ms <- function(x, path_export = getOption("path_export", "/export")) {
 }
 
 # Import objects to ms
+# import2ms <- function(path_export = getOption("path_export", "/export")) {
+#   
+#   path <- normalizePath(str_c(path_ms, path_export))
+#   files <- list.files(path)
+#   eval(parse(text = str_c(files, " <- read_rds('", path, "/", files, "')")),
+#        envir = .GlobalEnv)
+# 
+# }
+
+# Import objects to ms
 import2ms <- function(path_export = getOption("path_export", "/export")) {
   
   path <- normalizePath(str_c(path_ms, path_export))
-  files <- list.files(path)
-  eval(parse(text = str_c(files, " <- read_rds('", path, "/", files, "')")),
+  objects <- list.files(path)
+  files <- str_c(path, "/", objects) %>% 
+    normalizePath() %>% 
+    str_replace_all("\\\\", "\\\\\\\\")
+  eval(parse(text = str_c(objects, " <- read_rds('", files, "')")),
        envir = .GlobalEnv)
-
+  
 }
-
 # Calculate sr_even
 calc_sr_even <- function(ab_density, ad_density) {
   apply(cbind(ab_density, ad_density), 1, min) / 
