@@ -23,7 +23,7 @@ nCAM <- length(which(stomata$photo == "cam"))
 
 stomata %<>% filter(lifeform %in% c("Ph", "Ch", "hc", "Gn", "Th"),
                     photo == "c3") %>%
-  select(-photo)
+  dplyr::select(-photo)
 
 angio_phy <- extract.clade(phy, node = length(phy$tip.label) + 
                              which(phy$node.label == "angiosperms"))
@@ -31,7 +31,7 @@ angio_phy <- extract.clade(phy, node = length(phy$tip.label) +
 # Change species to acceptedname is latter is in phylogeny
 stomata$species[which(!stomata$species %in% phy$tip.label)] <-
   stomata$acceptedname[which(!stomata$species %in% phy$tip.label)]
-stomata %<>% select(-acceptedname)
+stomata %<>% dplyr::select(-acceptedname)
 
 n <- nrow(stomata)
 

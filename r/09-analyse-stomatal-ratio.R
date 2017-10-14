@@ -110,7 +110,7 @@ dev.off()
 
 lf <- data.frame(lifeform = names(lf))
 lf %<>% 
-  expand(lifeform, lifeform) %>%
+  tidyr::expand(lifeform, lifeform) %>%
   remove_diag()
 lf %<>% mutate(mean = numeric(nrow(.)),
                median = numeric(nrow(.)),

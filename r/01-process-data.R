@@ -98,7 +98,7 @@ x <- tmp %>%
 tmp$ad_density.x[x] <- tmp$ad_density.y[x]
 
 tmp %<>% 
-  select(species, acceptedname, ab_density.x, ad_density.x) %>%
+  dplyr::select(species, acceptedname, ab_density.x, ad_density.x) %>%
   set_colnames(c("species", "acceptedname", "ab_density", "ad_density"))
 
 stomata %<>% 
@@ -162,9 +162,9 @@ plantatt <- read_csv(str_c(path_raw_data, "/plantatt.csv"),
                        N = col_integer(),
                        S = col_integer()
                      )) %>%
-  select(species = `Taxon name`, 
-         lifeform = LF1, perennation1 = P1, perennation2 = P2, woodiness = W, height = Hght,
-         ellenberg_light = L)
+  dplyr::select(species = `Taxon name`, 
+                lifeform = LF1, perennation1 = P1, perennation2 = P2, woodiness = W, 
+                height = Hght, ellenberg_light = L)
 
 # Define habit
 plantatt$habit <- factor(NA, levels = c("annual", "biennial", "perennial",
@@ -200,7 +200,7 @@ x <- which(plantatt$woodiness == "w" & plantatt$height >= (shrub_cutoff * 1e2))
 plantatt$habit[x] <- "tree"
 
 rm(x)
-plantatt %<>% select(species, lifeform, ellenberg_light, habit)
+plantatt %<>% dplyr::select(species, lifeform, ellenberg_light, habit)
 
 # stomata$species[!(stomata$species %in% plantatt$species |
 #                    stomata$acceptedname %in% plantatt$species)] # Missing data for several

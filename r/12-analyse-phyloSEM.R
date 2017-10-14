@@ -16,9 +16,9 @@ stomata <- read_csv(str_c(path_proc_data, "/stomata_filtered.csv"),
 ##### Phylogenetic structural equation model ---
   
 # small data.frame for Rphylopars
-td <- stomata %>% select(species, ab_density, ad_density, ellenberg_light) %>%
+td <- stomata %>% dplyr::select(species, ab_density, ad_density, ellenberg_light) %>%
   mutate(logSDab = log(ab_density + 1), logSDad = log(ad_density + 1)) %>%
-  select(-ab_density, -ad_density) %>%
+  dplyr::select(-ab_density, -ad_density) %>%
   as.data.frame() %>% 
   set_rownames(.$species) # need to change row names for phylolm
 
