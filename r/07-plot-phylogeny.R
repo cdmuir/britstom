@@ -46,9 +46,10 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
 
 # Growth form
 
-  ## Palette
+  ## Palette for growth form
   palette(brewer.pal(5, "Greens"))
-
+  palette(rev(palette()))
+  
   ## Plot wedges
   message("double check that wedges are drawn in same order as data")
   for (i in 1:Ntip(phy)) {
@@ -59,50 +60,79 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
   ## Legend
   clip(grconvertX(0, "ndc", "user"), grconvertX(1, "ndc", "user"),
        grconvertY(0, "ndc", "user"), grconvertY(1, "ndc", "user"))
-  text(grconvertX(5.5, "in", "user"), grconvertY(0.85, "ndc", "user"),
+  text(grconvertX(5.5, "in", "user"), grconvertY(0.9, "ndc", "user"),
        labels = "Growth form", cex = 1.5)
   points(rep(grconvertX(5, "in", "user"), 5),
-         seq(0.1, 0.9, 0.2) * 1.25,
+         seq(0.15, 0.95, 0.2) * grconvertY(0.85, "ndc", "user"),
          pch = 21, col = "black", bg = 1:5, cex = 3)
   text(rep(grconvertX(5, "in", "user"), 5),
-       seq(0.1, 0.9, 0.2) * 1.25,
+       seq(0.15, 0.95, 0.2) * grconvertY(0.85, "ndc", "user"),
        labels = hf, pos = 4, offset = 1)
-
+  
+# Light
+  
+  ## Palette for light
+  palette(brewer.pal(length(unique(stomata$ellenberg_light)), "Oranges"))
+  palette(rev(palette()))
+  
+  ## Plot wedges
+  message("double check that wedges are drawn in same order as data")
+  for (i in 1:Ntip(phy)) {
+    draw_wedge(theta_left[i], theta_right[i], r1 = 1.075, r2 = 1.125, 
+               col = stomata$ellenberg_light[i] - min(stomata$ellenberg_light) + 1)
+  }  
+  
+  ## Legend
+  clip(grconvertX(0, "ndc", "user"), grconvertX(1, "ndc", "user"),
+       grconvertY(0, "ndc", "user"), grconvertY(1, "ndc", "user"))
+  text(grconvertX(5.5, "in", "user"), grconvertY(0.45, "ndc", "user"),
+       labels = "Ellenberg light\nindicator value", cex = 1.5)
+  points(rep(grconvertX(5, "in", "user"), 7),
+         seq(-0.4, -1.2, length.out = 7) * 1.25,
+         pch = 21, col = "black", bg = 1:7, cex = 3)
+  text(rep(grconvertX(5, "in", "user"), 5),
+       seq(-0.4, -1.2, length.out = 7) * 1.25,
+       labels = str_c(3:9, c(" shade", rep("", 5), " sun")), pos = 4, offset = 1)
+  
 # Stomatal ratio
 
   ## Histofan
-  draw_histofan(stomata$sr_even, 1.1, 1.2)
+  draw_histofan(stomata$sr_even, 1.15, 1.3)
 
   ## Legend
-  text(grconvertX(5.5, "in", "user"), grconvertY(0.45, "ndc", "user"),
-       labels = "Stomatal ratio", cex = 1.5)
+  text(grconvertX(0.1, "ndc", "user"), grconvertY(0.9, "ndc", "user"),
+       labels = "Stomatal\nratio", cex = 1.5)
 
-  theta <- seq(-pi / 12, pi / 12, length.out = 1e2)
-  r <- grconvertX(6, "in", "user")
+  theta <- seq(1 / 2 * pi - pi / 12, 1 / 2 * pi + pi / 12, length.out = 1e2)
+  theta_axis <- theta[1] - 24 / 360
+  theta_lab <- theta[1] - 72 / 360
+  
+  r <- grconvertX(5.25, "in", "user")
   x <- cos(theta) * r
-  y <- sin(theta) * r + grconvertY(0.25, "ndc", "user")
+  y <- sin(theta) * r #+ grconvertY(0.25, "ndc", "user")
   points(x, y, type = "l", col = "grey")
-  text(x[1], y[1], labels = "1", pos = 1, 
-       srt = 360 * theta[1] / (2 * pi))
-
-  r <- grconvertX(5.5, "in", "user")
-  x <- cos(theta) * r
-  y <- sin(theta) * r + grconvertY(0.25, "ndc", "user")
-  points(x, y, type = "l", col = "grey")
-  text(x[1], y[1], labels = "0.5", pos = 1, 
-       srt = 360 * theta[1] / (2 * pi))
-  text(x[1], y[1], labels = expression(SR[even]), pos = 1, offset = 2, 
-       cex = 1.25, srt = 360 * theta[1] / (2 * pi))
-
+  text(cos(theta_axis) * r, sin(theta_axis) * r, 
+       labels = "1", srt = 360 * (pi - theta_axis / (2 * pi)))
+  
   r <- grconvertX(5, "in", "user")
   x <- cos(theta) * r
-  y <- sin(theta) * r + grconvertY(0.25, "ndc", "user")
+  y <- sin(theta) * r #+ grconvertY(0.25, "ndc", "user")
   points(x, y, type = "l", col = "grey")
-  text(x[1], y[1], labels = "0", pos = 1, 
-       srt = 360 * theta[1] / (2 * pi))
+  text(cos(theta_axis) * r, sin(theta_axis) * r, 
+       labels = "0.5", srt = 360 * (pi - theta_axis / (2 * pi)))
+  text(cos(theta_lab) * r, sin(theta_lab) * r, 
+       labels = expression(SR[even]), cex = 1.25,
+       srt = 360 * (theta_lab / (2 * pi)))
+
+  r <- grconvertX(4.75, "in", "user")
+  x <- cos(theta) * r
+  y <- sin(theta) * r #+ grconvertY(0.25, "ndc", "user")
+  points(x, y, type = "l", col = "grey")
+  text(cos(theta_axis) * r, sin(theta_axis) * r,
+       labels = "0", srt = 360 * (pi - theta_lab / (2 * pi)))
 
   set.seed(883090777)
-  d <- runif(8, grconvertX(5, "in", "user"), grconvertX(6, "in", "user"))
+  d <- runif(8, grconvertX(4.75, "in", "user"), grconvertX(5.25, "in", "user"))
   theta <- seq(from = min(theta), to = max(theta), length.out = length(d) + 1)
   X <- Y <- numeric()
   for (i in 1:length(d)) {
@@ -110,7 +140,7 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
     Y %<>% c(sin(seq(theta[i], theta[i + 1], length.out = 1e2)) * d[i])
   }
 
-  Y %<>% add(grconvertY(0.25, "ndc", "user"))
+  #Y %<>% add(grconvertY(0.25, "ndc", "user"))
   points(X, Y, type = "l", lwd = 3)
 
 dev.off()
@@ -128,6 +158,7 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
 
   ## Palette
   palette(brewer.pal(5, "Greens"))
+  palette(rev(palette()))
 
   ## Plot wedges
   message("double check that wedges are drawn in same order as data")
@@ -139,50 +170,79 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
   ## Legend
   clip(grconvertX(0, "ndc", "user"), grconvertX(1, "ndc", "user"),
        grconvertY(0, "ndc", "user"), grconvertY(1, "ndc", "user"))
-  text(grconvertX(5.5, "in", "user"), grconvertY(0.85, "ndc", "user"),
+  text(grconvertX(5.5, "in", "user"), grconvertY(0.9, "ndc", "user"),
        labels = "Growth form", cex = 1.5)
   points(rep(grconvertX(5, "in", "user"), 5),
-         seq(0.1, 0.9, 0.2) * 1.25,
+         seq(0.15, 0.95, 0.2) * grconvertY(0.85, "ndc", "user"),
          pch = 21, col = "black", bg = 1:5, cex = 3)
   text(rep(grconvertX(5, "in", "user"), 5),
-       seq(0.1, 0.9, 0.2) * 1.25,
+       seq(0.15, 0.95, 0.2) * grconvertY(0.85, "ndc", "user"),
        labels = lf, pos = 4, offset = 1)
 
+# Light
+  
+  ## Palette for light
+  palette(brewer.pal(length(unique(stomata$ellenberg_light)), "Oranges"))
+  palette(rev(palette()))
+  
+  ## Plot wedges
+  message("double check that wedges are drawn in same order as data")
+  for (i in 1:Ntip(phy)) {
+    draw_wedge(theta_left[i], theta_right[i], r1 = 1.075, r2 = 1.125, 
+               col = stomata$ellenberg_light[i] - min(stomata$ellenberg_light) + 1)
+  }  
+  
+  ## Legend
+  clip(grconvertX(0, "ndc", "user"), grconvertX(1, "ndc", "user"),
+       grconvertY(0, "ndc", "user"), grconvertY(1, "ndc", "user"))
+  text(grconvertX(5.5, "in", "user"), grconvertY(0.45, "ndc", "user"),
+       labels = "Ellenberg light\nindicator value", cex = 1.5)
+  points(rep(grconvertX(5, "in", "user"), 7),
+         seq(-0.4, -1.2, length.out = 7) * 1.25,
+         pch = 21, col = "black", bg = 1:7, cex = 3)
+  text(rep(grconvertX(5, "in", "user"), 5),
+       seq(-0.4, -1.2, length.out = 7) * 1.25,
+       labels = str_c(3:9, c(" shade", rep("", 5), " sun")), pos = 4, offset = 1)
+  
 # Stomatal ratio
   
   ## Histofan
-  draw_histofan(stomata$sr_even, 1.1, 1.2)
+  draw_histofan(stomata$sr_even, 1.15, 1.3)
   
   ## Legend
-  text(grconvertX(5.5, "in", "user"), grconvertY(0.45, "ndc", "user"),
-       labels = "Stomatal ratio", cex = 1.5)
+  text(grconvertX(0.1, "ndc", "user"), grconvertY(0.9, "ndc", "user"),
+       labels = "Stomatal\nratio", cex = 1.5)
   
-  theta <- seq(-pi / 12, pi / 12, length.out = 1e2)
-  r <- grconvertX(6, "in", "user")
-  x <- cos(theta) * r
-  y <- sin(theta) * r + grconvertY(0.25, "ndc", "user")
-  points(x, y, type = "l", col = "grey")
-  text(x[1], y[1], labels = "1", pos = 1, 
-       srt = 360 * theta[1] / (2 * pi))
+  theta <- seq(1 / 2 * pi - pi / 12, 1 / 2 * pi + pi / 12, length.out = 1e2)
+  theta_axis <- theta[1] - 24 / 360
+  theta_lab <- theta[1] - 72 / 360
   
-  r <- grconvertX(5.5, "in", "user")
+  r <- grconvertX(5.25, "in", "user")
   x <- cos(theta) * r
-  y <- sin(theta) * r + grconvertY(0.25, "ndc", "user")
+  y <- sin(theta) * r #+ grconvertY(0.25, "ndc", "user")
   points(x, y, type = "l", col = "grey")
-  text(x[1], y[1], labels = "0.5", pos = 1, 
-       srt = 360 * theta[1] / (2 * pi))
-  text(x[1], y[1], labels = expression(SR[even]), pos = 1, offset = 2, 
-       cex = 1.25, srt = 360 * theta[1] / (2 * pi))
+  text(cos(theta_axis) * r, sin(theta_axis) * r, 
+       labels = "1", srt = 360 * (pi - theta_axis / (2 * pi)))
   
   r <- grconvertX(5, "in", "user")
   x <- cos(theta) * r
-  y <- sin(theta) * r + grconvertY(0.25, "ndc", "user")
+  y <- sin(theta) * r #+ grconvertY(0.25, "ndc", "user")
   points(x, y, type = "l", col = "grey")
-  text(x[1], y[1], labels = "0", pos = 1, 
-       srt = 360 * theta[1] / (2 * pi))
+  text(cos(theta_axis) * r, sin(theta_axis) * r, 
+       labels = "0.5", srt = 360 * (pi - theta_axis / (2 * pi)))
+  text(cos(theta_lab) * r, sin(theta_lab) * r, 
+       labels = expression(SR[even]), cex = 1.25,
+       srt = 360 * (theta_lab / (2 * pi)))
+  
+  r <- grconvertX(4.75, "in", "user")
+  x <- cos(theta) * r
+  y <- sin(theta) * r #+ grconvertY(0.25, "ndc", "user")
+  points(x, y, type = "l", col = "grey")
+  text(cos(theta_axis) * r, sin(theta_axis) * r,
+       labels = "0", srt = 360 * (pi - theta_lab / (2 * pi)))
   
   set.seed(883090777)
-  d <- runif(8, grconvertX(5, "in", "user"), grconvertX(6, "in", "user"))
+  d <- runif(8, grconvertX(4.75, "in", "user"), grconvertX(5.25, "in", "user"))
   theta <- seq(from = min(theta), to = max(theta), length.out = length(d) + 1)
   X <- Y <- numeric()
   for (i in 1:length(d)) {
@@ -190,8 +250,8 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
     Y %<>% c(sin(seq(theta[i], theta[i + 1], length.out = 1e2)) * d[i])
   }
   
-  Y %<>% add(grconvertY(0.25, "ndc", "user"))
+  #Y %<>% add(grconvertY(0.25, "ndc", "user"))
   points(X, Y, type = "l", lwd = 3)
   
-  dev.off()
+dev.off()
   
