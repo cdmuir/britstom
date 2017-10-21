@@ -43,7 +43,7 @@ fitSR_lf_pl <- read_rds(str_c(path_objects, "/fitSR_lf_pl.rds"))
 # Figure
 
 pdf(str_c(path_figures, "/figure_SR-lf.pdf"), 4, 7, useDingbats = FALSE)
-#postscript(str_c(path_figures, "/figure_SRmultReg.ps"), width = 4, height = 7) # need for submitting to journal website
+#postscript(str_c(path_figures, "/figure_SR-lf.eps"), width = 4, height = 7) # need for submitting to journal website
 par(mfrow = c(5, 1), mar = rep(0, 4), cex.lab = 1, oma = c(5, 7, 1, 1))
 
 for (i in 5:1) {
@@ -151,7 +151,7 @@ fitSR_hf_pl <- read_rds(str_c(path_objects, "/fitSR_hf_pl.rds"))
 # Figure
 
 pdf(str_c(path_figures, "/figure_SR-hf.pdf"), 4, 7, useDingbats = FALSE)
-#postscript(str_c(path_figures, "/figure_SR-hf.ps"), width = 4, height = 7) # need for submitting to journal website
+#postscript(str_c(path_figures, "/figure_SR-hf.eps"), width = 4, height = 7) # need for submitting to journal website
 par(mfrow = c(5, 1), mar = rep(0, 4), cex.lab = 1, oma = c(5, 7, 1, 1))
 
 for (i in 5:1) {

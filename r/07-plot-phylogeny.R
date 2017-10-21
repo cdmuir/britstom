@@ -51,7 +51,6 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
   palette(rev(palette()))
   
   ## Plot wedges
-  message("double check that wedges are drawn in same order as data")
   for (i in 1:Ntip(phy)) {
     draw_wedge(theta_left[i], theta_right[i], r1 = 1.025, r2 = 1.075, 
                col = stomata$habit[i])
@@ -76,7 +75,6 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
   palette(rev(palette()))
   
   ## Plot wedges
-  message("double check that wedges are drawn in same order as data")
   for (i in 1:Ntip(phy)) {
     draw_wedge(theta_left[i], theta_right[i], r1 = 1.075, r2 = 1.125, 
                col = stomata$ellenberg_light[i] - min(stomata$ellenberg_light) + 1)
@@ -161,7 +159,6 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
   palette(rev(palette()))
 
   ## Plot wedges
-  message("double check that wedges are drawn in same order as data")
   for (i in 1:Ntip(phy)) {
     draw_wedge(theta_left[i], theta_right[i], r1 = 1.025, r2 = 1.075, 
                col = stomata$lifeform[i])
@@ -186,7 +183,6 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
   palette(rev(palette()))
   
   ## Plot wedges
-  message("double check that wedges are drawn in same order as data")
   for (i in 1:Ntip(phy)) {
     draw_wedge(theta_left[i], theta_right[i], r1 = 1.075, r2 = 1.125, 
                col = stomata$ellenberg_light[i] - min(stomata$ellenberg_light) + 1)
