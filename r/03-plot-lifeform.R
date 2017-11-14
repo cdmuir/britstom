@@ -20,7 +20,7 @@ lf <- c("chamaephyte", "geophyte", "hemicryptophyte", "hydrophyte", "phanerophyt
 names(lf) <- c("Ch", "Gn", "hc", "Hy", "Ph", "Th")
 lf <- lf[names(sort(tapply(stomata$sr_propAd, stomata$lifeform, mean)))]
 
-pdf(str_c(path_figures, "/figureS_violin.pdf"), 8, 5.25)
+pdf(str_c(path_figures, "/figureS_violin.pdf"), 8, 5.25, useDingbats = FALSE)
 par(mai = c(1.75, 1.5, 0.25, 0.25), cex.lab = 1.5, las = 1, cex = 1.5, cex.axis = 0.5)
 
 vioplot(subset(stomata$sr_propAd, stomata$lifeform == names(lf[1]), na.rm = TRUE),

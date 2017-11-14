@@ -1,460 +1,452 @@
-\begin{thebibliography}{72}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\providecommand{\urlprefix}{URL }
+\begin{thebibliography}{71}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-\bibitem[{Bartelheimer and Poschlod(2016)}]{Bartelheimer_Poschlod_2016}
-Bartelheimer, M. and P.~Poschlod, 2016.
+\bibitem[{Bartelheimer \& Poschlod(2016)}]{Bartelheimer_Poschlod_2016}
+{\bf Bartelheimer M , Poschlod P}{\bf . 2016}.
 \newblock Functional characterizations of {E}llenberg indicator values--a
   review on ecophysiological determinants.
-\newblock Functional Ecology 30:506--516.
+\newblock \emph{Functional Ecology}, {\bf 30}: 506--516.
 
 \bibitem[{Bazzaz(1979)}]{Bazzaz_1979}
-Bazzaz, F., 1979.
+{\bf Bazzaz F}{\bf . 1979}.
 \newblock The physiological ecology of plant succession.
-\newblock Annual Review of Ecology and Systematics 10:351--71.
+\newblock \emph{Annual Review of Ecology and Systematics}, {\bf 10}: 351--71.
 
-\bibitem[{Beaulieu and O'Meara(2016)}]{Beaulieu_OMeara_2016}
-Beaulieu, J.~M. and B.~O'Meara, 2016.
-\newblock OUwie: Analysis of Evolutionary Rates in an OU Framework.
-\newblock \urlprefix\url{https://CRAN.R-project.org/package=OUwie}.
+\bibitem[{Beaulieu \& O'Meara(2016)}]{Beaulieu_OMeara_2016}
+{\bf Beaulieu JM , O'Meara B}. 2016.
+\newblock \emph{OUwie: Analysis of Evolutionary Rates in an OU Framework}.
 \newblock R package version 1.50.
 
-\bibitem[{Beerling and Kelly(1996)}]{Beerling_Kelly_1996}
-Beerling, D.~J. and C.~K. Kelly, 1996.
+\bibitem[{Beerling \& Kelly(1996)}]{Beerling_Kelly_1996}
+{\bf Beerling DJ , Kelly CK}{\bf . 1996}.
 \newblock Evolutionary comparative analyses of the relationship between leaf
   structure and function.
-\newblock New Phytologist 134:35--51.
+\newblock \emph{New Phytologist}, {\bf 134}: 35--51.
 
-\bibitem[{Beerling and Royer(2011)}]{Beerling_Royer_2011}
-Beerling, D.~J. and D.~L. Royer, 2011.
+\bibitem[{Beerling \& Royer(2011)}]{Beerling_Royer_2011}
+{\bf Beerling DJ , Royer DL}{\bf . 2011}.
 \newblock Convergent {C}enozoic {CO}$_2$ history.
-\newblock Nature Geoscience 4:418--420.
+\newblock \emph{Nature Geoscience}, {\bf 4}: 418--420.
 
-\bibitem[{Boettiger et~al.(2012)Boettiger, Coop, and
+\bibitem[{Boettiger \emph{et~al.}(2012)Boettiger, Coop \&
   Ralph}]{Boettiger_etal_2012}
-Boettiger, C., G.~Coop, and P.~Ralph, 2012.
+{\bf Boettiger C, Coop G , Ralph P}{\bf . 2012}.
 \newblock Is your phylogeny informative? {M}easuring the power of comparative
   methods.
-\newblock Evolution 66:2240--2251.
+\newblock \emph{Evolution}, {\bf 66}: 2240--2251.
 
-\bibitem[{Bucher et~al.(2017)Bucher, Auerswald, Gr{\"u}n-Wenzel, Higgins,
-  Jorge, and R{\"o}mermann}]{Bucher_etal_2017}
-Bucher, S.~F., K.~Auerswald, C.~Gr{\"u}n-Wenzel, S.~I. Higgins, J.~G. Jorge,
-  and C.~R{\"o}mermann, 2017.
+\bibitem[{Bucher \emph{et~al.}(2017)Bucher, Auerswald, Gr{\"u}n-Wenzel,
+  Higgins, Jorge \& R{\"o}mermann}]{Bucher_etal_2017}
+{\bf Bucher SF, Auerswald K, Gr{\"u}n-Wenzel C, Higgins SI, Jorge JG ,
+  R{\"o}mermann C}{\bf . 2017}.
 \newblock Stomatal traits relate to habitat preferences of herbaceous species
   in a temperate climate.
-\newblock Flora 229:107--115.
+\newblock \emph{Flora}, {\bf 229}: 107--115.
 
-\bibitem[{Buckley et~al.(2015)Buckley, John, Scoffoni, and
+\bibitem[{Buckley \emph{et~al.}(2015)Buckley, John, Scoffoni \&
   Sack}]{Buckley_etal_2015}
-Buckley, T.~N., G.~P. John, C.~Scoffoni, and L.~Sack, 2015.
+{\bf Buckley TN, John GP, Scoffoni C , Sack L}{\bf . 2015}.
 \newblock How does leaf anatomy influence water transport outside the xylem?
-\newblock Plant Physiology 168:1616--1635.
+\newblock \emph{Plant Physiology}, {\bf 168}: 1616--1635.
 
 \bibitem[{Carpenter(1994)}]{Carpenter_1994}
-Carpenter, R.~J., 1994.
+{\bf Carpenter RJ}{\bf . 1994}.
 \newblock Cuticular morphology and aspects of the ecology and fossil history of
   {N}orth {Q}ueensland rainforest {P}roteaceae.
-\newblock Botanical Journal of the Linnean Society 116:249.
+\newblock \emph{Botanical Journal of the Linnean Society}, {\bf 116}: 249.
 
-\bibitem[{Carpenter et~al.(2015)Carpenter, Macphail, Jordan, and
+\bibitem[{Carpenter \emph{et~al.}(2015)Carpenter, Macphail, Jordan \&
   Hill}]{Carpenter_etal_2015}
-Carpenter, R.~J., M.~K. Macphail, G.~J. Jordan, and R.~S. Hill, 2015.
+{\bf Carpenter RJ, Macphail MK, Jordan GJ , Hill RS}{\bf . 2015}.
 \newblock Fossil evidence for open, {P}roteaceae-dominated heathlands and fire
   in the {L}ate {C}retaceous of {A}ustralia.
-\newblock American Journal of Botany 102:2092--2107.
+\newblock \emph{American Journal of Botany}, {\bf 102}: 2092--2107.
 
 \bibitem[{Darwin(1886)}]{Darwin_1886}
-Darwin, F., 1886.
+{\bf Darwin F}{\bf . 1886}.
 \newblock On the relation between the ``bloom'' on leaves and the distribution
   of the stomata.
-\newblock Botanical Journal of the Linnean Society 22:99--116.
+\newblock \emph{Botanical Journal of the Linnean Society}, {\bf 22}: 99--116.
 
 \bibitem[{Darwin(1898)}]{Darwin_1898}
----{}---{}---, 1898.
+{\bf Darwin F}{\bf . 1898}.
 \newblock Observations on stomata.
-\newblock Philosophical Transactions of the Royal Society B: Biological
-  Sciences 190:531--621.
+\newblock \emph{Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, {\bf 190}: 531--621.
 
-\bibitem[{Dow et~al.(2014)Dow, Berry, and Bergmann}]{Dow_etal_2014a}
-Dow, G.~J., J.~A. Berry, and D.~C. Bergmann, 2014.
+\bibitem[{Dow \emph{et~al.}(2014)Dow, Berry \& Bergmann}]{Dow_etal_2014a}
+{\bf Dow GJ, Berry JA , Bergmann DC}{\bf . 2014}.
 \newblock The physiological importance of developmental mechanisms that enforce
   proper stomatal spacing in \textit{{A}rabidopsis thaliana}.
-\newblock New Phytologist 201:1205--1217.
+\newblock \emph{New Phytologist}, {\bf 201}: 1205--1217.
 
 \bibitem[{Ellenberg(1974)}]{Ellenberg_1974}
-Ellenberg, H., 1974.
-\newblock Indicator values of vascular plants in central {E}urope,
-  \emph{Scripta Geobotanica}, vol.~9.
+{\bf Ellenberg H}. 1974.
+\newblock \emph{Indicator values of vascular plants in central {E}urope}.
+\newblock vol.~9 of \emph{Scripta Geobotanica}.
 \newblock Springer-Verlag, G{\"o}ttingen, Germany.
 
 \bibitem[{Felsenstein(1985)}]{Felsenstein_1985}
-Felsenstein, J., 1985.
+{\bf Felsenstein J}{\bf . 1985}.
 \newblock Phylogenies and the comparative method.
-\newblock The American Naturalist 1:1--15.
+\newblock \emph{The American Naturalist}, {\bf 1}: 1--15.
 
-\bibitem[{Fior et~al.(2006)Fior, Karis, Casazza, Minuto, and
+\bibitem[{Fior \emph{et~al.}(2006)Fior, Karis, Casazza, Minuto \&
   Sala}]{Fior_etal_2006}
-Fior, S., P.~O. Karis, G.~Casazza, L.~Minuto, and F.~Sala, 2006.
+{\bf Fior S, Karis PO, Casazza G, Minuto L , Sala F}{\bf . 2006}.
 \newblock Molecular phylogeny of the {C}aryophyllaceae ({C}aryophyllales)
   inferred from chloroplast matk and nuclear {rDNA ITS} sequences.
-\newblock American Journal of Botany 93:399--411.
+\newblock \emph{American Journal of Botany}, {\bf 93}: 399--411.
 
-\bibitem[{Fitter and Peat(1994)}]{Fitter_Peat_1994a}
-Fitter, A. and H.~Peat, 1994.
+\bibitem[{Fitter \& Peat(1994)}]{Fitter_Peat_1994a}
+{\bf Fitter A , Peat H}{\bf . 1994}.
 \newblock The ecological flora database.
-\newblock Journal of Ecology 82:415--425.
+\newblock \emph{Journal of Ecology}, {\bf 82}: 415--425.
 
-\bibitem[{Fitter and Peat(2017)}]{BEF}
----{}---{}---, 2017.
+\bibitem[{Fitter \& Peat(2017)}]{BEF}
+{\bf Fitter A , Peat H}. 2017.
 \newblock Ecological flora of the {B}ritish isles.
-\newblock \urlprefix\url{http://www.ecoflora.co.uk}.
+\newblock URL: http://www.ecoflora.co.uk. Accessed on 2017-03-26.
 
-\bibitem[{Fontana et~al.(2017)Fontana, Labrecque, Collin, and
+\bibitem[{Fontana \emph{et~al.}(2017)Fontana, Labrecque, Collin \&
   B{\'e}langer}]{Fontana_etal_2017}
-Fontana, M., M.~Labrecque, A.~Collin, and N.~B{\'e}langer, 2017.
+{\bf Fontana M, Labrecque M, Collin A , B{\'e}langer N}{\bf . 2017}.
 \newblock Stomatal distribution patterns change according to leaf development
   and leaf water status in \textit{{S}alix miyabeana}.
-\newblock Plant Growth Regulation 81:63--70.
+\newblock \emph{Plant Growth Regulation}, {\bf 81}: 63--70.
 
-\bibitem[{Foster and Smith(1986)}]{Foster_Smith_1986}
-Foster, J. and W.~Smith, 1986.
+\bibitem[{Foster \& Smith(1986)}]{Foster_Smith_1986}
+{\bf Foster J , Smith W}{\bf . 1986}.
 \newblock Influence of stomatal distribution on transpiration in low-wind
   environments.
-\newblock Plant, Cell \& Environment 9:751--759.
+\newblock \emph{Plant, Cell \& Environment}, {\bf 9}: 751--759.
 
-\bibitem[{Franco and Silvertown(1996)}]{Franco_Silvertown_1996}
-Franco, M. and J.~Silvertown, 1996.
+\bibitem[{Franco \& Silvertown(1996)}]{Franco_Silvertown_1996}
+{\bf Franco M , Silvertown J}{\bf . 1996}.
 \newblock Life history variation in plants: an exploration of the fast-slow
   continuum hypothesis.
-\newblock Philosophical Transactions: Biological Sciences 351:1341--1348.
+\newblock \emph{Philosophical Transactions: Biological Sciences}, {\bf 351}:
+  1341--1348.
 
-\bibitem[{Gay and Hurd(1975)}]{Gay_Hurd_1975}
-Gay, A. and R.~Hurd, 1975.
+\bibitem[{Gay \& Hurd(1975)}]{Gay_Hurd_1975}
+{\bf Gay A , Hurd R}{\bf . 1975}.
 \newblock The influence of light on stomatal density in the tomato.
-\newblock New Phytologist 75:37--46.
+\newblock \emph{New Phytologist}, {\bf 75}: 37--46.
 
 \bibitem[{Gibson(1996)}]{Gibson_1996}
-Gibson, A.~C., 1996.
-\newblock Structure-Function Relations of Warm Desert Plants.
+{\bf Gibson AC}. 1996.
+\newblock \emph{Structure-Function Relations of Warm Desert Plants}.
 \newblock Springer-Verlag, Berlin.
 
 \bibitem[{Givnish(1987)}]{Givnish_1987}
-Givnish, T.~J., 1987.
+{\bf Givnish TJ}{\bf . 1987}.
 \newblock Comparative studies of leaf form: assessing the relative roles of
   selective pressures and phylogenetic constraints.
-\newblock New Phytologist 106:131--160.
+\newblock \emph{New Phytologist}, {\bf 106}: 131--160.
 
-\bibitem[{Goolsby et~al.(2016)Goolsby, Bruggeman, and
+\bibitem[{Goolsby \emph{et~al.}(2016)Goolsby, Bruggeman \&
   An\'{e}}]{Goolsby_etal_2016}
-Goolsby, E.~W., J.~Bruggeman, and C.~An\'{e}, 2016.
-\newblock Rphylopars: Phylogenetic Comparative Tools for Missing Data and
-  Within-Species Variation.
-\newblock \urlprefix\url{https://CRAN.R-project.org/package=Rphylopars}.
+{\bf Goolsby EW, Bruggeman J , An\'{e} C}. 2016.
+\newblock \emph{Rphylopars: Phylogenetic Comparative Tools for Missing Data and
+  Within-Species Variation}.
 \newblock R package version 0.2.9.
 
-\bibitem[{Goolsby et~al.(2017)Goolsby, Bruggeman, and
+\bibitem[{Goolsby \emph{et~al.}(2017)Goolsby, Bruggeman \&
   An\'{e}}]{Goolsby_etal_2017}
----{}---{}---, 2017.
+{\bf Goolsby EW, Bruggeman J , An\'{e} C}{\bf . 2017}.
 \newblock Rphylopars: fast multivariate phylogenetic comparative methods for
   missing data and within-species variation.
-\newblock Methods in Ecology and Evolution 8:22--27.
+\newblock \emph{Methods in Ecology and Evolution}, {\bf 8}: 22--27.
 
 \bibitem[{Gutschick(1984)}]{Gutschick_1984b}
-Gutschick, V.~P., 1984.
+{\bf Gutschick VP}{\bf . 1984}.
 \newblock Photosynthesis model for {C}$_3$ leaves incorporating {CO}$_2$
   transport, propagation of radiation, and biochemistry 2. ecological and
   agricultural utility.
-\newblock Photosynthetica 18:569--595.
+\newblock \emph{Photosynthetica}, {\bf 18}: 569--595.
 
 \bibitem[{Haberlandt(1914)}]{Haberlandt_1914}
-Haberlandt, G., 1914.
-\newblock Physiological Plant Anatomy.
+{\bf Haberlandt G}. 1914.
+\newblock \emph{Physiological Plant Anatomy}.
 \newblock Macmillan and Co., London.
 
-\bibitem[{Hill et~al.(2004)Hill, Preston, and Roy}]{Hill_etal_2004}
-Hill, M., C.~Preston, and D.~Roy, 2004.
-\newblock {PLANTATT} - Attributes of {B}ritish and {I}rish Plants: Status,
-  Size, Life History, Geography and Habitats.
+\bibitem[{Hill \emph{et~al.}(2004)Hill, Preston \& Roy}]{Hill_etal_2004}
+{\bf Hill M, Preston C , Roy D}. 2004.
+\newblock \emph{{PLANTATT} - Attributes of {B}ritish and {I}rish Plants:
+  Status, Size, Life History, Geography and Habitats}.
 \newblock Centre for Ecology \& Hydrology, Huntingdon, Cambridgeshire.
 
-\bibitem[{Ho and An\'{e}(2014)}]{Ho_Ane_2014}
-Ho, L. S.~T. and C.~An\'{e}, 2014.
+\bibitem[{Ho \& An\'{e}(2014)}]{Ho_Ane_2014}
+{\bf Ho LST , An\'{e} C}{\bf . 2014}.
 \newblock Intrinsic inference difficulties for trait evolution with
   {O}rnstein-{U}hlenbeck models.
-\newblock Methods in Ecology and Evolution 5:1133--1146.
+\newblock \emph{Methods in Ecology and Evolution}, {\bf 5}: 1133--1146.
 
 \bibitem[{Jones(1985)}]{Jones_1985}
-Jones, H.~G., 1985.
+{\bf Jones HG}. 1985.
 \newblock Adaptive significance of leaf development and structural responses to
   environment.
-\newblock Pp. 155--173, \emph{in} N.~R. Baker, W.~Davies, and C.~K. Ong, eds.
-  Control of Leaf Growth, \emph{Society for Experimental Biology Seminar
-  Series}, vol.~27. Cambridge University Press, Cambridge.
+\newblock In: \emph{Control of Leaf Growth} (eds. Baker NR., Davies W. \& Ong
+  CK.).
+\newblock Cambridge University Press, Cambridge, vol.~27 of \emph{Society for
+  Experimental Biology Seminar Series}, pp. 155--173.
 
-\bibitem[{Jordan et~al.(2014)Jordan, Carpenter, and
+\bibitem[{Jordan \emph{et~al.}(2014)Jordan, Carpenter \&
   Brodribb}]{Jordan_etal_2014}
-Jordan, G.~J., R.~J. Carpenter, and T.~J. Brodribb, 2014.
+{\bf Jordan GJ, Carpenter RJ , Brodribb TJ}{\bf . 2014}.
 \newblock Using fossil leaves as evidence for open vegetation.
-\newblock Palaeogeography, Palaeoclimatology, Palaeoecology 395:168--175.
+\newblock \emph{Palaeogeography, Palaeoclimatology, Palaeoecology}, {\bf 395}:
+  168--175.
 
-\bibitem[{Kelly and Beerling(1995)}]{Kelly_Beerling_1995}
-Kelly, C. and D.~Beerling, 1995.
+\bibitem[{Kelly \& Beerling(1995)}]{Kelly_Beerling_1995}
+{\bf Kelly C , Beerling D}{\bf . 1995}.
 \newblock Plant life form, stomatal density and taxonomic relatedness: a
   reanalysis of {S}alisbury (1927).
-\newblock Functional Ecology 9:422--431.
+\newblock \emph{Functional Ecology}, {\bf 9}: 422--431.
 
-\bibitem[{K{\"o}rner et~al.(1989)K{\"o}rner, Neumayer, Menendez-Riedl, and
+\bibitem[{K{\"o}rner \emph{et~al.}(1989)K{\"o}rner, Neumayer, Menendez-Riedl \&
   Smeets-Scheel}]{Korner_etal_1989}
-K{\"o}rner, C., M.~Neumayer, S.~P. Menendez-Riedl, and A.~Smeets-Scheel, 1989.
+{\bf K{\"o}rner C, Neumayer M, Menendez-Riedl SP , Smeets-Scheel A}{\bf .
+  1989}.
 \newblock Functional morphology of mountain plants.
-\newblock Flora 182:353--383.
+\newblock \emph{Flora}, {\bf 182}: 353--383.
 
-\bibitem[{Lim et~al.(2014)Lim, Crawley, De~Vere, Rich, and
+\bibitem[{Lim \emph{et~al.}(2014)Lim, Crawley, De~Vere, Rich \&
   Savolainen}]{Lim_etal_2014}
-Lim, J., M.~J. Crawley, N.~De~Vere, T.~Rich, and V.~Savolainen, 2014.
+{\bf Lim J, Crawley MJ, De~Vere N, Rich T , Savolainen V}{\bf . 2014}.
 \newblock A phylogenetic analysis of the {B}ritish flora sheds light on the
   evolutionary and ecological factors driving plant invasions.
-\newblock Ecology and Evolution 4:4258--4269.
+\newblock \emph{Ecology and Evolution}, {\bf 4}: 4258--4269.
 
-\bibitem[{Mason et~al.(2016)Mason, Goolsby, Humphreys, and
+\bibitem[{Mason \emph{et~al.}(2016)Mason, Goolsby, Humphreys \&
   Donovan}]{Mason_etal_2016}
-Mason, C.~M., E.~W. Goolsby, D.~P. Humphreys, and L.~A. Donovan, 2016.
+{\bf Mason CM, Goolsby EW, Humphreys DP , Donovan LA}{\bf . 2016}.
 \newblock Phylogenetic structural equation modelling reveals no need for an
   `origin? of the leaf economics spectrum.
-\newblock Ecology letters 19:54--61.
+\newblock \emph{Ecology letters}, {\bf 19}: 54--61.
 
-\bibitem[{McElwain and Steinthorsdottir(2017)}]{McElwain_Steinthorsdottir_2017}
-McElwain, J.~C. and M.~Steinthorsdottir, 2017.
+\bibitem[{McElwain \& Steinthorsdottir(2017)}]{McElwain_Steinthorsdottir_2017}
+{\bf McElwain JC , Steinthorsdottir M}{\bf . 2017}.
 \newblock Paleoecology, ploidy, paleoatmospheric composition, and developmental
   biology: a review of the multiple uses of fossil stomata.
-\newblock Plant Physiology 174:650--664.
+\newblock \emph{Plant Physiology}, {\bf 174}: 650--664.
 
-\bibitem[{McKown et~al.(2014)McKown, Guy, Quamme, Kl{\'a}p{\v{s}}t{\v{e}},
-  La~Mantia, Constabel, El-Kassaby, Hamelin, Zifkin, and
+\bibitem[{McKown \emph{et~al.}(2014)McKown, Guy, Quamme,
+  Kl{\'a}p{\v{s}}t{\v{e}}, La~Mantia, Constabel, El-Kassaby, Hamelin, Zifkin \&
   Azam}]{Mckown_etal_2014}
-McKown, A.~D., R.~D. Guy, L.~Quamme, J.~Kl{\'a}p{\v{s}}t{\v{e}}, J.~La~Mantia,
-  C.~Constabel, Y.~A. El-Kassaby, R.~C. Hamelin, M.~Zifkin, and M.~Azam, 2014.
+{\bf McKown AD, Guy RD, Quamme L, Kl{\'a}p{\v{s}}t{\v{e}} J, La~Mantia J,
+  Constabel C, El-Kassaby YA, Hamelin RC, Zifkin M , Azam M}{\bf . 2014}.
 \newblock Association genetics, geography and ecophysiology link stomatal
   patterning in \textit{{P}opulus trichocarpa} with carbon gain and disease
   resistance trade-offs.
-\newblock Molecular Ecology 23:5771--5790.
+\newblock \emph{Molecular Ecology}, {\bf 23}: 5771--5790.
 
-\bibitem[{Melotto et~al.(2017)Melotto, Zhang, Oblessuc, and
+\bibitem[{Melotto \emph{et~al.}(2017)Melotto, Zhang, Oblessuc \&
   He}]{Melotto_etal_2017}
-Melotto, M., L.~Zhang, P.~R. Oblessuc, and S.~Y. He, 2017.
+{\bf Melotto M, Zhang L, Oblessuc PR , He SY}{\bf . 2017}.
 \newblock Stomatal defense a decade later.
-\newblock Plant Physiology 174:561--571.
+\newblock \emph{Plant Physiology}, {\bf 174}: 561--571.
 
-\bibitem[{Metcalfe and Chalk(1950)}]{Metcalfe_Chalk_1950}
-Metcalfe, C.~R. and L.~Chalk, 1950.
-\newblock Anatomy of the dicotyledons, Vols. 1 \& 2.
-\newblock First ed. Oxford University Press, Oxford.
+\bibitem[{Metcalfe \& Chalk(1950)}]{Metcalfe_Chalk_1950}
+{\bf Metcalfe CR , Chalk L}. 1950.
+\newblock \emph{Anatomy of the dicotyledons, Vols. 1 \& 2}.
+\newblock 1st edn.
+\newblock Oxford University Press, Oxford.
 
-\bibitem[{Milla et~al.(2013)Milla, de~Diego-Vico, and
+\bibitem[{Milla \emph{et~al.}(2013)Milla, de~Diego-Vico \&
   Mart{\'\i}n-Robles}]{Milla_etal_2013}
-Milla, R., N.~de~Diego-Vico, and N.~Mart{\'\i}n-Robles, 2013.
+{\bf Milla R, de~Diego-Vico N , Mart{\'\i}n-Robles N}{\bf . 2013}.
 \newblock Shifts in stomatal traits following the domestication of plant
   species.
-\newblock Journal of Experimental Botany 64:3137--3146.
+\newblock \emph{Journal of Experimental Botany}, {\bf 64}: 3137--3146.
 
-\bibitem[{Mott et~al.(1984)Mott, Gibson, and O'Leary}]{Mott_etal_1982}
-Mott, K.~A., A.~C. Gibson, and J.~W. O'Leary, 1984.
+\bibitem[{Mott \emph{et~al.}(1984)Mott, Gibson \& O'Leary}]{Mott_etal_1982}
+{\bf Mott KA, Gibson AC , O'Leary JW}{\bf . 1984}.
 \newblock The adaptive significance of amphistomatic leaves.
-\newblock Plant, Cell \& Environment 5:455--460.
+\newblock \emph{Plant, Cell \& Environment}, {\bf 5}: 455--460.
 
-\bibitem[{Mott and Michaelson(1991)}]{Mott_Michaelson_1991}
-Mott, K.~A. and O.~Michaelson, 1991.
+\bibitem[{Mott \& Michaelson(1991)}]{Mott_Michaelson_1991}
+{\bf Mott KA , Michaelson O}{\bf . 1991}.
 \newblock Amphistomy as an adaptation to high light intensity in
   \textit{Ambrosia cordifolia} ({C}ompositae).
-\newblock American Journal of Botany 78:76--79.
+\newblock \emph{American Journal of Botany}, {\bf 78}: 76--79.
 
-\bibitem[{Mott and O'Leary(1984)}]{Mott_Oleary_1984}
-Mott, K.~A. and J.~W. O'Leary, 1984.
+\bibitem[{Mott \& O'Leary(1984)}]{Mott_Oleary_1984}
+{\bf Mott KA , O'Leary JW}{\bf . 1984}.
 \newblock Stomatal behavior and {CO}$_2$ exchange characteristics in
   amphistomatous leaves.
-\newblock Plant Physiology 74:47--51.
+\newblock \emph{Plant Physiology}, {\bf 74}: 47--51.
 
 \bibitem[{Muir(2015)}]{Muir_2015}
-Muir, C.~D., 2015.
+{\bf Muir CD}{\bf . 2015}.
 \newblock Making pore choices: repeated regime shifts in stomatal ratio.
-\newblock Proc. R. Soc. B 282:20151498.
+\newblock \emph{Proc. R. Soc. B}, {\bf 282}: 20151498.
 
-\bibitem[{Muir(2017)}]{Muir_dryad}
----{}---{}---, 2017.
-\newblock Data from: Light and life form interact to shape stomatal ratio among
-  {B}ritish angiosperms.
-\newblock \urlprefix\url{http://dx.doi.org/10.5061/dryad.?????}
-
-\bibitem[{Niinemets and Valladares(2006)}]{Niinemets_Valladares_2006}
-Niinemets, {\"U}. and F.~Valladares, 2006.
+\bibitem[{Niinemets \& Valladares(2006)}]{Niinemets_Valladares_2006}
+{\bf Niinemets {\"U} , Valladares F}{\bf . 2006}.
 \newblock Tolerance to shade, drought, and waterlogging of temperate {N}orthern
   {H}emisphere trees and shrubs.
-\newblock Ecological Monographs 76:521--547.
+\newblock \emph{Ecological Monographs}, {\bf 76}: 521--547.
 
 \bibitem[{Parkhurst(1978)}]{Parkhurst_1978}
-Parkhurst, D.~F., 1978.
+{\bf Parkhurst DF}{\bf . 1978}.
 \newblock The adaptive significance of stomatal occurrence on one or both
   surfaces of leaves.
-\newblock The Journal of Ecology 66:367--383.
+\newblock \emph{The Journal of Ecology}, {\bf 66}: 367--383.
 
-\bibitem[{Parkhurst and Mott(1990)}]{Parkhurst_Mott_1990}
-Parkhurst, D.~F. and K.~A. Mott, 1990.
+\bibitem[{Parkhurst \& Mott(1990)}]{Parkhurst_Mott_1990}
+{\bf Parkhurst DF , Mott KA}{\bf . 1990}.
 \newblock Intercellular diffusion limits to {CO}$_2$ uptake in leaves studied
   in air and helox.
-\newblock Plant Physiology 94:1024--1032.
+\newblock \emph{Plant Physiology}, {\bf 94}: 1024--1032.
 
-\bibitem[{Parlange and Waggoner(1970)}]{Parlange_Waggoner_1970}
-Parlange, J.-Y. and P.~E. Waggoner, 1970.
+\bibitem[{Parlange \& Waggoner(1970)}]{Parlange_Waggoner_1970}
+{\bf Parlange JY , Waggoner PE}{\bf . 1970}.
 \newblock Stomatal dimensions and resistance to diffusion.
-\newblock Plant Physiology 46:337--342.
+\newblock \emph{Plant Physiology}, {\bf 46}: 337--342.
 
-\bibitem[{Peat and Fitter(1994)}]{Peat_Fitter_1994b}
-Peat, H. and A.~Fitter, 1994.
+\bibitem[{Peat \& Fitter(1994)}]{Peat_Fitter_1994b}
+{\bf Peat H , Fitter A}{\bf . 1994}.
 \newblock A comparative study of the distribution and density of stomata in the
   {B}ritish flora.
-\newblock Biological Journal of the Linnean Society 52:377--393.
+\newblock \emph{Biological Journal of the Linnean Society}, {\bf 52}: 377--393.
 
-\bibitem[{Pennell et~al.(2016)Pennell, FitzJohn, and
+\bibitem[{Pennell \emph{et~al.}(2016)Pennell, FitzJohn \&
   Cornwell}]{Pennell_etal_2016}
-Pennell, M.~W., R.~G. FitzJohn, and W.~K. Cornwell, 2016.
+{\bf Pennell MW, FitzJohn RG , Cornwell WK}{\bf . 2016}.
 \newblock A simple approach for maximizing the overlap of phylogenetic and
   comparative data.
-\newblock Methods in Ecology and Evolution 7:751--758.
+\newblock \emph{Methods in Ecology and Evolution}, {\bf 7}: 751--758.
 
-\bibitem[{Posp{\'\i}{\^s}ilov{\'a} and
+\bibitem[{Posp{\'\i}{\^s}ilov{\'a} \&
   Sol{\'a}rov{\'a}(1984)}]{Pospisilova_Solarova_1980}
-Posp{\'\i}{\^s}ilov{\'a}, J. and J.~Sol{\'a}rov{\'a}, 1984.
+{\bf Posp{\'\i}{\^s}ilov{\'a} J , Sol{\'a}rov{\'a} J}{\bf . 1984}.
 \newblock Environmental and biological control of diffusive conductances of
   adaxial and abaxial leaf epidermes.
-\newblock Photosynthetica 18:445--453.
+\newblock \emph{Photosynthetica}, {\bf 18}: 445--453.
 
 \bibitem[{Raunki{\ae}r(1934)}]{Raunkiaer_1934}
-Raunki{\ae}r, C.~C., 1934.
-\newblock The Life Forms of Plants and Statistical Plant Geography.
+{\bf Raunki{\ae}r CC}. 1934.
+\newblock \emph{The Life Forms of Plants and Statistical Plant Geography}.
 \newblock Clarendon Press, Oxford.
 
 \bibitem[{Reich(1984)}]{Reich_1984}
-Reich, P., 1984.
+{\bf Reich P}{\bf . 1984}.
 \newblock Relationships between leaf age, irradiance, leaf conductance,
   {CO}$_2$ exchange, and water-use efficiency in hybrid poplar.
-\newblock Photosynthetica 18:445--453.
+\newblock \emph{Photosynthetica}, {\bf 18}: 445--453.
 
 \bibitem[{Revell(2010)}]{Revell_2010}
-Revell, L.~J., 2010.
+{\bf Revell LJ}{\bf . 2010}.
 \newblock Phylogenetic signal and linear regression on species data.
-\newblock Methods in Ecology and Evolution 1:319--329.
+\newblock \emph{Methods in Ecology and Evolution}, {\bf 1}: 319--329.
 
 \bibitem[{Revell(2012)}]{Revell_2012}
----{}---{}---, 2012.
+{\bf Revell LJ}{\bf . 2012}.
 \newblock phytools: An {R} package for phylogenetic comparative biology (and
   other things).
-\newblock Methods in Ecology and Evolution 3:217--223.
+\newblock \emph{Methods in Ecology and Evolution}, {\bf 3}: 217--223.
 
-\bibitem[{Richardson et~al.(2017)Richardson, Brodribb, and
+\bibitem[{Richardson \emph{et~al.}(2017)Richardson, Brodribb \&
   Jordan}]{Richardson_etal_2017}
-Richardson, F., T.~J. Brodribb, and G.~J. Jordan, 2017.
+{\bf Richardson F, Brodribb TJ , Jordan GJ}{\bf . 2017}.
 \newblock Amphistomatic leaf surfaces independently regulate gas exchange in
   response to variations in evaporative demand.
-\newblock Tree Physiology Pp. 1--10.
+\newblock \emph{Tree Physiology}, {\bf 37}: 869--878.
 
 \bibitem[{Rosseel(2012)}]{Rosseel_2012}
-Rosseel, Y., 2012.
+{\bf Rosseel Y}{\bf . 2012}.
 \newblock {lavaan}: An {R} package for structural equation modeling.
-\newblock Journal of Statistical Software 48:1--36.
+\newblock \emph{Journal of Statistical Software}, {\bf 48}: 1--36.
 
 \bibitem[{Royer(2001)}]{Royer_2001}
-Royer, D.~L., 2001.
+{\bf Royer DL}{\bf . 2001}.
 \newblock Stomatal density and stomatal index as indicators of paleoatmospheric
   {CO}$_2$ concentration.
-\newblock Review of Palaeobotany and Palynology 114:1--28.
+\newblock \emph{Review of Palaeobotany and Palynology}, {\bf 114}: 1--28.
 
-\bibitem[{Sack and Buckley(2016)}]{Sack_Buckley_2016}
-Sack, L. and T.~N. Buckley, 2016.
+\bibitem[{Sack \& Buckley(2016)}]{Sack_Buckley_2016}
+{\bf Sack L , Buckley TN}{\bf . 2016}.
 \newblock The developmental basis of stomatal density and flux.
-\newblock Plant Physiology 171:2358--2363.
+\newblock \emph{Plant Physiology}, {\bf 171}: 2358--2363.
 
-\bibitem[{Salguero-G{\'o}mez et~al.(2016)Salguero-G{\'o}mez, Jones, Jongejans,
-  Blomberg, Hodgson, Mbeau-Ache, Zuidema, de~Kroon, and
+\bibitem[{Salguero-G{\'o}mez \emph{et~al.}(2016)Salguero-G{\'o}mez, Jones,
+  Jongejans, Blomberg, Hodgson, Mbeau-Ache, Zuidema, de~Kroon \&
   Buckley}]{Salguero-Gomez_etal_2016}
-Salguero-G{\'o}mez, R., O.~R. Jones, E.~Jongejans, S.~P. Blomberg, D.~J.
-  Hodgson, C.~Mbeau-Ache, P.~A. Zuidema, H.~de~Kroon, and Y.~M. Buckley, 2016.
+{\bf Salguero-G{\'o}mez R, Jones OR, Jongejans E, Blomberg SP, Hodgson DJ,
+  Mbeau-Ache C, Zuidema PA, de~Kroon H , Buckley YM}{\bf . 2016}.
 \newblock Fast--slow continuum and reproductive strategies structure plant
   life-history variation worldwide.
-\newblock Proceedings of the National Academy of Sciences of the United States
-  of America 113:230--235.
+\newblock \emph{Proceedings of the National Academy of Sciences of the United
+  States of America}, {\bf 113}: 230--235.
 
 \bibitem[{Salisbury(1927)}]{Salisbury_1927}
-Salisbury, E., 1927.
+{\bf Salisbury E}{\bf . 1927}.
 \newblock On the causes and ecological significance of stomatal frequency, with
   special reference to the woodland flora.
-\newblock Philosophical Transactions of the Royal Society of London. Series B
-  216:1--65.
+\newblock \emph{Philosophical Transactions of the Royal Society of London.
+  Series B}, {\bf 216}: 1--65.
 
-\bibitem[{Salmaki et~al.(2013)Salmaki, Zarre, Ryding, Lindqvist, Br{\"a}uchler,
-  Heubl, Barber, and Bendiksby}]{Salmaki_etal_2013}
-Salmaki, Y., S.~Zarre, O.~Ryding, C.~Lindqvist, C.~Br{\"a}uchler, G.~Heubl,
-  J.~Barber, and M.~Bendiksby, 2013.
+\bibitem[{Salmaki \emph{et~al.}(2013)Salmaki, Zarre, Ryding, Lindqvist,
+  Br{\"a}uchler, Heubl, Barber \& Bendiksby}]{Salmaki_etal_2013}
+{\bf Salmaki Y, Zarre S, Ryding O, Lindqvist C, Br{\"a}uchler C, Heubl G,
+  Barber J , Bendiksby M}{\bf . 2013}.
 \newblock Molecular phylogeny of tribe {S}tachydeae ({L}amiaceae subfamily
   {L}amioideae).
-\newblock Molecular Phylogenetics and Evolution 69:535--551.
+\newblock \emph{Molecular Phylogenetics and Evolution}, {\bf 69}: 535--551.
 
-\bibitem[{Scheen et~al.(2004)Scheen, Brochmann, Brysting, Elven, Morris,
-  Soltis, Soltis, and Albert}]{Scheen_etal_2004}
-Scheen, A.-C., C.~Brochmann, A.~K. Brysting, R.~Elven, A.~Morris, D.~E. Soltis,
-  P.~S. Soltis, and V.~A. Albert, 2004.
+\bibitem[{Scheen \emph{et~al.}(2004)Scheen, Brochmann, Brysting, Elven, Morris,
+  Soltis, Soltis \& Albert}]{Scheen_etal_2004}
+{\bf Scheen AC, Brochmann C, Brysting AK, Elven R, Morris A, Soltis DE, Soltis
+  PS , Albert VA}{\bf . 2004}.
 \newblock Northern hemisphere biogeography of \textit{{C}erastium}
   ({C}aryophyllaceae): insights from phylogenetic analysis of noncoding plastid
   nucleotide sequences.
-\newblock American Journal of Botany 91:943--952.
+\newblock \emph{American Journal of Botany}, {\bf 91}: 943--952.
 
-\bibitem[{Shipley et~al.(2017)Shipley, Belluau, Kühn, Soudzilovskaia, Bahn,
-  Penuelas, Kattge, Sack, Cavender-Bares, Ozinga, Blonder, van Bodegom,
-  Manning, Hickler, Sosinski, Pillar, and Onipchenko}]{Shipley_etal_2017}
-Shipley, B., M.~Belluau, I.~Kühn, N.~A. Soudzilovskaia, M.~Bahn, J.~Penuelas,
-  J.~Kattge, L.~Sack, J.~Cavender-Bares, W.~A. Ozinga, B.~Blonder, P.~M. van
-  Bodegom, P.~Manning, T.~Hickler, E.~Sosinski, V.~D.~P. Pillar, and
-  V.~Onipchenko, 2017.
+\bibitem[{Shipley \emph{et~al.}(2017)Shipley, Belluau, Kühn, Soudzilovskaia,
+  Bahn, Penuelas, Kattge, Sack, Cavender-Bares, Ozinga, Blonder, van Bodegom,
+  Manning, Hickler, Sosinski, Pillar \& Onipchenko}]{Shipley_etal_2017}
+{\bf Shipley B, Belluau M, Kühn I, Soudzilovskaia NA, Bahn M, Penuelas J,
+  Kattge J, Sack L, Cavender-Bares J, Ozinga WA \emph{et~al}}{\bf . 2017}.
 \newblock Predicting habitat affinities of plant species using commonly
   measured functional traits.
-\newblock Journal of Vegetation Science 28:1082--1095.
-\newblock \urlprefix\url{http://dx.doi.org/10.1111/jvs.12554}.
+\newblock \emph{Journal of Vegetation Science}, {\bf 28}: 1082--1095.
 
 \bibitem[{Smith(1981)}]{Smith_1981}
-Smith, W., 1981.
+{\bf Smith W}{\bf . 1981}.
 \newblock Temperature and water relation patterns in subalpine understory
   plants.
-\newblock Oecologia 48:353--359.
+\newblock \emph{Oecologia}, {\bf 48}: 353--359.
 
-\bibitem[{Smith et~al.(1997)Smith, Vogelmann, DeLucia, Bell, and
+\bibitem[{Smith \emph{et~al.}(1997)Smith, Vogelmann, DeLucia, Bell \&
   Shepherd}]{Smith_etal_1997}
-Smith, W.~K., T.~C. Vogelmann, E.~H. DeLucia, D.~T. Bell, and K.~A. Shepherd,
-  1997.
+{\bf Smith WK, Vogelmann TC, DeLucia EH, Bell DT , Shepherd KA}{\bf . 1997}.
 \newblock Leaf form and photosynthesis.
-\newblock BioScience 11:785--793.
+\newblock \emph{BioScience}, {\bf 11}: 785--793.
 
 \bibitem[{Wolfe(1971)}]{Wolfe_1971}
-Wolfe, J.~A., 1971.
+{\bf Wolfe JA}{\bf . 1971}.
 \newblock Tertiary climatic fluctuations and methods of analysis of {T}ertiary
   floras.
-\newblock Palaeogeography, Palaeoclimatology, Palaeoecology 9:27--57.
+\newblock \emph{Palaeogeography, Palaeoclimatology, Palaeoecology}, {\bf 9}:
+  27--57.
 
 \bibitem[{Woodward(1987)}]{Woodward_1987}
-Woodward, F., 1987.
+{\bf Woodward F}{\bf . 1987}.
 \newblock Stomatal numbers are sensitive to increases in {CO}$_2$ from
   pre-industrial levels.
-\newblock Nature 327:617--618.
+\newblock \emph{Nature}, {\bf 327}: 617--618.
 
-\bibitem[{Woodward and Bazzaz(1988)}]{Woodward_Bazzaz_1988}
-Woodward, F.~I. and F.~Bazzaz, 1988.
+\bibitem[{Woodward \& Bazzaz(1988)}]{Woodward_Bazzaz_1988}
+{\bf Woodward FI , Bazzaz F}{\bf . 1988}.
 \newblock The responses of stomatal density to {CO}$_2$ partial pressure.
-\newblock Journal of Experimental Botany 39:1771--1781.
+\newblock \emph{Journal of Experimental Botany}, {\bf 39}: 1771--1781.
 
 \bibitem[{Wullschleger(1993)}]{Wullschleger_1993}
-Wullschleger, S.~D., 1993.
+{\bf Wullschleger SD}{\bf . 1993}.
 \newblock Biochemical limitations to carbon assimilation in {C}$_3$ plants? {A}
   retrospective analysis of the {A/Ci} curves from 109 species.
-\newblock Journal of Experimental Botany 44:907--920.
+\newblock \emph{Journal of Experimental Botany}, {\bf 44}: 907--920.
 
 \end{thebibliography}

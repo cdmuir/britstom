@@ -41,6 +41,8 @@
 
 $^1$ Biodiversity Research Centre and Botany Department, University of British Columbia, Vancouver, British Columbia V6T 1Z4, Canada \\
 \\
+\textit{Twitter handle:} @thegoodphyte \\
+\\
 \textit{Author for correspondence:} \\
 \textit{Christopher D. Muir} \\
 \textit{Tel:} +17782284851 \\
@@ -71,9 +73,9 @@ Acknowledgement: 26\\
   
 @
 
-\linenumbers
-\setstretch{\stretchy}
-%\pagenumbering{gobble}
+%\linenumbers
+%\setstretch{\stretchy}
+\pagenumbering{gobble}
 %\raggedright
 
 %\clearpage
@@ -128,7 +130,7 @@ To address these questions, I reanalyzed existing data on stomatal ratio, light 
 
 \section*{Materials and Methods}
 
-Data and annotated source code to generate this manuscript are available on GitHub (https://github.com/cdmuir/britstom) and Dryad \citep{Muir_dryad}.
+Data and annotated source code to generate this manuscript are available on GitHub (https://github.com/cdmuir/britstom) and processed data files are archived on Data Dryad (https://doi.org/10.5061/dryad.5q5q6).
 
 \subsection*{Data on stomatal ratio, light habitat, growth form, and phylogenetic relationships}
 
@@ -288,7 +290,25 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 %--------------------------------------------------
 
 \bibliography{refs}
-\bibliographystyle{evolution}
+\bibliographystyle{newphyt}
+
+\clearpage
+
+%--------------------------------------------------
+% Supporting Figure Captions
+%--------------------------------------------------
+
+\section*{Supporting figure captions}
+
+Figure S1: Most hydrophytes are hyperstomatous, having most stomata on the adaxial (`upper') surface 
+
+Figure S2: Raunki\ae r life form and plant habit broadly overlap.
+
+Figure S3: Phylogenetic diversification of stomatal ratio follows growth form and light tolerance.
+
+Figure S4: Growth forms have different tolerances for sun and shade among British angiosperms.
+
+Figure S5: The effect of light on stomatal ratio depends on growth form.
 
 \clearpage
 
@@ -393,7 +413,7 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SR-lf.pdf}}
 %\centerline{\includegraphics[angle=270]{figures/figure_SR-lf.eps}} % Needed this to upload file to journal website
-\caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity.} 
+\caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity. Key to symbols: n.s. = not significant,  $^*~P < 0.05$, $^{**}~P < 0.01$, $^{***}~P < 0.001$.} 
 \label{fig:SR-lf}
 \end{figure}
 
@@ -410,6 +430,17 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 %--------------------------------------------------
 
 \section*{Supporting Information}
+
+\begin{center}
+{\Huge Light and growth form interact to shape stomatal ratio among British angiosperms}
+
+{\large Christopher D. Muir}
+
+{\large Accepted on 10 November 2017}
+
+\end{center}
+
+\clearpage
 
 % Modify and restart table/figure numbering for appendixes
 \renewcommand\thefigure{S\arabic{figure}}    
@@ -450,7 +481,7 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SR-hf.pdf}}
 %\centerline{\includegraphics[angle=270]{figures/figure_SR-hf.eps}} % Needed this to upload file to journal website
-\caption{The effect of light on stomatal ratio depends on growth form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in annual, biennual, and perennial herbs, but not shrubs or trees. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to growth form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity.} 
+\caption{The effect of light on stomatal ratio depends on growth form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in annual, biennual, and perennial herbs, but not shrubs or trees. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to growth form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity. Key to symbols: n.s. = not significant,  $^*~P < 0.05$, $^{**}~P < 0.01$, $^{***}~P < 0.001$.} 
 \label{fig:SR-hf}
 \end{figure}
 \end{document}
