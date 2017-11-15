@@ -99,12 +99,12 @@
 \newblock \emph{American Journal of Botany}, {\bf 93}: 399--411.
 
 \bibitem[{Fitter \& Peat(1994)}]{Fitter_Peat_1994a}
-{\bf Fitter A , Peat H}{\bf . 1994}.
+{\bf Fitter AH , Peat HJ}{\bf . 1994}.
 \newblock The ecological flora database.
 \newblock \emph{Journal of Ecology}, {\bf 82}: 415--425.
 
 \bibitem[{Fitter \& Peat(2017)}]{BEF}
-{\bf Fitter A , Peat H}. 2017.
+{\bf Fitter AH , Peat HJ}. 2017.
 \newblock Ecological flora of the {B}ritish isles.
 \newblock URL: http://www.ecoflora.co.uk. Accessed on 2017-03-26.
 
@@ -210,7 +210,7 @@
   168--175.
 
 \bibitem[{Kelly \& Beerling(1995)}]{Kelly_Beerling_1995}
-{\bf Kelly C , Beerling D}{\bf . 1995}.
+{\bf Kelly CK , Beerling DJ}{\bf . 1995}.
 \newblock Plant life form, stomatal density and taxonomic relatedness: a
   reanalysis of {S}alisbury (1927).
 \newblock \emph{Functional Ecology}, {\bf 9}: 422--431.
@@ -317,7 +317,7 @@
 \newblock \emph{Plant Physiology}, {\bf 46}: 337--342.
 
 \bibitem[{Peat \& Fitter(1994)}]{Peat_Fitter_1994b}
-{\bf Peat H , Fitter A}{\bf . 1994}.
+{\bf Peat HJ , Fitter AH}{\bf . 1994}.
 \newblock A comparative study of the distribution and density of stomata in the
   {B}ritish flora.
 \newblock \emph{Biological Journal of the Linnean Society}, {\bf 52}: 377--393.
@@ -415,17 +415,17 @@
   nucleotide sequences.
 \newblock \emph{American Journal of Botany}, {\bf 91}: 943--952.
 
-\bibitem[{Shipley \emph{et~al.}(2017)Shipley, Belluau, K?hn, Soudzilovskaia,
+\bibitem[{Shipley \emph{et~al.}(2017)Shipley, Belluau, Kühn, Soudzilovskaia,
   Bahn, Penuelas, Kattge, Sack, Cavender-Bares, Ozinga, Blonder, van Bodegom,
   Manning, Hickler, Sosinski, Pillar \& Onipchenko}]{Shipley_etal_2017}
-{\bf Shipley B, Belluau M, K?hn I, Soudzilovskaia NA, Bahn M, Penuelas J,
+{\bf Shipley B, Belluau M, Kühn I, Soudzilovskaia NA, Bahn M, Penuelas J,
   Kattge J, Sack L, Cavender-Bares J, Ozinga WA \emph{et~al}}{\bf . 2017}.
 \newblock Predicting habitat affinities of plant species using commonly
   measured functional traits.
 \newblock \emph{Journal of Vegetation Science}, {\bf 28}: 1082--1095.
 
 \bibitem[{Smith(1981)}]{Smith_1981}
-{\bf Smith W}{\bf . 1981}.
+{\bf Smith WK}{\bf . 1981}.
 \newblock Temperature and water relation patterns in subalpine understory
   plants.
 \newblock \emph{Oecologia}, {\bf 48}: 353--359.
@@ -444,7 +444,7 @@
   27--57.
 
 \bibitem[{Woodward(1987)}]{Woodward_1987}
-{\bf Woodward F}{\bf . 1987}.
+{\bf Woodward FI}{\bf . 1987}.
 \newblock Stomatal numbers are sensitive to increases in {CO}$_2$ from
   pre-industrial levels.
 \newblock \emph{Nature}, {\bf 327}: 617--618.

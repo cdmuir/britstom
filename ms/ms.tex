@@ -42,32 +42,34 @@
 
 $^1$ Biodiversity Research Centre and Botany Department, University of British Columbia, Vancouver, British Columbia V6T 1Z4, Canada \\
 \\
-\textit{Twitter handle:} @thegoodphyte \\
-\\
-\textit{Author for correspondence:} \\
-\textit{Christopher D. Muir} \\
-\textit{Tel:} +17782284851 \\
-\textit{Email:} chrisdmuir@gmail.com \\
-University of British Columbia \\
-6270 University Blvd. \\
-Vancouver, BC, Canada \\
-V6T 1Z4 \\
-\\
-Short title: Shedding light on stomatal evolution\\
-\\
-Word count: \\
-Summary: 199\\
-Introduction: 1355\\
-Materials and Methods: 1698\\
-Results: 582\\
-Discussion: 1935\\
-Acknowledgement: 26\\
-4 Figures and 1 Table, 5 Supplemental Figures
+\begin{center}
+In press at \textit{New Phytologist} \\
+\end{center}
+\clearpage
+%\textit{Twitter handle:} @thegoodphyte \\
+%\\
+%\textit{Author for correspondence:} \\
+%\textit{Christopher D. Muir} \\
+%\textit{Tel:} +1 984-218-5309 \\
+%\textit{Email:} chrisdmuir@gmail.com \\
+%1413 N Mangum St\\
+%Durham, NC 27701\\
+%\\
+%Short title: Shedding light on stomatal evolution\\
+%\\
+%Word count: \\
+%Summary: 199\\
+%Introduction: 1355\\
+%Materials and Methods: 1698\\
+%Results: 582\\
+%Discussion: 1935\\
+%Acknowledgement: 26\\
+%4 Figures and 1 Table, 5 Supplemental Figures
 
 
 %\linenumbers
 %\setstretch{\stretchy}
-\pagenumbering{gobble}
+%\pagenumbering{gobble}
 %\raggedright
 
 %\clearpage
@@ -88,11 +90,13 @@ Acknowledgement: 26\\
 
 \section*{Keywords}
 
-Adaptation, amphistomy, Ellenberg light indicator value, growth form, phylogenetic comparative methods, Raunki\ae r life form, stomata, stomatal ratio
+adaptation, amphistomy, Ellenberg light indicator value, growth form, phylogenetic comparative methods, Raunki\ae r life form, stomata, stomatal ratio
+
+\clearpage
 
 \section*{Introduction}
 
-Natural selection shapes leaf anatomy in order to optimize its photosynthetic function in a given environment \citep{Haberlandt_1914, Givnish_1987, Smith_etal_1997}. By understanding the adaptive significance of leaf anatomical variation we can learn about natural history, find targets for crop improvement, and identify anatomical proxies for paleoclimates preserved in the fossil record \citep[e.g.][]{Wolfe_1971, Royer_2001, McElwain_Steinthorsdottir_2017}. The size, density, and distribution of stomata on a leaf vary widely and impact the flux of CO$_2$ and water vapour \citep[recently reviewed in][]{Sack_Buckley_2016}, as well as susceptibility to foliar pathogens that infect through stomata \citep{Mckown_etal_2014, Melotto_etal_2017}. Hence, stomata have been especially useful in understanding plastic and evolutionary response to climate change and domestication \citep{Woodward_1987, Beerling_Royer_2011, Milla_etal_2013}.
+Natural selection shapes leaf anatomy in order to optimize its photosynthetic function in a given environment \citep{Haberlandt_1914, Givnish_1987, Smith_etal_1997}. By understanding the adaptive significance of leaf anatomical variation we can learn about natural history, find targets for crop improvement, and identify anatomical proxies for paleoclimates preserved in the fossil record \citep[e.g.][]{Wolfe_1971, Royer_2001, McElwain_Steinthorsdottir_2017}. The size, density, and distribution of stomata on a leaf vary widely and impact the flux of CO$_2$ and water vapour \citep[recently reviewed in][]{Sack_Buckley_2016}, as well as susceptibility to foliar pathogens that infect through stomata \citep{Mckown_etal_2014, Melotto_etal_2017}. Hence, stomata have been especially useful in understanding plastic and evolutionary responses to climate change and domestication \citep{Woodward_1987, Beerling_Royer_2011, Milla_etal_2013}.
 
 While the density and size of stomata have been researched extensively \citep[and references therein]{Sack_Buckley_2016}, the adaptive significance of stomatal distribution is less well understood. Stomata are most often found only on the lower leaf surface (hypostomy) but occur on both surfaces (amphistomy) in many species \citep{Metcalfe_Chalk_1950, Parkhurst_1978, Mott_etal_1982}. Theory and experiments demonstrate that amphistomy increases photosynthetic rates under many conditions. By creating a second parallel pathway for CO$_2$ diffusion within the mesophyll, amphistomy optimally supplies CO$_2$ \citep{Parkhurst_1978, Gutschick_1984b, Jones_1985}. Amphistomy is correlated with greater CO$_2$ diffusion \citep{Beerling_Kelly_1996} and higher photosynthetic rates \citep{Mckown_etal_2014}. These observations are corroborated by experiments demonstrating that amphistomy increases maximum photosynthetic rates by up to 20\% \citep{Parkhurst_Mott_1990}. On the other hand, amphistomy can increase transpiration \citep{Jones_1985, Foster_Smith_1986, Buckley_etal_2015}. While transition to amphistomy is thus thought to increase transpiration, empirical studies suggest greater water-use efficiency in amphistomatous species \citep{Bucher_etal_2017}. Hence, amphistomy appears to benefit a plant's carbon use relative to water loss and should be favored when CO$_2$ limits photosynthetic rate. The open questions are under what ecological conditions does CO$_2$ supply most strongly limit photosynthetic rate \citep{Peat_Fitter_1994b} and when is photosynthetic rate most important to fitness?
 
@@ -152,13 +156,9 @@ I tested whether growth form, under either classification scheme, was associated
 
 \subsection*{Open habitat, growth form, and stomatal ratio}
 
-% REMOVED: I used $\textrm{SR}_\textrm{even}$ rather than $\textrm{SR}_\textrm{propAd}$ as the response variable because the hypothesis is that faster life history and/or high light favor more even stomatal densities on each surface.
-
 I compared phylogenetic linear models to test whether growth form, \el, or interactions between them predicted $\textrm{SR}_\textrm{even}$. I fit models using \pkg{phylolm} and calculated Akaike Information Criteria (AIC), a common measure of model fit that penalizes additional parameters. Phylogenetic linear models simultaneously estimate the effect of continuous and categorical predictors while controlling for phylogenetic nonindependence. For these and subsequent analyses, I assumed an Ornstein-Uhlenbeck process model for the residuals with the root character state integrated over the stationary distribution. The Ornstein-Uhlenbeck model is characterized by a diffusion rate ($\sigma ^ 2$) and a return rate ($\alpha$), which describes the phylogenetic signal (see above). I used 10$^4$ parametric bootstrap samples of the full model (including main effects and interactions) to calculate parameter confidence intervals \citep{Boettiger_etal_2012}. 
 
 I tested whether phylogenetic nonstationarity could explain the residual variation in stomatal ratio after accounting for growth form and \el. Specifically, I compared the expected residual variation given the actual tree versus a hypothetical tree where trait evolution has reached stationarity (i.e. a star phylogeny with infinite branch lengths). If phylogeny explains much of the variation, then the simulated residual variance from the actual tree should be greater than that of the stationary tree. I simulated trait values from 10$^4$ parametric bootstrap samples of the model with the lowest AIC (this was the model including Raunki\ae r life form, \el, and their interaction; see Results). I performed the first set of simulations using the actual phylogenetic tree in \pkg{OUwie} version 1.50 \citep{Beaulieu_OMeara_2016}. Each simulation used a different bootstrap parameter sample of $\alpha$ and $\sigma ^ 2$, where $\alpha$ is the return rate to the mean and $\sigma ^ 2$ is the diffusion rate. At stationarity, the variance of an Ornstein-Uhlenbeck trait is equal to $\sigma ^ 2 / 2 \alpha$. Therefore, I simulated stationary data by assuming a normal distribution with this variance estimated from the bootstrap samples. For comparability, I set the mean of simulations from both actual phylogeny and the stationary `phylogeny' to zero. I compared the actual to stationary variance across simulated datasets using a paired $t$-test.
-
-% REMOVING, but keep text in case I decide to replace: Likewise, to determine whether the interaction between Raunki\ae r life form and \el~was statistically significant, I used a parametric bootstrap to generate the null distribution of $\Delta$AIC values ($\Delta$AIC is the difference in AIC between competing models). Specifically, I sampled 1000 random datasets from the estimated model with main effects of Raunki\ae r life form and \el~but no interaction. I fit these simulated datasets to models with and without interactions and  calculated $\Delta$AIC. The statistical significance of the observed $\Delta$AIC is the proportion of simulated $\Delta$AIC greater than the observed.
 
 \subsection*{Does ab- or adaxial stomatal density contribute more to stomatal ratio evolution?}
 
@@ -243,7 +243,7 @@ Among British angiosperms, phylogenetic comparative analyses suggest that select
 
 The interaction between light and growth form among British angiosperms suggests that amphistomy may only be strongly favored when CO$_2$ strongly limits photosynthesis (as in open habitat) \textit{and} photosynthesis strongly limits fitness (as in herbs). This is consistent with life history theory predicting that the demography of open habitat herbs is strongly limited by plant growth \citep{Franco_Silvertown_1996}. Along these lines, Raunki\ae r life form may explain stomatal ratio better than plant habit (Table~\ref{table:srAIC}) because it is a better proxy for life history characteristics. For example, on an axis of `fast' to `slow' life history, geophytes more closely resemble phanerophytes than do chamaephytes or hemicryptophytes \citep{Salguero-Gomez_etal_2016}. Similarly, the relationship between light and stomatal ratio for geophytes was intermediate between that for phanerophytes and chamaephytes/hemicryptophytes (Fig.~\ref{fig:hf-light}). These comparisons indirectly suggest that both high light and fast life history are necessary to induce strong selection for amphistomy. The ideal way to test this would be to measure selection on stomatal ratio in a species that varied quantitatively in both stomatal ratio and life history (e.g., containing both therophyte/annual and perennial forms). I predict that amphistomy will be favored more strongly in the annual form grown under high light compared to an annual under low light or a perennial in high light, and much more strongly than a perennial grown in low light. Similar experiments could also be performed to test if and when light-mediated plasticity in stomatal ratio is adaptive \citep{Gay_Hurd_1975, Mott_Michaelson_1991, Fontana_etal_2017}.
 
-The prevalence of amphistomatous species in high light habitats supports the hypothesis that amphistomy is an adaptation to maximize photosynthetic rates by increasing CO$_2$ diffusion \citep{Jones_1985}. It is also evidence against the hypothesis that the principle fitness cost of amphistomy is water loss \citep{Darwin_1886, Foster_Smith_1986} or dehydration of palisade mesophyll \citep{Buckley_etal_2015}, though these factors are likely very important in determining differential regulation of stomata on each surface. Since evaporative demand increases under high light, under these hypotheses we would expect plants in high light to be hypostomatous. Because stomatal conductances on each surface can be regulated independently in response to the environment \citep{Darwin_1898, Pospisilova_Solarova_1980, Smith_1981, Reich_1984, Mott_Oleary_1984}, amphistomatous leaves likely cope with these stresses by rapidly closing adaxial stomata when water supply cannot match evaporative demands \citep{Richardson_etal_2017}. Instead, patterns in the British flora are at least consistent with the idea that adaxial stomata increase susceptibility to foliar pathogens \citep{Gutschick_1984b, Mckown_etal_2014}. The cost of adaxial stomata may be greater in the shade because wetter leaves and lower ultraviolet light provide a more suitable microclimate for many foliar pathogens.
+The prevalence of amphistomatous species in high light habitats supports the hypothesis that amphistomy is an adaptation to maximize photosynthetic rates by increasing CO$_2$ diffusion \citep{Jones_1985}. Additional CO$_2$ should increase quantum yield under high light when chloroplastic CO$_2$ concentration strongly limits photosynthetic rate. The association between light tolerance and amphistomy is also evidence against the hypothesis that the principle fitness cost of amphistomy is water loss \citep{Darwin_1886, Foster_Smith_1986} or dehydration of palisade mesophyll \citep{Buckley_etal_2015}, though these factors are likely very important in determining differential regulation of stomata on each surface. Since evaporative demand increases under high light, under these hypotheses we would expect plants in high light to be hypostomatous. Because stomatal conductances on each surface can be regulated independently in response to the environment \citep{Darwin_1898, Pospisilova_Solarova_1980, Smith_1981, Reich_1984, Mott_Oleary_1984}, amphistomatous leaves likely cope with these stresses by rapidly closing adaxial stomata when water supply cannot match evaporative demands \citep{Richardson_etal_2017}. Instead, patterns in the British flora are at least consistent with the idea that adaxial stomata increase susceptibility to foliar pathogens \citep{Gutschick_1984b, Mckown_etal_2014}. The cost of adaxial stomata may be greater in the shade because wetter leaves and lower ultraviolet light provide a more suitable microclimate for many foliar pathogens.
 
 \subsection*{Amphistomy as a proxy for open habitat}
 
@@ -290,17 +290,17 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 % Supporting Figure Captions
 %--------------------------------------------------
 
-\section*{Supporting figure captions}
+%\section*{Supporting figure captions}
 
-Figure S1: Most hydrophytes are hyperstomatous, having most stomata on the adaxial (`upper') surface 
+%Figure S1: Most hydrophytes are hyperstomatous, having most stomata on the adaxial (`upper') surface 
 
-Figure S2: Raunki\ae r life form and plant habit broadly overlap.
+%Figure S2: Raunki\ae r life form and plant habit broadly overlap.
 
-Figure S3: Phylogenetic diversification of stomatal ratio follows growth form and light tolerance.
+%Figure S3: Phylogenetic diversification of stomatal ratio follows growth form and light tolerance.
 
-Figure S4: Growth forms have different tolerances for sun and shade among British angiosperms.
+%Figure S4: Growth forms have different tolerances for sun and shade among British angiosperms.
 
-Figure S5: The effect of light on stomatal ratio depends on growth form.
+%Figure S5: The effect of light on stomatal ratio depends on growth form.
 
 \clearpage
 
@@ -404,7 +404,7 @@ Figure S5: The effect of light on stomatal ratio depends on growth form.
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SR-lf.pdf}}
-%\centerline{\includegraphics[angle=270]{figures/figure_SR-lf.eps}} % Needed this to upload file to journal website
+%\centerline{\includegraphics[angle=270]{figures_eps/figure_SR-lf.eps}} % Needed this to upload file to journal website
 \caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity. Key to symbols: n.s. = not significant,  $^*~P < 0.05$, $^{**}~P < 0.01$, $^{***}~P < 0.001$.} 
 \label{fig:SR-lf}
 \end{figure}
@@ -472,7 +472,7 @@ Figure S5: The effect of light on stomatal ratio depends on growth form.
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SR-hf.pdf}}
-%\centerline{\includegraphics[angle=270]{figures/figure_SR-hf.eps}} % Needed this to upload file to journal website
+%\centerline{\includegraphics[angle=270]{figures_eps/figure_SR-hf.eps}} % Needed this to upload file to journal website
 \caption{The effect of light on stomatal ratio depends on growth form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in annual, biennual, and perennial herbs, but not shrubs or trees. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to growth form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity. Key to symbols: n.s. = not significant,  $^*~P < 0.05$, $^{**}~P < 0.01$, $^{***}~P < 0.001$.} 
 \label{fig:SR-hf}
 \end{figure}
