@@ -1,4 +1,4 @@
-\begin{thebibliography}{71}
+\begin{thebibliography}{72}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Bartelheimer \& Poschlod(2016)}]{Bartelheimer_Poschlod_2016}
@@ -108,6 +108,17 @@
 \newblock Ecological flora of the {B}ritish isles.
 \newblock URL: http://www.ecoflora.co.uk. Accessed on 2017-03-26.
 
+\bibitem[{Flexas \emph{et~al.}(2012)Flexas, Barbour, Brendel, Cabrera,
+  Carriqu{\'\i}, D{\'\i}az-Espejo, Douthe, Dreyer, Ferrio, Gago, Gall{\'e},
+  Galm{\'e}s, Kodama, Medrano, Niinemets, Peguero-Pina, Pou, Ribas-Carb{\'o},
+  Tom{\'a}s, Tosens \& Warren}]{Flexas_etal_2012}
+{\bf Flexas J, Barbour MM, Brendel O, Cabrera HM, Carriqu{\'\i} M,
+  D{\'\i}az-Espejo A, Douthe C, Dreyer E, Ferrio JP, Gago J \emph{et~al}}{\bf .
+  2012}.
+\newblock Mesophyll diffusion conductance to {CO$_2$}: an unappreciated central
+  player in photosynthesis.
+\newblock \emph{Plant Science}, {\bf 193}: 70--84.
+
 \bibitem[{Fontana \emph{et~al.}(2017)Fontana, Labrecque, Collin \&
   B{\'e}langer}]{Fontana_etal_2017}
 {\bf Fontana M, Labrecque M, Collin A , B{\'e}langer N}{\bf . 2017}.
@@ -116,7 +127,7 @@
 \newblock \emph{Plant Growth Regulation}, {\bf 81}: 63--70.
 
 \bibitem[{Foster \& Smith(1986)}]{Foster_Smith_1986}
-{\bf Foster J , Smith W}{\bf . 1986}.
+{\bf Foster JR , Smith WK}{\bf . 1986}.
 \newblock Influence of stomatal distribution on transpiration in low-wind
   environments.
 \newblock \emph{Plant, Cell \& Environment}, {\bf 9}: 751--759.
@@ -404,10 +415,10 @@
   nucleotide sequences.
 \newblock \emph{American Journal of Botany}, {\bf 91}: 943--952.
 
-\bibitem[{Shipley \emph{et~al.}(2017)Shipley, Belluau, Kühn, Soudzilovskaia,
+\bibitem[{Shipley \emph{et~al.}(2017)Shipley, Belluau, K?hn, Soudzilovskaia,
   Bahn, Penuelas, Kattge, Sack, Cavender-Bares, Ozinga, Blonder, van Bodegom,
   Manning, Hickler, Sosinski, Pillar \& Onipchenko}]{Shipley_etal_2017}
-{\bf Shipley B, Belluau M, Kühn I, Soudzilovskaia NA, Bahn M, Penuelas J,
+{\bf Shipley B, Belluau M, K?hn I, Soudzilovskaia NA, Bahn M, Penuelas J,
   Kattge J, Sack L, Cavender-Bares J, Ozinga WA \emph{et~al}}{\bf . 2017}.
 \newblock Predicting habitat affinities of plant species using commonly
   measured functional traits.
