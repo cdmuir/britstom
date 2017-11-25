@@ -107,14 +107,14 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
   
   r <- grconvertX(5.25, "in", "user")
   x <- cos(theta) * r
-  y <- sin(theta) * r #+ grconvertY(0.25, "ndc", "user")
+  y <- sin(theta) * r
   points(x, y, type = "l", col = "grey")
   text(cos(theta_axis) * r, sin(theta_axis) * r, 
        labels = "1", srt = 360 * (pi - theta_axis / (2 * pi)))
   
   r <- grconvertX(5, "in", "user")
   x <- cos(theta) * r
-  y <- sin(theta) * r #+ grconvertY(0.25, "ndc", "user")
+  y <- sin(theta) * r
   points(x, y, type = "l", col = "grey")
   text(cos(theta_axis) * r, sin(theta_axis) * r, 
        labels = "0.5", srt = 360 * (pi - theta_axis / (2 * pi)))
@@ -124,7 +124,7 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
 
   r <- grconvertX(4.75, "in", "user")
   x <- cos(theta) * r
-  y <- sin(theta) * r #+ grconvertY(0.25, "ndc", "user")
+  y <- sin(theta) * r
   points(x, y, type = "l", col = "grey")
   text(cos(theta_axis) * r, sin(theta_axis) * r,
        labels = "0", srt = 360 * (pi - theta_lab / (2 * pi)))
@@ -138,7 +138,6 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
     Y %<>% c(sin(seq(theta[i], theta[i + 1], length.out = 1e2)) * d[i])
   }
 
-  #Y %<>% add(grconvertY(0.25, "ndc", "user"))
   points(X, Y, type = "l", lwd = 3)
 
 dev.off()
@@ -246,7 +245,6 @@ gp <- plot(phy, type = "fan", show.tip.label = FALSE,
     Y %<>% c(sin(seq(theta[i], theta[i + 1], length.out = 1e2)) * d[i])
   }
   
-  #Y %<>% add(grconvertY(0.25, "ndc", "user"))
   points(X, Y, type = "l", lwd = 3)
   
 dev.off()

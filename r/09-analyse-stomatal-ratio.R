@@ -43,7 +43,6 @@ fitSR_lf_pl <- read_rds(str_c(path_objects, "/fitSR_lf_pl.rds"))
 # Figure
 
 pdf(str_c(path_figures, "/figure_SR-lf.pdf"), 4, 7, useDingbats = FALSE)
-#postscript(str_c(path_figures, "/figure_SR-lf.eps"), width = 4, height = 7) # need for submitting to journal website
 par(mfrow = c(5, 1), mar = rep(0, 4), cex.lab = 1, oma = c(5, 7, 1, 1))
 
 for (i in 5:1) {
@@ -106,25 +105,6 @@ mtext(2, text = expression(
 
 dev.off()
 
-# IN FLUX: compare slopes
-
-lf <- data.frame(lifeform = names(lf))
-lf %<>% 
-  tidyr::expand(lifeform, lifeform) %>%
-  remove_diag()
-lf %<>% mutate(mean = numeric(nrow(.)),
-               median = numeric(nrow(.)),
-               lower = numeric(nrow(.)),
-               upper = numeric(nrow(.)))
-
-for (i in 1:nrow(lf)) {
-  
-  s1 <- fitSR_lf_pl$bootstrap[, sprintf('lifeform%s', lf$lifeform[i])]
-  s2 <- fitSR_lf_pl$bootstrap[, sprintf('lifeform%s', lf$lifeform1[i])]
-  lf[i, 3:6] <- compare_slopes(s1, s2)
-  
-}
-
 ##### Habit and Ellenberg light indicator values versus sr_even -----
 
 hf <- c("tree", "shrub", "perennial", "biennial", "annual")
@@ -151,7 +131,6 @@ fitSR_hf_pl <- read_rds(str_c(path_objects, "/fitSR_hf_pl.rds"))
 # Figure
 
 pdf(str_c(path_figures, "/figure_SR-hf.pdf"), 4, 7, useDingbats = FALSE)
-#postscript(str_c(path_figures, "/figure_SR-hf.eps"), width = 4, height = 7) # need for submitting to journal website
 par(mfrow = c(5, 1), mar = rep(0, 4), cex.lab = 1, oma = c(5, 7, 1, 1))
 
 for (i in 5:1) {

@@ -45,25 +45,6 @@ $^1$ Biodiversity Research Centre and Botany Department, University of British C
 In press at \textit{New Phytologist} \\
 \end{center}
 \clearpage
-%\textit{Twitter handle:} @thegoodphyte \\
-%\\
-%\textit{Author for correspondence:} \\
-%\textit{Christopher D. Muir} \\
-%\textit{Tel:} +1 984-218-5309 \\
-%\textit{Email:} chrisdmuir@gmail.com \\
-%1413 N Mangum St\\
-%Durham, NC 27701\\
-%\\
-%Short title: Shedding light on stomatal evolution\\
-%\\
-%Word count: \\
-%Summary: 199\\
-%Introduction: 1355\\
-%Materials and Methods: 1698\\
-%Results: 582\\
-%Discussion: 1935\\
-%Acknowledgement: 26\\
-%4 Figures and 1 Table, 5 Supplemental Figures
 
 <<Import-objects, echo = FALSE, results = hide>>=
 
@@ -74,13 +55,6 @@ In press at \textit{New Phytologist} \\
   setwd("ms")
   
 @
-
-%\linenumbers
-%\setstretch{\stretchy}
-%\pagenumbering{gobble}
-%\raggedright
-
-%\clearpage
 
 \section*{Summary}
 
@@ -295,24 +269,6 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 \clearpage
 
 %--------------------------------------------------
-% Supporting Figure Captions
-%--------------------------------------------------
-
-%\section*{Supporting figure captions}
-
-%Figure S1: Most hydrophytes are hyperstomatous, having most stomata on the adaxial (`upper') surface 
-
-%Figure S2: Raunki\ae r life form and plant habit broadly overlap.
-
-%Figure S3: Phylogenetic diversification of stomatal ratio follows growth form and light tolerance.
-
-%Figure S4: Growth forms have different tolerances for sun and shade among British angiosperms.
-
-%Figure S5: The effect of light on stomatal ratio depends on growth form.
-
-\clearpage
-
-%--------------------------------------------------
 % Tables
 %--------------------------------------------------
 
@@ -412,7 +368,6 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SR-lf.pdf}}
-%\centerline{\includegraphics[angle=270]{figures_eps/figure_SR-lf.eps}} % Needed this to upload file to journal website
 \caption{The effect of light on stomatal ratio depends on Raunki\ae r life form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in therophytes, hemicryptophytes, and chamaephytes but not geophytes and phanerophytes. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to Raunki\ae r life form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity. Key to symbols: n.s. = not significant,  $^*~P < 0.05$, $^{**}~P < 0.01$, $^{***}~P < 0.001$.} 
 \label{fig:SR-lf}
 \end{figure}
@@ -480,7 +435,6 @@ CDM designed the study, collected data, analyzed the data, and wrote the manuscr
 
 \begin{figure}[ht]
 \centerline{\includegraphics[width=0.5\textwidth]{figures/figure_SR-hf.pdf}}
-%\centerline{\includegraphics[angle=270]{figures_eps/figure_SR-hf.eps}} % Needed this to upload file to journal website
 \caption{The effect of light on stomatal ratio depends on growth form. Greater Ellenberg light indicator values (\el) are associated with greater stomatal ratio ($\mathrm{SR_{even}}$) in annual, biennual, and perennial herbs, but not shrubs or trees. The maximum likelihood slope from phylogenetic regression is given with statistical significance based on 10$^4$ parametric bootstrap samples. Numbers in parentheses next to growth form are the sample sizes in the final dataset. Estimated slopes (solid line) and 95\% bootstrapped confidence intervals (gray polygon between dashed lines) are plotted against raw data. Points have been jittered for visual clarity. Key to symbols: n.s. = not significant,  $^*~P < 0.05$, $^{**}~P < 0.01$, $^{***}~P < 0.001$.} 
 \label{fig:SR-hf}
 \end{figure}
